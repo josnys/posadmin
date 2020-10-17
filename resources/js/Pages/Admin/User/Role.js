@@ -16,6 +16,7 @@ function CreateRole() {
      const { auth, errors, data } = usePage();
      const [sending, setSending] = useState(false);
      const [saved, setSaved] = useState(false);
+     console.log(data);
      const [values, setValues] = useState({
           user_roles: data.user_roles || [],
           checkAll: false,

@@ -140,6 +140,7 @@ function CreateRole() {
     type: "text",
     disable: false,
     readonly: false,
+    must: true,
     errors: errors.display,
     value: values.display,
     onChange: handleChange
@@ -330,14 +331,17 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
       errors = _ref$errors === void 0 ? [] : _ref$errors,
       disable = _ref.disable,
       readonly = _ref.readonly,
-      props = _objectWithoutProperties(_ref, ["label", "name", "className", "errors", "disable", "readonly"]);
+      must = _ref.must,
+      props = _objectWithoutProperties(_ref, ["label", "name", "className", "errors", "disable", "readonly", "must"]);
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: className
   }, label && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     className: "block font-medium text-sm text-gray-700",
     htmlFor: name
-  }, label, ":"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({
+  }, label, " ", must && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-red-700"
+  }, "*")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({
     id: name,
     name: name
   }, props, {

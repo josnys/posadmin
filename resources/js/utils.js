@@ -32,6 +32,7 @@ export function createSlug(string){
      if(string.length == 0){
           return "";
      }
+     string = string.replace(' ', '-');
      var diactricMap = {
           "á": "a",
           "à": "a",
@@ -94,18 +95,6 @@ export function createSlug(string){
           string = string.replace(from, to);
      }
      return string.toLowerCase().replace(/[^a-z0-9_-]/gi,'');
-     // let accent = ['à', 'á', 'è', 'é', 'í', 'ì', 'ó', 'ò', 'ú', 'ù', 'ä', 'ë', 'ï', 'ö', 'ü', 'â', 'ê', 'î', 'ô', 'û', "'"];
-     // let replace = ['a', 'a', 'e', 'e', 'i', 'i', 'o', 'o', 'u', 'u', 'a', 'e', 'i', 'i', 'u', 'a', 'e', 'i', 'o', 'u', ''];
-     // let data = string.split('');
-     // let result = '';
-     // for(var i = 0; i < data.length; i++){
-     //      if(accent.indexOf(data[i]) != -1){
-     //           result += replace[accent.indexOf(data[i])];
-     //      }else{
-     //           result += data[i];
-     //      }
-     // }
-     // return result.replace(' ', '-').toLowerCase();
 }
 
 export function isPar(a){

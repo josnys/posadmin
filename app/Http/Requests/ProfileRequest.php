@@ -24,33 +24,18 @@ class ProfileRequest extends FormRequest
      public function rules()
      {
           return [
-               'name' => ['required', 'string', 'max:255'],
+               'fname' => ['required', 'string', 'max:255'],
+               'lname' => ['required', 'string', 'max:255'],
+               'dob' => ['sometimes', 'date'],
+               'sex' => ['sometimes', 'string'],
+               'identification' => ['required', 'alpha_dash'],
+               'identificationType' => ['required', 'string'],
+               'phone' => ['required'],
                'current_username' => ['required'],
                'username' => ['required', 'exclude_if:current_username,'.auth()->user()->username, 'string', 'max:30', 'unique:users'],
                'current_email' => ['required'],
                'email' => ['required', 'exclude_if:current_email,'.auth()->user()->email, 'string', 'email', 'max:255', 'unique:users'],
-               'photo' => ['sometimes', 'image', 'max:2048', 'mimes:jpeg,jpg,png']
-          ];
-     }
-
-     public function messages()
-     {
-          return [
-               'name.required' => 'Name is required.',
-               'name.string' => 'Name should be string.',
-               'name.string' => 'Name should be less than 255 characters.',
-               'username.required' => 'Username is required.',
-               'username.string' => 'Username should be string.',
-               'username.max' => 'Username should be less than 30 characters.',
-               'username.unique' => 'Username is already taken.',
-               'email.required' => 'Email is required.',
-               'email.string' => 'Email should be string.',
-               'email.email' => 'Email should be a valid email address.',
-               'email.max' => 'Email should be less than 255 characters.',
-               'email.unique' => 'Email is already in use.',
-               'photo.image' => 'The photo should be an image.',
-               'photo.max' => 'The photo size should be less than or equal to 2MB.',
-               'photo.mimes' => 'The image type is invalid.',
+               'photo' => ['sometimes', 'exclude_if:selectedAvatar,null', 'image', 'max:2048', 'mimes:jpeg,jpg,png']
           ];
      }
 }

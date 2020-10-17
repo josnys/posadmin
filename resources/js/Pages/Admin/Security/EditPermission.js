@@ -75,6 +75,7 @@ function CreateRole() {
                                                    type="text"
                                                    disable={false}
                                                    readonly={false}
+                                                   must={true}
                                                    errors={errors.display}
                                                    value={values.display}
                                                    onChange={handleChange}

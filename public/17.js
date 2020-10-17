@@ -18,6 +18,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_DataContainer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Shared/DataContainer */ "./resources/js/Shared/DataContainer.js");
 /* harmony import */ var _Shared_DropdownButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Shared/DropdownButton */ "./resources/js/Shared/DropdownButton.js");
 /* harmony import */ var _Shared_Icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Shared/Icon */ "./resources/js/Shared/Icon.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../utils */ "./resources/js/utils.js");
+
 
 
 
@@ -32,7 +34,6 @@ var Index = function Index() {
       errors = _usePage.errors,
       data = _usePage.data;
 
-  console.log(data.data);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
     key: "security-index"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Users")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -44,8 +45,8 @@ var Index = function Index() {
     className: "text-md text-gray-700 leading-tight"
   }, "Users")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DataContainer__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-span-12"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
-    href: route('role.create'),
+  }, Object(_utils__WEBPACK_IMPORTED_MODULE_7__["can"])(auth.user, 'change-password-user') && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+    href: route('user.create'),
     className: "bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
     name: 'plus',
@@ -58,6 +59,8 @@ var Index = function Index() {
     className: "px-4 py-2"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     className: "px-4 py-2"
+  }, "Code"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+    className: "px-4 py-2"
   }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     className: "px-4 py-2"
   }, "Username"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
@@ -68,6 +71,7 @@ var Index = function Index() {
     className: "px-4 py-2"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, data.data.map(function (_ref) {
     var id = _ref.id,
+        code = _ref.code,
         name = _ref.name,
         username = _ref.username,
         email = _ref.email,
@@ -87,6 +91,8 @@ var Index = function Index() {
       className: "mx-auto h-8 w-8 rounded-full"
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       className: "border px-4 py-2"
+    }, code), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      className: "border px-4 py-2"
     }, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       className: "border px-4 py-2"
     }, username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
@@ -98,19 +104,25 @@ var Index = function Index() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DropdownButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
       caption: "Actions",
       color: "blue"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+    }, Object(_utils__WEBPACK_IMPORTED_MODULE_7__["can"])(auth.user, 'update-user') && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
       href: route('user.edit', id),
       className: "flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
       name: 'edit',
       className: 'fill-current w-5 h-5 mr-2'
-    }), "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+    }), "Edit"), Object(_utils__WEBPACK_IMPORTED_MODULE_7__["can"])(auth.user, 'assign-role') && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
       href: route('user.get.role', id),
       className: "flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
       name: 'cheveron-right',
       className: 'fill-current w-5 h-5 mr-2'
-    }), "Assign Role"))));
+    }), "Assign Role"), Object(_utils__WEBPACK_IMPORTED_MODULE_7__["can"])(auth.user, 'change-password-user') && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+      href: route('user.get.resetpassword', id),
+      className: "flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Icon__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      name: 'key',
+      className: 'fill-current w-5 h-5 mr-2'
+    }), "Change Password"))));
   }), !data.data.length && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     colSpan: "4",
     className: "p-4 bg-blue-100 text-blue-500 text-center"

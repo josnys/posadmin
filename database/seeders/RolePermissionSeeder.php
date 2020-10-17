@@ -94,6 +94,11 @@ class RolePermissionSeeder extends Seeder
                     'display_name' => 'Delete User',
                     'description' => 'Allow user to delete user\'s accounts.'
                ],
+               [
+                    'name' => 'change-password-user',
+                    'display_name' => 'Change Password User',
+                    'description' => 'Allow user to change other user\'s password'
+               ],
           ];
 
           $permissionIds = array();

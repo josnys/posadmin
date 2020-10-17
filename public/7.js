@@ -69,6 +69,7 @@ var ProfileEditCard = function ProfileEditCard() {
     current_password: '',
     password: '',
     password_confirmation: '',
+    pin: '',
     errors: errors
   }),
       _useState6 = _slicedToArray(_useState5, 2),
@@ -125,6 +126,7 @@ var ProfileEditCard = function ProfileEditCard() {
     type: "password",
     disable: false,
     readonly: false,
+    must: true,
     errors: values.errors.current_password,
     value: values.current_password,
     onChange: handleChange
@@ -135,6 +137,7 @@ var ProfileEditCard = function ProfileEditCard() {
     type: "password",
     disable: false,
     readonly: false,
+    must: true,
     errors: values.errors.password,
     value: values.password,
     onChange: handleChange
@@ -145,8 +148,19 @@ var ProfileEditCard = function ProfileEditCard() {
     type: "password",
     disable: false,
     readonly: false,
+    must: false,
     errors: values.errors.password_confirmation,
     value: values.password_confirmation,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    className: "form-input rounded-md shadow-sm mt-4 block w-full",
+    label: "PIN",
+    name: "pin",
+    type: "password",
+    disable: false,
+    readonly: false,
+    errors: values.errors.pin,
+    value: values.pin,
     onChange: handleChange
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex items-center justify-end px-4 py-3 bg-gray-100 text-right sm:px-6 rounded-b"
@@ -377,14 +391,17 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
       errors = _ref$errors === void 0 ? [] : _ref$errors,
       disable = _ref.disable,
       readonly = _ref.readonly,
-      props = _objectWithoutProperties(_ref, ["label", "name", "className", "errors", "disable", "readonly"]);
+      must = _ref.must,
+      props = _objectWithoutProperties(_ref, ["label", "name", "className", "errors", "disable", "readonly", "must"]);
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: className
   }, label && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     className: "block font-medium text-sm text-gray-700",
     htmlFor: name
-  }, label, ":"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({
+  }, label, " ", must && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-red-700"
+  }, "*")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({
     id: name,
     name: name
   }, props, {
@@ -453,6 +470,7 @@ function createSlug(string) {
     return "";
   }
 
+  string = string.replace(' ', '-');
   var diactricMap = (_diactricMap = {
     "á": "a",
     "à": "a",
@@ -492,18 +510,7 @@ function createSlug(string) {
     string = string.replace(from, to);
   }
 
-  return string.toLowerCase().replace(/[^a-z0-9_-]/gi, ''); // let accent = ['à', 'á', 'è', 'é', 'í', 'ì', 'ó', 'ò', 'ú', 'ù', 'ä', 'ë', 'ï', 'ö', 'ü', 'â', 'ê', 'î', 'ô', 'û', "'"];
-  // let replace = ['a', 'a', 'e', 'e', 'i', 'i', 'o', 'o', 'u', 'u', 'a', 'e', 'i', 'i', 'u', 'a', 'e', 'i', 'o', 'u', ''];
-  // let data = string.split('');
-  // let result = '';
-  // for(var i = 0; i < data.length; i++){
-  //      if(accent.indexOf(data[i]) != -1){
-  //           result += replace[accent.indexOf(data[i])];
-  //      }else{
-  //           result += data[i];
-  //      }
-  // }
-  // return result.replace(' ', '-').toLowerCase();
+  return string.toLowerCase().replace(/[^a-z0-9_-]/gi, '');
 }
 function isPar(a) {
   var b = a % 2;

@@ -42,8 +42,12 @@ Route::group(['middleware' => ['auth']], function(){
 
      // Users
      Route::get('/user', [App\Http\Controllers\Admin\UserController::class, 'index'])->middleware('permission:read-user')->name('user.index');
+     Route::get('/user/create', [App\Http\Controllers\Admin\UserController::class, 'create'])->middleware('permission:create-user')->name('user.create');
+     Route::post('/user/create', [App\Http\Controllers\Admin\UserController::class, 'store'])->middleware('permission:create-user')->name('user.store');
      Route::get('/user/{user}/edit', [App\Http\Controllers\Admin\UserController::class, 'edit'])->middleware('permission:update-user')->name('user.edit');
      Route::post('/user/{user}/edit', [App\Http\Controllers\Admin\UserController::class, 'update'])->middleware('permission:update-user')->name('user.update');
      Route::get('/user/{user}/role', [App\Http\Controllers\Admin\UserController::class, 'getRoles'])->middleware('permission:assign-role')->name('user.get.role');
      Route::post('/user/{user}/role', [App\Http\Controllers\Admin\UserController::class, 'postRole'])->middleware('permission:assign-role')->name('user.post.role');
+     Route::get('/user/{user}/resetPassword', [App\Http\Controllers\Admin\UserController::class, 'getResetPassword'])->middleware('permission:change-password-user')->name('user.get.resetpassword');
+     Route::post('/user/{user}/resetPassword', [App\Http\Controllers\Admin\UserController::class, 'postResetPassword'])->middleware('permission:change-password-user')->name('user.post.resetpassword');
 });

@@ -4,6 +4,7 @@ import { Inertia } from '@inertiajs/inertia';
 import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import Layout from '../../../Shared/Layout';
 import TextInput from '../../../Shared/TextInput';
+import SelectInput from '../../../Shared/SelectInput';
 import FileInput from '../../../Shared/FileInput';
 import ProfileCard from '../../../Shared/ProfileCard';
 import DataCard from '../../../Shared/DataCard';
@@ -14,7 +15,15 @@ const Edit = () => {
      const [sending, setSending] = useState(false);
 
      const [values, setValues] = useState({
-          name: data.name || '',
+          fname: data.fname || '',
+          lname: data.lname || '',
+          code: data.code || '',
+          dob: data.dob || '',
+          sex: data.sex || '',
+          identification: data.identification || '',
+          identificationType: data.identificationType || '',
+          address: data.address || '',
+          phone: data.phone || '',
           username: data.username || '',
           email: data.email || '',
           avatar: data.avatar
@@ -47,7 +56,7 @@ const Edit = () => {
                          <div className="px-4 sm:px-0">
                               <h3 className="text-lg font-medium text-gray-900">Edit User</h3>
                               <p className="mt-1 text-sm text-gray-600">
-                                   Edit user's account
+                                   Edit user's personal informations
                               </p>
                          </div>
                     </div>
@@ -56,39 +65,140 @@ const Edit = () => {
                               <div className="px-4 py-5 sm:p-6">
                                    <div className="grid grid-cols-6 gap-6">
                                         <div className="col-span-6 sm:col-span-4">
-                                              <TextInput
-                                                   className="form-input rounded-md shadow-sm mt-4 block w-full"
-                                                   label="Name"
-                                                   name="name"
-                                                   type="text"
-                                                   disable={false}
-                                                   readonly={false}
-                                                   errors={errors.name}
-                                                   value={values.name}
-                                                   onChange={handleChange}
-                                              />
-                                              <TextInput
-                                                   className="form-input rounded-md shadow-sm mt-4 block w-full"
-                                                   label="Userame"
-                                                   name="username"
-                                                   type="text"
-                                                   disable={true}
-                                                   readonly={true}
-                                                   errors={errors.username}
-                                                   value={values.username}
-                                                   onChange={handleChange}
-                                              />
-                                              <TextInput
-                                                   className="form-input rounded-md shadow-sm mt-4 block w-full"
-                                                   label="Email"
-                                                   name="email"
-                                                   type="email"
-                                                   disable={true}
-                                                   readonly={true}
-                                                   errors={errors.email}
-                                                   value={values.email}
-                                                   onChange={handleChange}
-                                              />
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="First Name"
+                                                  name="fname"
+                                                  type="text"
+                                                  disable={false}
+                                                  readonly={false}
+                                                  must={true}
+                                                  errors={errors.fname}
+                                                  value={values.fname}
+                                                  onChange={handleChange}
+                                             />
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Last Name"
+                                                  name="lname"
+                                                  type="text"
+                                                  disable={false}
+                                                  readonly={false}
+                                                  must={true}
+                                                  errors={errors.lname}
+                                                  value={values.lname}
+                                                  onChange={handleChange}
+                                             />
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Code"
+                                                  name="code"
+                                                  type="text"
+                                                  disable={true}
+                                                  readonly={true}
+                                                  must={false}
+                                                  errors={errors.code}
+                                                  value={values.code}
+                                                  onChange={handleChange}
+                                             />
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Date of Birth"
+                                                  name="dob"
+                                                  type="date"
+                                                  disable={false}
+                                                  readonly={false}
+                                                  must={true}
+                                                  errors={errors.dob}
+                                                  value={values.dob}
+                                                  onChange={handleChange}
+                                             />
+                                             <SelectInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Sex"
+                                                  name="sex"
+                                                  must={true}
+                                                  errors={errors.sex}
+                                                  value={values.sex}
+                                                  onChange={handleChange}
+                                                  >
+                                                  <option value={''}>Choose Sex</option>
+                                                  {data.sexes.map(({code, name}, i) => {
+                                                       return <option key={code} value={code}>{name}</option>
+                                                  })}
+                                             </SelectInput>
+                                             <SelectInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Identity Type"
+                                                  name="identificationType"
+                                                  must={true}
+                                                  errors={errors.identificationType}
+                                                  value={values.identificationType}
+                                                  onChange={handleChange}
+                                                  >
+                                                  <option value={''}>Choose Identity Type</option>
+                                                  {data.identityType.map(({code, name}, i) => {
+                                                       return <option key={code} value={code}>{name}</option>
+                                                  })}
+                                             </SelectInput>
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Identity Number"
+                                                  name="identification"
+                                                  type="text"
+                                                  disable={false}
+                                                  readonly={false}
+                                                  must={true}
+                                                  errors={errors.identification}
+                                                  value={values.identification}
+                                                  onChange={handleChange}
+                                             />
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Userame"
+                                                  name="username"
+                                                  type="text"
+                                                  disable={true}
+                                                  readonly={true}
+                                                  errors={errors.username}
+                                                  value={values.username}
+                                                  onChange={handleChange}
+                                             />
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Email"
+                                                  name="email"
+                                                  type="email"
+                                                  disable={true}
+                                                  readonly={true}
+                                                  errors={errors.email}
+                                                  value={values.email}
+                                                  onChange={handleChange}
+                                             />
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Phone Number"
+                                                  name="phone"
+                                                  type="text"
+                                                  disable={false}
+                                                  readonly={false}
+                                                  must={true}
+                                                  errors={errors.phone}
+                                                  value={values.phone}
+                                                  onChange={handleChange}
+                                             />
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Address"
+                                                  name="address"
+                                                  type="text"
+                                                  disable={false}
+                                                  readonly={false}
+                                                  must={true}
+                                                  errors={errors.address}
+                                                  value={values.address}
+                                                  onChange={handleChange}
+                                             />
                                         </div>
                                    </div>
                               </div>

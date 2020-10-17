@@ -13,6 +13,21 @@ use Inertia\Inertia;
 
 class HomeController extends Controller
 {
+     protected $userSex;
+     protected $identityType;
+
+     public function __construct()
+     {
+          $this->userSex = [
+               ['code' => 'Man', 'name' => 'Man'],
+               ['code' => 'Woman', 'name' => 'Woman']
+          ];
+          $this->identityType = [
+               ['code' => 'CIN', 'name' => 'CIN'],
+               ['code' => 'Passport', 'name' => 'Passport'],
+               ['code' => 'Driver License', 'name' => 'Driver License']
+          ];
+     }
      /**
      * Show the application dashboard.
      *
@@ -28,10 +43,22 @@ class HomeController extends Controller
           return Inertia::render('Dashboard/User/Profile', [
                'data' => [
                     'id' => Auth::user()->id,
-                    'name' => Auth::user()->name,
+                    'fname' => Auth::user()->firstname,
+                    'lname' => Auth::user()->lastname,
+                    'code' => Auth::user()->code,
+                    'dob' => Auth::user()->dob,
+                    'sex' => Auth::user()->sex,
+                    'identification' => Auth::user()->identification,
+                    'identificationType' => Auth::user()->identification_type,
+                    'address' => Auth::user()->address,
+                    'phone' => Auth::user()->phone,
+                    'pin' => Auth::user()->pin,
+                    'multiConnect' => (Auth::user()->multi_connect) ? true : false,
                     'username' => Auth::user()->username,
                     'email' => Auth::user()->email,
-                    'avatar' => (Auth::user()->profile_url) ? route('show.image', Auth::user()->profile_url) : null
+                    'avatar' => (Auth::user()->profile_url) ? route('show.image', 'users/'.Auth::user()->profile_url) : null,
+                    'sexes' => $this->userSex,
+                    'identityType' => $this->identityType
                ]
           ]);
      }
@@ -44,7 +71,14 @@ class HomeController extends Controller
                $index = count(explode('/', $mediaPath)) - 1;
                $mediaName = explode('/', $mediaPath)[$index];
           }
-          $user->name = $request->get('name');
+          $user->firstname = $request->get('fname');
+          $user->lastname = $request->get('lname');
+          $user->dob = $request->get('dob');
+          $user->sex = $request->get('sex');
+          $user->identification = $request->get('identification');
+          $user->identification_type = $request->get('identificationType');
+          $user->address = $request->get('address');
+          $user->phone = $request->get('phone');
           $user->username = $request->get('username');
           $user->email = $request->get('email');
           $user->profile_url = $mediaName;
@@ -68,6 +102,9 @@ class HomeController extends Controller
                ], 422);
           }
           $user->password = Hash::make($request->get('password'));
+          if($request->get('pin') != null){
+               $user->pin = $request->get('pin');
+          }
           $user->update();
           Auth::logout();
           return response()->json([

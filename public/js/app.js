@@ -48568,17 +48568,45 @@ var map = {
 		1,
 		16
 	],
+	"./Admin/User/ChangePassword": [
+		"./resources/js/Pages/Admin/User/ChangePassword.js",
+		0,
+		1,
+		21
+	],
+	"./Admin/User/ChangePassword.js": [
+		"./resources/js/Pages/Admin/User/ChangePassword.js",
+		0,
+		1,
+		21
+	],
+	"./Admin/User/Create": [
+		"./resources/js/Pages/Admin/User/Create.js",
+		0,
+		1,
+		11,
+		2
+	],
+	"./Admin/User/Create.js": [
+		"./resources/js/Pages/Admin/User/Create.js",
+		0,
+		1,
+		11,
+		2
+	],
 	"./Admin/User/Edit": [
 		"./resources/js/Pages/Admin/User/Edit.js",
 		0,
 		1,
-		11
+		11,
+		23
 	],
 	"./Admin/User/Edit.js": [
 		"./resources/js/Pages/Admin/User/Edit.js",
 		0,
 		1,
-		11
+		11,
+		23
 	],
 	"./Admin/User/Index": [
 		"./resources/js/Pages/Admin/User/Index.js",
@@ -48667,14 +48695,16 @@ var map = {
 	"./Components/ProfileEditCard": [
 		"./resources/js/Pages/Components/ProfileEditCard.js",
 		0,
-		2,
-		21
+		11,
+		18,
+		24
 	],
 	"./Components/ProfileEditCard.js": [
 		"./resources/js/Pages/Components/ProfileEditCard.js",
 		0,
-		2,
-		21
+		11,
+		18,
+		24
 	],
 	"./Dashboard/Home": [
 		"./resources/js/Pages/Dashboard/Home.js",
@@ -48692,15 +48722,17 @@ var map = {
 		"./resources/js/Pages/Dashboard/User/Profile.js",
 		0,
 		1,
-		2,
-		18
+		11,
+		18,
+		22
 	],
 	"./Dashboard/User/Profile.js": [
 		"./resources/js/Pages/Dashboard/User/Profile.js",
 		0,
 		1,
-		2,
-		18
+		11,
+		18,
+		22
 	],
 	"./Welcome": [
 		"./resources/js/Pages/Welcome.js",

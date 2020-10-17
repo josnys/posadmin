@@ -34,18 +34,15 @@ function Welcome() {
     className: "p-6 min-h-screen flex justify-center items-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "bg-white p-4 rounded text-center text-lg text-gray-600 shadow-xl w-full max-w-xl leading-loose"
-  }, "Welcome to the ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500"
-  }, "Laravel 8 | Fortify | TailwindCSS | InertiaJs | Reactjs"), "scaffolded by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500"
+  }, "POS Admin"), "by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
     className: "hover:text-purple-600",
     href: "https://twitter.com/josnyS"
   }, "JosnyS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
     className: "mr-2 text-xs hover:underline hover:text-blue-500",
     href: route('login')
-  }, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__["InertiaLink"], {
-    className: "text-xs hover:underline hover:text-blue-500",
-    href: route('register')
-  }, "Register"))));
+  }, "Login"))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Welcome);
