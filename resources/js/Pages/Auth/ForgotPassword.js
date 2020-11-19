@@ -10,7 +10,7 @@ import Logo from '../../Shared/Logo';
 import FlashMessages from '../../Shared/FlashMessages';
 
 function ForgotPassword() {
-     const { errors, app, flash } = usePage();
+     const { errors, app, flash } = usePage().props;
      const [sending, setSending] = useState(false);
      const [sent, setSent] = useState(false);
      const [values, setValues] = useState({

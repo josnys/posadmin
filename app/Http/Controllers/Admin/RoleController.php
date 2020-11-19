@@ -63,7 +63,7 @@ class RoleController extends Controller
 
      public function getAssign(Role $role)
      {
-          $role = $role->with('permissions')->first();
+          $role = $role->with('permissions')->find($role->id);
           $_permissions = Permission::all();
           $role_permission = array();
           foreach($role->permissions as $rp){

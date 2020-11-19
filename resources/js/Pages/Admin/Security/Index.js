@@ -8,7 +8,7 @@ import Icon from '../../../Shared/Icon';
 import { can } from '../../../utils';
 
 const Index = () => {
-     const { auth, errors, data } = usePage();
+     const { auth, errors, data } = usePage().props;
      return (
           <React.Fragment key="security-index">
                <Helmet>

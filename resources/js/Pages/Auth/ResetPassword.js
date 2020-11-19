@@ -10,7 +10,7 @@ import Logo from '../../Shared/Logo';
 import FlashMessages from '../../Shared/FlashMessages';
 
 function ResetPassword() {
-     const { errors, data, app, flash } = usePage();
+     const { errors, data, app, flash } = usePage().props;
      const [sending, setSending] = useState(false);
      const [values, setValues] = useState({
           email: data.email,

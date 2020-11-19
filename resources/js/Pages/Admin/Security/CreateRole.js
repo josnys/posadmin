@@ -16,7 +16,7 @@ import { createSlug } from '../../../utils';
 import axios from 'axios';
 
 function CreateRole() {
-     const { auth, errors, data } = usePage();
+     const { auth, errors, data } = usePage().props;
      const [sending, setSending] = useState(false);
      const [saved, setSaved] = useState(false);
      const [values, setValues] = useState({
@@ -105,6 +105,7 @@ function CreateRole() {
                                                    type="text"
                                                    disable={false}
                                                    readonly={false}
+                                                   must={true}
                                                    errors={values.errors.display}
                                                    value={values.display}
                                                    onChange={handleChange}
@@ -117,6 +118,7 @@ function CreateRole() {
                                                    type="text"
                                                    disable={false}
                                                    readonly={true}
+                                                   must={false}
                                                    errors={values.errors.name}
                                                    value={values.name}
                                                    onChange={handleChange}

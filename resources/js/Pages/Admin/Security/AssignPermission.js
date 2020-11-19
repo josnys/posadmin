@@ -13,7 +13,7 @@ import LoadingButton from '../../../Shared/LoadingButton';
 import axios from 'axios';
 
 function CreateRole() {
-     const { auth, errors, data } = usePage();
+     const { auth, errors, data } = usePage().props;
      const [sending, setSending] = useState(false);
      const [saved, setSaved] = useState(false);
      const [values, setValues] = useState({

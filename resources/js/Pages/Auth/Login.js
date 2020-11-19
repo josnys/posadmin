@@ -9,7 +9,7 @@ import LoadingButton from '../../Shared/LoadingButton';
 import Logo from '../../Shared/Logo';
 
 function Login() {
-     const { errors, app } = usePage();
+     const { errors, app } = usePage().props;
      const [sending, setSending] = useState(false);
      const [values, setValues] = useState({
           email: '',
@@ -49,6 +49,7 @@ function Login() {
                               type="text"
                               disable={false}
                               readonly={false}
+                              must={false}
                               errors={errors.email}
                               value={values.email}
                               onChange={handleChange}
@@ -60,6 +61,7 @@ function Login() {
                               type="password"
                               disable={false}
                               readonly={false}
+                              must={false}
                               errors={errors.password}
                               value={values.password}
                               onChange={handleChange}
@@ -72,7 +74,6 @@ function Login() {
                               </label>
                          </div>
                          <div className="flex items-center justify-end mt-4">
-                              <InertiaLink href={route('password.request')} className="underline text-sm text-gray-600 hover:text-gray-900">Forgot your password?</InertiaLink>
                               <LoadingButton type="submit" loading={sending} className="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 ml-4">Login</LoadingButton>
                          </div>
                     </form>

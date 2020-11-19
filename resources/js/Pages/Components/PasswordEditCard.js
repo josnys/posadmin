@@ -9,7 +9,7 @@ import LoadingButton from '../../Shared/LoadingButton';
 import axios from 'axios';
 
 const ProfileEditCard = () => {
-     const { auth, errors, data } = usePage();
+     const { auth, errors, data } = usePage().props;
      const [sending, setSending] = useState(false);
      const [saved, setSaved] = useState(false);
 
@@ -17,6 +17,7 @@ const ProfileEditCard = () => {
           current_password: '',
           password: '',
           password_confirmation: '',
+          pin: '',
           errors: errors
      });
 
@@ -64,38 +65,52 @@ const ProfileEditCard = () => {
                                    <div className="grid grid-cols-6 gap-6">
                                         <div className="col-span-6 sm:col-span-4">
                                              <TextInput
-                                                   className="form-input rounded-md shadow-sm mt-4 block w-full"
-                                                   label="Current Password"
-                                                   name="current_password"
-                                                   type="password"
-                                                   disable={false}
-                                                   readonly={false}
-                                                   errors={values.errors.current_password}
-                                                   value={values.current_password}
-                                                   onChange={handleChange}
-                                              />
-                                              <TextInput
-                                                   className="form-input rounded-md shadow-sm mt-4 block w-full"
-                                                   label="New Password"
-                                                   name="password"
-                                                   type="password"
-                                                   disable={false}
-                                                   readonly={false}
-                                                   errors={values.errors.password}
-                                                   value={values.password}
-                                                   onChange={handleChange}
-                                              />
-                                              <TextInput
-                                                   className="form-input rounded-md shadow-sm mt-4 block w-full"
-                                                   label="Confirm Password"
-                                                   name="password_confirmation"
-                                                   type="password"
-                                                   disable={false}
-                                                   readonly={false}
-                                                   errors={values.errors.password_confirmation}
-                                                   value={values.password_confirmation}
-                                                   onChange={handleChange}
-                                              />
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Current Password"
+                                                  name="current_password"
+                                                  type="password"
+                                                  disable={false}
+                                                  readonly={false}
+                                                  must={true}
+                                                  errors={values.errors.current_password}
+                                                  value={values.current_password}
+                                                  onChange={handleChange}
+                                             />
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="New Password"
+                                                  name="password"
+                                                  type="password"
+                                                  disable={false}
+                                                  readonly={false}
+                                                  must={true}
+                                                  errors={values.errors.password}
+                                                  value={values.password}
+                                                  onChange={handleChange}
+                                             />
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="Confirm Password"
+                                                  name="password_confirmation"
+                                                  type="password"
+                                                  disable={false}
+                                                  readonly={false}
+                                                  must={false}
+                                                  errors={values.errors.password_confirmation}
+                                                  value={values.password_confirmation}
+                                                  onChange={handleChange}
+                                             />
+                                             <TextInput
+                                                  className="form-input rounded-md shadow-sm mt-4 block w-full"
+                                                  label="PIN"
+                                                  name="pin"
+                                                  type="password"
+                                                  disable={false}
+                                                  readonly={false}
+                                                  errors={values.errors.pin}
+                                                  value={values.pin}
+                                                  onChange={handleChange}
+                                             />
                                         </div>
                                    </div>
                               </div>

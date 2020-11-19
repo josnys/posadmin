@@ -25,16 +25,7 @@ class PasswordRequest extends FormRequest
      {
           return [
                'password' => ['required', 'string', 'min:8', 'confirmed'],
-          ];
-     }
-
-     public function messages()
-     {
-          return [
-               'password.required' => 'Password is required.',
-               'password.string' => 'Password is should be string.',
-               'password.min' => 'Password is should be at least 8 characters.',
-               'password.confirmed' => 'Confirm Password does not match password.',
+               'pin' => ['nullable', 'digits:4']
           ];
      }
 }

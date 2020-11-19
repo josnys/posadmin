@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default ({ label, name, className, errors = [], disable, readonly, ...props }) => {
+export default ({ label, name, className, errors = [], disable, readonly, must, ...props }) => {
      return (
           <div className={className}>
                {label && (
                     <label className="block font-medium text-sm text-gray-700" htmlFor={name}>
-                         {label}:
+                         {label} {must && (<span className="text-red-700">*</span>)}
                     </label>
                )}
                <input

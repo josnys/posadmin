@@ -6,7 +6,7 @@ import ProfileEditCard from '../../Components/ProfileEditCard';
 import PasswordEditCard from '../../Components/PasswordEditCard';
 
 const Profile = () => {
-     const { auth, errors } = usePage();
+     const { auth, errors } = usePage().props;
      return (
           <React.Fragment key="uprofile">
                <Helmet>

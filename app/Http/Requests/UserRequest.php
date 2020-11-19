@@ -24,16 +24,13 @@ class UserRequest extends FormRequest
      public function rules()
      {
           return [
-               'name' => ['required', 'string', 'max:255'],
-          ];
-     }
-
-     public function messages()
-     {
-          return [
-               'name.required' => 'Name is required.',
-               'name.string' => 'Name should be string.',
-               'name.string' => 'Name should be less than 255 characters.',
+               'fname' => ['required', 'string', 'max:255'],
+               'lname' => ['required', 'string', 'max:255'],
+               'dob' => ['sometimes', 'date'],
+               'sex' => ['sometimes', 'string'],
+               'identification' => ['required', 'alpha_dash'],
+               'identificationType' => ['required', 'string'],
+               'phone' => ['required'],
           ];
      }
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { usePage } from '@inertiajs/inertia-react';
 
 export default ({ caption, color, children, ...props }) => {
-     const { auth } = usePage();
+     const { auth } = usePage().props;
      const [menuOpened, setMenuOpened] = useState(false);
      return (
           <div className="relative">

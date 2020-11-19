@@ -4,7 +4,7 @@ import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import Layout from '../../Shared/Layout';
 
 const Home = () => {
-     const { auth } = usePage();
+     const { auth } = usePage().props;
      return (
           <div>
                <Helmet>

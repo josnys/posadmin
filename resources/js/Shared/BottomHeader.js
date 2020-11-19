@@ -3,7 +3,7 @@ import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import Icon from './Icon';
 
 export default ({ ...props }) => {
-     const { auth } = usePage();
+     const { auth } = usePage().props;
      const [menuOpened, setMenuOpened] = useState(false);
      return (
           <div className="bg-white border-b w-full p-4 md:py-0 md:px-12 text-sm d:text-md flex justify-between items-center">
@@ -27,7 +27,6 @@ export default ({ ...props }) => {
                                    My Profile
                               </InertiaLink>
                               <div className="border-t border-gray-200"></div>
-                              <InertiaLink href="#" className="block px-6 py-2 text-gray-600 hover:bg-gray-200 hover:text-gray-700">Manage Users</InertiaLink>
                               <div className="border-t border-gray-200"></div>
                               <InertiaLink href={route('logout')} className="block px-6 py-2 text-gray-600 hover:bg-red-300 hover:text-red-700 hover:font-semibold" method="post">
                                    Logout

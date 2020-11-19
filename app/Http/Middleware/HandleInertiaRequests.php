@@ -45,10 +45,7 @@ class HandleInertiaRequests extends Middleware
                     $permissions = array();
                     if($user){
                          foreach($user->roles as $r){
-                              array_push($roles, [
-                                   'name' => $r->name,
-                                   'display' => $r->display_name
-                              ]);
+                              array_push($roles, $r->display_name);
                               foreach($r->permissions as $p){
                                    array_push($permissions, $p->name);
                               }
@@ -57,10 +54,9 @@ class HandleInertiaRequests extends Middleware
 
                     return [
                          'user' => $user ? [
-                              'id' => $user->id,
+                              'id' => $user->code,
                               'name' => $user->name,
                               'username' => $user->username,
-                              'email' => $user->email,
                               'avatar' => ($user->profile_url) ? route('show.image', 'users/'.$user->profile_url) : null, // (Auth::user()->profile_url) ? asset('storage/users/'.Auth::user()->profile_url) : null
                               'roles' => ($roles) ? $roles : null,
                               'can' => ($permissions) ? $permissions : null

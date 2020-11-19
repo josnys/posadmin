@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[10],{
 
-/***/ "./resources/js/Pages/Admin/Security/EditRole.js":
-/*!*******************************************************!*\
-  !*** ./resources/js/Pages/Admin/Security/EditRole.js ***!
-  \*******************************************************/
+/***/ "./resources/js/Pages/Admin/Security/EditPermission.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/Pages/Admin/Security/EditPermission.js ***!
+  \*************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -61,10 +61,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function CreateRole() {
-  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["usePage"])(),
-      auth = _usePage.auth,
-      errors = _usePage.errors,
-      data = _usePage.data;
+  var _usePage$props = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["usePage"])().props,
+      auth = _usePage$props.auth,
+      errors = _usePage$props.errors,
+      data = _usePage$props.data;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -77,6 +77,7 @@ function CreateRole() {
       setSaved = _useState4[1];
 
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    id: data.id || null,
     name: data.name || '',
     display: data.display || '',
     description: data.description || '',
@@ -102,7 +103,7 @@ function CreateRole() {
   function handleSubmit(e) {
     e.preventDefault();
     setSending(true);
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post(route('role.update', data.id), values).then(function () {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post(route('permission.update', data.id), values).then(function () {
       setSending(false);
     });
   }
@@ -115,9 +116,9 @@ function CreateRole() {
     className: "px-4 sm:px-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "text-lg font-medium text-gray-900"
-  }, "Edit Role"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Edit Permission"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mt-1 text-sm text-gray-600"
-  }, "Use the form to edit roles to the system. These role will be used to defined the level of access of each users"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DataCard__WEBPACK_IMPORTED_MODULE_6__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+  }, "Use the form to edit permissions to the system. These role will be used to defined the level of access of each users"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DataCard__WEBPACK_IMPORTED_MODULE_6__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "px-4 py-5 sm:p-6"
@@ -140,6 +141,7 @@ function CreateRole() {
     type: "text",
     disable: false,
     readonly: false,
+    must: true,
     errors: errors.display,
     value: values.display,
     onChange: handleChange
@@ -330,14 +332,17 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
       errors = _ref$errors === void 0 ? [] : _ref$errors,
       disable = _ref.disable,
       readonly = _ref.readonly,
-      props = _objectWithoutProperties(_ref, ["label", "name", "className", "errors", "disable", "readonly"]);
+      must = _ref.must,
+      props = _objectWithoutProperties(_ref, ["label", "name", "className", "errors", "disable", "readonly", "must"]);
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: className
   }, label && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     className: "block font-medium text-sm text-gray-700",
     htmlFor: name
-  }, label, ":"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({
+  }, label, " ", must && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "text-red-700"
+  }, "*")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({
     id: name,
     name: name
   }, props, {
