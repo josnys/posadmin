@@ -9,9 +9,11 @@ import FileInput from '../../../Shared/FileInput';
 import ProfileCard from '../../../Shared/ProfileCard';
 import DataCard from '../../../Shared/DataCard';
 import LoadingButton from '../../../Shared/LoadingButton';
+import Icon from '../../../Shared/Icon';
+import classNames from 'classnames';
 
 const Create = () => {
-     const { auth, errors, data } = usePage();
+     const { auth, errors, data } = usePage().props;
      const [sending, setSending] = useState(false);
 
      const [values, setValues] = useState({
@@ -28,6 +30,11 @@ const Create = () => {
           password: '',
           password_confirmation: '',
           pin: ''
+     });
+
+     const iconClasses = classNames('w-4 h-4 mr-2', {
+          'text-white fill-current': false,
+          'text-gray-500 hover:text-white fill-current': true
      });
 
      function handleChange(e) {
@@ -65,6 +72,12 @@ const Create = () => {
                          <DataCard>
                               <div className="px-4 py-5 sm:p-6">
                                    <div className="grid grid-cols-6 gap-6">
+                                        <div className="col-span-12 text-right">
+                                             <InertiaLink href={route('user.index')} className="bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
+                                                  <Icon name="back" className={iconClasses} />
+                                                  Back
+                                             </InertiaLink>
+                                        </div>
                                         <div className="col-span-6 sm:col-span-4">
                                              <TextInput
                                                   className="form-input rounded-md shadow-sm mt-4 block w-full"
@@ -218,6 +231,7 @@ const Create = () => {
                                                   type="password"
                                                   disable={false}
                                                   readonly={false}
+                                                  must={true}
                                                   errors={errors.password}
                                                   value={values.password}
                                                   onChange={handleChange}
@@ -229,6 +243,7 @@ const Create = () => {
                                                   type="password"
                                                   disable={false}
                                                   readonly={false}
+                                                  must={true}
                                                   errors={errors.password_confirmation}
                                                   value={values.password_confirmation}
                                                   onChange={handleChange}
@@ -240,6 +255,7 @@ const Create = () => {
                                                   type="text"
                                                   disable={false}
                                                   readonly={false}
+                                                  must={true}
                                                   errors={errors.pin}
                                                   value={values.pin}
                                                   onChange={handleChange}

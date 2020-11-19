@@ -4,7 +4,7 @@ import { InertiaLink, usePage } from '@inertiajs/inertia-react';
 import Helmet from 'react-helmet';
 
 function Welcome() {
-     const { app } = usePage();
+     const { app } = usePage().props;
      console.log(app);
      return (
           <React.Fragment key="app">

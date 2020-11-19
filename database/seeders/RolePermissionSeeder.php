@@ -99,6 +99,151 @@ class RolePermissionSeeder extends Seeder
                     'display_name' => 'Change Password User',
                     'description' => 'Allow user to change other user\'s password'
                ],
+               [
+                    'name' => 'create-category',
+                    'display_name' => 'Create Category',
+                    'description' => 'Allow users to create a Category'
+               ],
+               [
+                    'name' => 'read-category',
+                    'display_name' => 'Read Category',
+                    'description' => 'Allow user to read Category'
+               ],
+               [
+                    'name' => 'update-category',
+                    'display_name' => 'Update Category',
+                    'description' => 'Allow user to modify Category'
+               ],
+               [
+                    'name' => 'delete-category',
+                    'display_name' => 'Delete Category',
+                    'description' => 'Allow user to delete a Category'
+               ],
+               [
+                    'name' => 'create-subcategory',
+                    'display_name' => 'Create Subcategory',
+                    'description' => 'Allow users to create a Subcategory'
+               ],
+               [
+                    'name' => 'read-subcategory',
+                    'display_name' => 'Read Subcategory',
+                    'description' => 'Allow user to read Subcategory'
+               ],
+               [
+                    'name' => 'update-subcategory',
+                    'display_name' => 'Update Subcategory',
+                    'description' => 'Allow user to modify Subcategory'
+               ],
+               [
+                    'name' => 'delete-subcategory',
+                    'display_name' => 'Delete Subcategory',
+                    'description' => 'Allow user to delete a Subcategory'
+               ],
+               [
+                    'name' => 'create-presentation',
+                    'display_name' => 'Create Presentation',
+                    'description' => 'Allow users to create a Presentation'
+               ],
+               [
+                    'name' => 'read-presentation',
+                    'display_name' => 'Read Presentation',
+                    'description' => 'Allow user to read Presentation'
+               ],
+               [
+                    'name' => 'update-presentation',
+                    'display_name' => 'Update Presentation',
+                    'description' => 'Allow user to modify Presentation'
+               ],
+               [
+                    'name' => 'delete-presentation',
+                    'display_name' => 'Delete Presentation',
+                    'description' => 'Allow user to delete a Presentation'
+               ],
+               [
+                    'name' => 'create-agency',
+                    'display_name' => 'Create Agency',
+                    'description' => 'Allow users to create a Agency'
+               ],
+               [
+                    'name' => 'read-agency',
+                    'display_name' => 'Read Agency',
+                    'description' => 'Allow user to read Agency'
+               ],
+               [
+                    'name' => 'update-agency',
+                    'display_name' => 'Update Agency',
+                    'description' => 'Allow user to modify Agency'
+               ],
+               [
+                    'name' => 'delete-agency',
+                    'display_name' => 'Delete Agency',
+                    'description' => 'Allow user to delete a Agency'
+               ],
+               [
+                    'name' => 'create-supplier',
+                    'display_name' => 'Create Supplier',
+                    'description' => 'Allow users to create a Supplier'
+               ],
+               [
+                    'name' => 'read-supplier',
+                    'display_name' => 'Read Supplier',
+                    'description' => 'Allow user to read Supplier'
+               ],
+               [
+                    'name' => 'update-supplier',
+                    'display_name' => 'Update Supplier',
+                    'description' => 'Allow user to modify Supplier'
+               ],
+               [
+                    'name' => 'delete-supplier',
+                    'display_name' => 'Delete Supplier',
+                    'description' => 'Allow user to delete a Supplier'
+               ],
+               [
+                    'name' => 'create-product',
+                    'display_name' => 'Create product',
+                    'description' => 'Allow users to create a product'
+               ],
+               [
+                    'name' => 'read-product',
+                    'display_name' => 'Read product',
+                    'description' => 'Allow user to read product'
+               ],
+               [
+                    'name' => 'update-product',
+                    'display_name' => 'Update product',
+                    'description' => 'Allow user to modify product'
+               ],
+               [
+                    'name' => 'delete-product',
+                    'display_name' => 'Delete product',
+                    'description' => 'Allow user to delete a product'
+               ],
+               [
+                    'name' => 'configure-product',
+                    'display_name' => 'Configure product',
+                    'description' => 'Allow user to configure a product'
+               ],
+               [
+                    'name' => 'create-product-configuration',
+                    'display_name' => 'Create product configuration',
+                    'description' => 'Allow users to create a product configuration'
+               ],
+               [
+                    'name' => 'read-product-configuration',
+                    'display_name' => 'Read product configuration',
+                    'description' => 'Allow user to read product configuration'
+               ],
+               [
+                    'name' => 'update-product-configuration',
+                    'display_name' => 'Update product configuration',
+                    'description' => 'Allow user to modify product configuration'
+               ],
+               [
+                    'name' => 'delete-product-configuration',
+                    'display_name' => 'Delete product configuration',
+                    'description' => 'Allow user to delete a product configuration'
+               ],
           ];
 
           $permissionIds = array();

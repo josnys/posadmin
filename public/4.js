@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
 
-/***/ "./resources/js/Pages/Admin/Security/CreatePermission.js":
-/*!***************************************************************!*\
-  !*** ./resources/js/Pages/Admin/Security/CreatePermission.js ***!
-  \***************************************************************/
+/***/ "./resources/js/Pages/Admin/Security/CreateRole.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/Pages/Admin/Security/CreateRole.js ***!
+  \*********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -27,9 +27,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_TextInput__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../Shared/TextInput */ "./resources/js/Shared/TextInput.js");
 /* harmony import */ var _Shared_TextArea__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../Shared/TextArea */ "./resources/js/Shared/TextArea.js");
 /* harmony import */ var _Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../Shared/LoadingButton */ "./resources/js/Shared/LoadingButton.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../utils */ "./resources/js/utils.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _Shared_DropdownButton__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../../Shared/DropdownButton */ "./resources/js/Shared/DropdownButton.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../utils */ "./resources/js/utils.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_15__);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -64,11 +65,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function CreatePermission() {
-  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["usePage"])(),
-      auth = _usePage.auth,
-      errors = _usePage.errors,
-      data = _usePage.data;
+
+function CreateRole() {
+  var _usePage$props = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["usePage"])().props,
+      auth = _usePage$props.auth,
+      errors = _usePage$props.errors,
+      data = _usePage$props.data;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -109,7 +111,7 @@ function CreatePermission() {
     var value = e.target.value;
     setValues(function (values) {
       return _objectSpread(_objectSpread({}, values), {}, {
-        name: Object(_utils__WEBPACK_IMPORTED_MODULE_13__["createSlug"])(value)
+        name: Object(_utils__WEBPACK_IMPORTED_MODULE_14__["createSlug"])(value)
       });
     });
   }
@@ -117,7 +119,7 @@ function CreatePermission() {
   function handleSubmit(e) {
     e.preventDefault();
     setSending(true);
-    axios__WEBPACK_IMPORTED_MODULE_14___default.a.post(route('permission.store'), values).then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_15___default.a.post(route('role.store'), values).then(function (response) {
       setSaved(true);
       setSending(false);
       var _data = values.data;
@@ -152,9 +154,9 @@ function CreatePermission() {
     className: "px-4 sm:px-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "text-lg font-medium text-gray-900"
-  }, "Add Permission"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Add Role"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mt-1 text-sm text-gray-600"
-  }, "Use the form to add permissions to the system. These permissions will be used to grant access to all system's functionalities"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DataCard__WEBPACK_IMPORTED_MODULE_6__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+  }, "Use the form to add roles to the system. These role will be used to defined the level of access of each users"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DataCard__WEBPACK_IMPORTED_MODULE_6__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "px-4 py-5 sm:p-6"
@@ -220,8 +222,8 @@ function CreatePermission() {
     className: "col-span-12"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "text-lg font-medium text-gray-900"
-  }, "Permission's List")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-    className: "table-auto col-span-12"
+  }, "Roles's List")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table-fixed col-span-12"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
     className: "bg-gray-400"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
@@ -247,13 +249,22 @@ function CreatePermission() {
       className: "border px-4 py-2"
     }, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       className: "border px-4 py-2"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DropdownButton__WEBPACK_IMPORTED_MODULE_13__["default"], {
+      caption: "Actions",
+      color: "blue"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["InertiaLink"], {
-      href: route('permission.edit', id),
-      className: "bg-blue-300 hover:bg-blue-400 mr-2 text-blue-800 text-sm py-1 px-1 rounded inline-flex items-center"
+      href: route('role.edit', id),
+      className: "flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Icon__WEBPACK_IMPORTED_MODULE_8__["default"], {
       name: 'edit',
-      className: 'fill-current w-4 h-4 mr-2'
-    }), "Edit")));
+      className: 'fill-current w-5 h-5 mr-2'
+    }), "Edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["InertiaLink"], {
+      href: route('role.get.assign', id),
+      className: "flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Icon__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      name: 'cheveron-right',
+      className: 'fill-current w-5 h-5 mr-2'
+    }), "Assign Permission"))));
   }), !values.data.length && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     colSpan: "4",
     className: "p-4 bg-blue-100 text-blue-500 text-center"
@@ -262,14 +273,14 @@ function CreatePermission() {
 // Docs: https://inertiajs.com/pages#persistent-layouts
 
 
-CreatePermission.layout = function (page) {
+CreateRole.layout = function (page) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
     children: page,
-    header: 'Create Permission'
+    header: 'Create Role'
   });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (CreatePermission);
+/* harmony default export */ __webpack_exports__["default"] = (CreateRole);
 
 /***/ }),
 
@@ -311,6 +322,85 @@ __webpack_require__.r(__webpack_exports__);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "grid grid-cols-3 gap-4 p-4 rounded bg-white shadow-md"
   }, children);
+});
+
+/***/ }),
+
+/***/ "./resources/js/Shared/DropdownButton.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Shared/DropdownButton.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var caption = _ref.caption,
+      color = _ref.color,
+      children = _ref.children,
+      props = _objectWithoutProperties(_ref, ["caption", "color", "children"]);
+
+  var auth = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])().props.auth;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      menuOpened = _useState2[0],
+      setMenuOpened = _useState2[1];
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "relative"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex items-center cursor-pointer select-none group",
+    onClick: function onClick() {
+      return setMenuOpened(true);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    className: "inline-flex justify-center w-full rounded-md border border-".concat(color, "-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-").concat(color, "-700 hover:text-").concat(color, "-500 focus:outline-none focus:border-").concat(color, "-300 focus:shadow-outline-").concat(color, " active:bg-").concat(color, "-50 active:text-").concat(color, "-800 transition ease-in-out duration-150"),
+    id: "options-menu",
+    "aria-haspopup": "true",
+    "aria-expanded": "true"
+  }, caption, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+    className: "-mr-1 ml-2 h-5 w-5",
+    viewBox: "0 0 20 20",
+    fill: "currentColor"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+    fillRule: "evenodd",
+    d: "M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z",
+    clipRule: "evenodd"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: menuOpened ? '' : 'hidden'
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "whitespace-no-wrap absolute z-20 mt-8 left-auto top-0 right-0 py-2 shadow-xl bg-white rounded text-sm"
+  }, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    onClick: function onClick() {
+      setMenuOpened(false);
+    },
+    className: "bg-black opacity-25 fixed inset-0 z-10"
+  })));
 });
 
 /***/ }),

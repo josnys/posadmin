@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[9],{
 
-/***/ "./resources/js/Pages/Admin/Security/EditPermission.js":
-/*!*************************************************************!*\
-  !*** ./resources/js/Pages/Admin/Security/EditPermission.js ***!
-  \*************************************************************/
+/***/ "./resources/js/Pages/Admin/Security/AssignPermission.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/Pages/Admin/Security/AssignPermission.js ***!
+  \***************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -61,10 +61,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function CreateRole() {
-  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["usePage"])(),
-      auth = _usePage.auth,
-      errors = _usePage.errors,
-      data = _usePage.data;
+  var _usePage$props = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["usePage"])().props,
+      auth = _usePage$props.auth,
+      errors = _usePage$props.errors,
+      data = _usePage$props.data;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -77,10 +77,9 @@ function CreateRole() {
       setSaved = _useState4[1];
 
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    id: data.id || null,
-    name: data.name || '',
-    display: data.display || '',
-    description: data.description || '',
+    role_permissions: data.role_permissions || [],
+    checkAll: false,
+    checkAllCaption: 'Select All',
     errors: errors
   }),
       _useState6 = _slicedToArray(_useState5, 2),
@@ -94,36 +93,94 @@ function CreateRole() {
 
   function handleChange(e) {
     var key = e.target.name;
-    var value = e.target.value;
+    var value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+
+    var _data = parseInt(e.target.value);
+
+    for (var i = 0; i < values.role_permissions.length; i++) {
+      if (values.role_permissions[i].id == _data) {
+        values.role_permissions[i].checked = value;
+        break;
+      }
+    }
+
+    for (var i = 0; i < data.permissions.length; i++) {
+      if (data.permissions[i].id == _data) {
+        data.permissions[i].isCheck = value;
+        break;
+      }
+    }
+
+    var perms = values.role_permissions;
+
+    if (perms.indexOf(_data) != -1) {
+      perms.splice(perms.indexOf(_data), 1);
+    } else {
+      perms.push(_data);
+    }
+
+    console.log(key, value, perms);
     setValues(function (values) {
-      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
+      return _objectSpread(_objectSpread({}, values), {}, {
+        role_permissions: perms
+      });
+    });
+  }
+
+  function handleAll(e) {
+    var key = e.target.name;
+    var value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    console.log(key, value);
+    var perms = [];
+    var caption = value ? 'Unselect All' : 'Select All';
+
+    for (var i = 0; i < data.permissions.length; i++) {
+      if (value) {
+        perms.push(data.permissions[i].id);
+      }
+
+      data.permissions[i].isCheck = value;
+    }
+
+    if (!value) {
+      perms = [];
+    }
+
+    console.log(perms);
+    setValues(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, {
+        role_permissions: perms,
+        checkAllCaption: caption
+      });
     });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     setSending(true);
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post(route('permission.update', data.id), values).then(function () {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post(route('role.post.assign', data.role.id), values).then(function () {
       setSending(false);
     });
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-    key: "permission-c"
+    key: "assign-perms"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_ProfileCard__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "md:col-span-1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "px-4 sm:px-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    className: "text-lg font-medium text-gray-900"
-  }, "Edit Permission"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-md font-medium text-gray-900"
+  }, "Assign Permissions to Role :"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "text-lg font-medium text-gray-700 mt-3"
+  }, data.role.display), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mt-1 text-sm text-gray-600"
-  }, "Use the form to edit permissions to the system. These role will be used to defined the level of access of each users"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DataCard__WEBPACK_IMPORTED_MODULE_6__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+  }, data.role.description))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DataCard__WEBPACK_IMPORTED_MODULE_6__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "px-4 py-5 sm:p-6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "grid grid-cols-3 gap-3"
+    className: "grid grid-cols-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-span-12 text-right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["InertiaLink"], {
@@ -133,35 +190,48 @@ function CreateRole() {
     name: "back",
     className: iconClasses
   }), "Back")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-span-6 sm:col-span-4"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    className: "form-input rounded-md shadow-sm mt-4 block w-full",
-    label: "Display Name",
-    name: "display",
-    type: "text",
-    disable: false,
-    readonly: false,
-    must: true,
-    errors: errors.display,
-    value: values.display,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    className: "form-input rounded-md shadow-sm mt-4 block w-full",
-    label: "Name",
-    name: "name",
-    type: "text",
-    disable: false,
-    readonly: true,
-    errors: errors.name,
-    value: values.name
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextArea__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    className: "form-input rounded-md shadow-sm mt-4 block w-full",
-    label: "Description",
-    name: "description",
-    errors: errors.description,
-    value: values.description,
-    onChange: handleChange
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "sm:col-span-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex mt-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "flex items-center mr-4",
+    htmlFor: "perms"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    name: "checkAll",
+    id: "checkAll",
+    className: "form-checkbox",
+    type: "checkbox",
+    checked: values.chekcAll,
+    onChange: handleAll
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "ml-2 text-sm text-gray-600"
+  }, values.checkAllCaption))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "overflow-auto h-64 list-none pt-2 mt-2"
+  }, data.permissions.map(function (_ref) {
+    var id = _ref.id,
+        display = _ref.display,
+        description = _ref.description,
+        isCheck = _ref.isCheck;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "p-2 mt-2 rounded hover:bg-gray-200 hover:shadow-md ".concat(isCheck ? 'bg-blue-200' : ''),
+      key: id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      className: "flex items-center",
+      htmlFor: "perms"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      name: "permissions[]",
+      id: "permissions[]",
+      className: "form-checkbox",
+      type: "checkbox",
+      value: id,
+      checked: isCheck,
+      onChange: handleChange
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      className: "ml-2 text-sm text-gray-800"
+    }, display)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      className: "text-sm text-gray-500 pl-6"
+    }, description));
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex items-center justify-end px-4 py-3 bg-gray-100 text-right sm:px-6 rounded-b"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "mr-3"
@@ -171,7 +241,7 @@ function CreateRole() {
     type: "submit",
     loading: sending,
     className: "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 ml-4"
-  }, "Update"))))));
+  }, "Assign Permissions"))))));
 } // Persisten layout
 // Docs: https://inertiajs.com/pages#persistent-layouts
 

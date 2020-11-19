@@ -7,7 +7,7 @@ import TopHeader from './TopHeader';
 import BottomHeader from './BottomHeader';
 
 export default function Layout({ children, header }) {
-     const { app } = usePage();
+     const { app } = usePage().props;
      return (
           <React.Fragment key="layout">
                <Helmet titleTemplate={`${app.name} | %s`} />

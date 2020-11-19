@@ -62,10 +62,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ "./resources/js/Pages/Auth/ResetPassword.js":
-/*!**************************************************!*\
-  !*** ./resources/js/Pages/Auth/ResetPassword.js ***!
-  \**************************************************/
+/***/ "./resources/js/Pages/Auth/ForgotPassword.js":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Auth/ForgotPassword.js ***!
+  \***************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -114,53 +114,60 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function ResetPassword() {
-  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["usePage"])(),
-      errors = _usePage.errors,
-      data = _usePage.data,
-      app = _usePage.app,
-      flash = _usePage.flash;
+function ForgotPassword() {
+  var _usePage$props = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["usePage"])().props,
+      errors = _usePage$props.errors,
+      app = _usePage$props.app,
+      flash = _usePage$props.flash;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
       sending = _useState2[0],
       setSending = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    email: data.email,
-    token: data._token,
-    password: '',
-    password_confirmation: ''
-  }),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      values = _useState4[0],
-      setValues = _useState4[1];
+      sent = _useState4[0],
+      setSent = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    email: '',
+    sent: false
+  }),
+      _useState6 = _slicedToArray(_useState5, 2),
+      values = _useState6[0],
+      setValues = _useState6[1];
 
   function handleChange(e) {
     var key = e.target.name;
-    var value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    var value = e.target.value;
     setValues(function (values) {
       return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, key, value));
     });
   }
 
   function handleSubmit(e) {
+    console.log('clicked', flash);
     e.preventDefault();
     setSending(true);
-    console.log(values);
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post(route('password.update'), values).then(function () {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post(route('password.email'), values).then(function () {
       setSending(false);
+      setSent(true);
     });
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "".concat(app.name, " | Reset Password"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_FlashMessages__WEBPACK_IMPORTED_MODULE_9__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Logo__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "".concat(app.name, " | Forgot Password"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_FlashMessages__WEBPACK_IMPORTED_MODULE_9__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Logo__WEBPACK_IMPORTED_MODULE_8__["default"], {
     className: "w-12 h-12"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_AuthCard__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_AuthCard__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mb-4 text-sm text-gray-600"
+  }, "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one."), sent && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "py-4 text-center text-sm font-medium text-green-500"
+  }, "An e-mail has been sent to you."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    className: "mt-4",
+    className: "",
     label: "Email",
     name: "email",
     type: "email",
@@ -169,34 +176,16 @@ function ResetPassword() {
     errors: errors.email,
     value: values.email,
     onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    className: "mt-4",
-    label: "Password",
-    name: "password",
-    type: "password",
-    disable: false,
-    errors: errors.password,
-    value: values.password,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    className: "mt-4",
-    label: "Confirm Password",
-    name: "password_confirmation",
-    type: "password",
-    disable: false,
-    errors: errors.password_confirmation,
-    value: values.password_confirmation,
-    onChange: handleChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flex items-center justify-end mt-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_7__["default"], {
     type: "submit",
     loading: sending,
-    className: "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 ml-4"
-  }, "Reset Password")))));
+    className: "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150"
+  }, "Email Password Reset Link")))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (ResetPassword);
+/* harmony default export */ __webpack_exports__["default"] = (ForgotPassword);
 
 /***/ }),
 
@@ -300,10 +289,9 @@ var ButtonClose = function ButtonClose(_ref) {
       visible = _useState2[0],
       setVisible = _useState2[1];
 
-  var _usePage = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])(),
-      flash = _usePage.flash,
-      errors = _usePage.errors;
-
+  var _usePage$props = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])().props,
+      flash = _usePage$props.flash,
+      errors = _usePage$props.errors;
   var numOfErrors = Object.keys(errors).length;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     setVisible(true);

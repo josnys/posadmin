@@ -11,7 +11,7 @@ import { toFormData } from '../../utils';
 import axios from 'axios';
 
 const ProfileEditCard = () => {
-     const { auth, errors, data } = usePage();
+     const { auth, errors, data } = usePage().props;
      const [sending, setSending] = useState(false);
      const [saved, setSaved] = useState(false);
 

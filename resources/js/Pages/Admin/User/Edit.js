@@ -9,9 +9,11 @@ import FileInput from '../../../Shared/FileInput';
 import ProfileCard from '../../../Shared/ProfileCard';
 import DataCard from '../../../Shared/DataCard';
 import LoadingButton from '../../../Shared/LoadingButton';
+import Icon from '../../../Shared/Icon';
+import classNames from 'classnames';
 
 const Edit = () => {
-     const { auth, errors, data } = usePage();
+     const { auth, errors, data } = usePage().props;
      const [sending, setSending] = useState(false);
 
      const [values, setValues] = useState({
@@ -27,6 +29,11 @@ const Edit = () => {
           username: data.username || '',
           email: data.email || '',
           avatar: data.avatar
+     });
+
+     const iconClasses = classNames('w-4 h-4 mr-2', {
+          'text-white fill-current': false,
+          'text-gray-500 hover:text-white fill-current': true
      });
 
      function handleChange(e) {
@@ -64,6 +71,12 @@ const Edit = () => {
                          <form onSubmit={handleSubmit}>
                               <div className="px-4 py-5 sm:p-6">
                                    <div className="grid grid-cols-6 gap-6">
+                                        <div className="col-span-12 text-right">
+                                             <InertiaLink href={route('user.index')} className="bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
+                                                  <Icon name="back" className={iconClasses} />
+                                                  Back
+                                             </InertiaLink>
+                                        </div>
                                         <div className="col-span-6 sm:col-span-4">
                                              <TextInput
                                                   className="form-input rounded-md shadow-sm mt-4 block w-full"

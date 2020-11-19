@@ -9,7 +9,7 @@ import LoadingButton from '../../Shared/LoadingButton';
 import Logo from '../../Shared/Logo';
 
 function Login() {
-     const { errors, app } = usePage();
+     const { errors, app } = usePage().props;
      const [sending, setSending] = useState(false);
      const [values, setValues] = useState({
           email: '',

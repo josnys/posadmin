@@ -10,7 +10,7 @@ import Logo from '../../Shared/Logo';
 
 function VerifyEmail() {
      const { errors, app } = usePage();
-     const [sending, setSending] = useState(false);
+     const [sending, setSending] = useState(false).props;
      const [values, setValues] = useState({
           email: '',
           password: '',
