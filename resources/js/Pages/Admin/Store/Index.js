@@ -19,7 +19,7 @@ const Index = () => {
                </div>
                <DataContainer>
                     <div className="col-span-12">
-                         {can(auth.user, 'create-product') && (<InertiaLink href={route('store.create')} className="bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
+                         {can(auth.user, 'create-store') && (<InertiaLink href={route('store.create')} className="bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
                               <Icon name={'plus'} className={'fill-current w-4 h-4 mr-2'} />
                               Add Store
                          </InertiaLink>)}
@@ -41,21 +41,13 @@ const Index = () => {
                                         <td className="border px-4 py-2">{image && (<img src={image} alt={name} className="w-8 rounded mx-auto" />)}</td>
                                         <td className="border px-4 py-2 text-center">{code}</td>
                                         <td className="border px-4 py-2">{name}</td>
-                                        <td className="border px-4 py-2">{type}</td>
+                                        <td className="border px-4 py-2 text-center">{type}</td>
                                         <td className={`border px-4 py-2 text-center text-${status?'green':'red'}-600`}>{statusCaption}</td>
                                         <td className="border px-4 py-2">
                                              <DropdownButton caption="Actions" color="blue">
-                                                  {can(auth.user, 'update-product') && (<InertiaLink href={route('store.edit', id)} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
-                                                       <Icon name={'edit'} className={'fill-current w-5 h-5 mr-2'} />
-                                                       Edit
-                                                  </InertiaLink>)}
-                                                  {can(auth.user, 'read-product') && (<InertiaLink href={route('store.show', id)} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                                                  {can(auth.user, 'read-store') && (<InertiaLink href={route('store.show', id)} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
                                                        <Icon name={'eye'} className={'fill-current w-5 h-5 mr-2'} />
                                                        View
-                                                  </InertiaLink>)}
-                                                  {can(auth.user, 'read-product-configuration') && (<InertiaLink href={route('store.contact.index', id)} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
-                                                       <Icon name={'phone'} className={'fill-current w-5 h-5 mr-2'} />
-                                                       Contacts
                                                   </InertiaLink>)}
                                              </DropdownButton>
                                         </td>

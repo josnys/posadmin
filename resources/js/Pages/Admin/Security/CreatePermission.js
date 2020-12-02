@@ -153,7 +153,7 @@ function CreatePermission() {
                </div>
                <DataContainer>
                     <div className="col-span-12">
-                         <h3 className="text-lg font-medium text-gray-900">Permission's List</h3>
+                         <h3 className="text-lg font-medium text-gray-900">Permission's List <span className="float-right text-sm text-gray-600 font-medium">{data.data.length} in total</span></h3>
                     </div>
                     <table className="table-auto col-span-12">
                          <thead className="bg-gray-400">

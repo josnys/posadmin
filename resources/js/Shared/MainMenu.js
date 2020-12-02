@@ -15,7 +15,7 @@ export default ({ className }) => {
                {can(auth.user, 'read-agency')?<MainMenuItem text="Agencies" link="agency.index" icon="clipboard" />:null}
                {can(auth.user, 'read-supplier')?<MainMenuItem text="Supplier" link="supplier.index" icon="briefcase" />:null}
                {can(auth.user, 'read-product')?<MainMenuItem text="Products" link="product.index" icon="collection" />:null}
-               {can(auth.user, 'read-product')?<MainMenuItem text="Stores" link="store.index" icon="office" />:null}
+               {can(auth.user, 'read-store')?<MainMenuItem text="Stores" link="store.index" icon="office" />:null}
           </div>
      );
 };

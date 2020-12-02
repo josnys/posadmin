@@ -1,3 +1,5 @@
+import format from 'date-fns/format';
+
 export function filesize(size) {
      const i = Math.floor(Math.log(size) / Math.log(1024));
      return (
@@ -111,4 +113,8 @@ export function can(user, permission){
           return true;
      }
      return false;
+}
+
+export function dateTimeFormat(date){
+     return format(new Date(date), 'dd MMM yyyy, hh:ii aa');
 }

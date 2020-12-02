@@ -123,4 +123,27 @@ class ProductConfigurationController extends Controller
 
           return redirect()->route('product.config.index', $product->id)->with('success', 'Configuration updated successfully');
      }
+
+     public function search(Request $request)
+     {
+          $request->validate(['search' => ['required', 'string']]);
+          $products = Product::with(['configurations' => function($configurations){
+               return $configurations->with('presentation')->with('agency')->active();
+          }])->active()->where('name', 'like', '%'.$request->get('search').'%')->get();
+          $data = array();
+          if($products->count() > 0){
+               foreach($products as $product){
+                    foreach($product->configurations as $config){
+                         array_push($data, [
+                              'id' => $config->id,
+                              'code' => $config->code,
+                              'name' => "{$product->name} {$config->agency->name} {$config->presentation->name}"
+                         ]);
+                    }
+               }
+          }
+          return response()->json([
+               'data' => $data
+          ], 200);
+     }
 }

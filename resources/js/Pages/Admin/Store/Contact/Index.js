@@ -20,7 +20,7 @@ const Index = () => {
                </div>
                <DataContainer>
                     <div className="col-span-12">
-                         {can(auth.user, 'create-product-configuration') && (<InertiaLink href={route('store.contact.create', data.id)} className="bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
+                         {can(auth.user, 'create-store-contact') && (<InertiaLink href={route('store.contact.create', data.id)} className="bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
                               <Icon name={'plus'} className={'fill-current w-4 h-4 mr-2'} />
                               Add Contact
                          </InertiaLink>)}
@@ -44,7 +44,7 @@ const Index = () => {
                                         <td className={`border px-4 py-2 text-center text-${status?'green':'red'}-600`}>{statusCaption}</td>
                                         <td className="border px-4 py-2">
                                              <DropdownButton caption="Actions" color="blue">
-                                                  {can(auth.user, 'update-product-configuration') && (<InertiaLink href={route('store.contact.edit', [data.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                                                  {can(auth.user, 'update-store-contact') && (<InertiaLink href={route('store.contact.edit', [data.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
                                                        <Icon name={'edit'} className={'fill-current w-5 h-5 mr-2'} />
                                                        Edit
                                                   </InertiaLink>)}

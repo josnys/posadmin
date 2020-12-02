@@ -244,6 +244,71 @@ class RolePermissionSeeder extends Seeder
                     'display_name' => 'Delete product configuration',
                     'description' => 'Allow user to delete a product configuration'
                ],
+               [
+                    'name' => 'create-store',
+                    'display_name' => 'Create store',
+                    'description' => 'Allow users to create a store'
+               ],
+               [
+                    'name' => 'read-store',
+                    'display_name' => 'Read store',
+                    'description' => 'Allow user to read store'
+               ],
+               [
+                    'name' => 'update-store',
+                    'display_name' => 'Update store',
+                    'description' => 'Allow user to modify store'
+               ],
+               [
+                    'name' => 'delete-store',
+                    'display_name' => 'Delete store',
+                    'description' => 'Allow user to delete a store'
+               ],
+               [
+                    'name' => 'create-store-contact',
+                    'display_name' => 'Create store contact',
+                    'description' => 'Allow users to create a store contact'
+               ],
+               [
+                    'name' => 'read-store-contact',
+                    'display_name' => 'Read store contact',
+                    'description' => 'Allow user to read store contact'
+               ],
+               [
+                    'name' => 'update-store-contact',
+                    'display_name' => 'Update store contact',
+                    'description' => 'Allow user to modify store contact'
+               ],
+               [
+                    'name' => 'delete-store-contact',
+                    'display_name' => 'Delete store contact',
+                    'description' => 'Allow user to delete a store contact'
+               ],
+               [
+                    'name' => 'create-purchase-order',
+                    'display_name' => 'Create Purchase Order',
+                    'description' => 'Allow users to create a purchase order'
+               ],
+               [
+                    'name' => 'read-purchase-order',
+                    'display_name' => 'Read Purchase Order',
+                    'description' => 'Allow user to read purchase order'
+               ],
+               [
+                    'name' => 'update-purchase-order',
+                    'display_name' => 'Update Purchase Order',
+                    'description' => 'Allow user to modify purchase order'
+               ],
+               [
+                    'name' => 'delete-purchase-order',
+                    'display_name' => 'Delete Purchase Order',
+                    'description' => 'Allow user to delete a purchase order'
+               ],
+               [
+                    'name' => 'approve-purchase-order',
+                    'display_name' => 'Approve Purchase Order',
+                    'description' => 'Allow user to approve purchase order'
+               ],
           ];
 
           $permissionIds = array();

@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductConfigurationController;
 use App\Http\Controllers\Admin\StoreController;
 use App\Http\Controllers\Admin\StoreContactController;
+use App\Http\Controllers\Admin\PurchaseOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -116,18 +117,31 @@ Route::group(['middleware' => ['auth']], function(){
      Route::get('/product/{product}/config/{config}/edit', [ProductConfigurationController::class, 'edit'])->middleware('permission:update-product-configuration')->name('product.config.edit');
      Route::post('/product/{product}/config/{config}/edit', [ProductConfigurationController::class, 'update'])->middleware('permission:update-product-configuration')->name('product.config.update');
 
+     // Product's search
+     Route::post('/product/search', [ProductConfigurationController::class, 'search'])->name('product.search');
+
      // Stores
-     Route::get('/store', [StoreController::class, 'index'])->middleware('permission:update-product')->name('store.index');
-     Route::get('/store/create', [StoreController::class, 'create'])->middleware('permission:update-product')->name('store.create');
-     Route::post('/store/create', [StoreController::class, 'store'])->middleware('permission:update-product')->name('store.store');
-     Route::get('/store/{store}', [StoreController::class, 'show'])->middleware('permission:update-product')->name('store.show');
-     Route::get('/store/{store}/edit', [StoreController::class, 'edit'])->middleware('permission:update-product')->name('store.edit');
-     Route::post('/store/{store}/edit', [StoreController::class, 'update'])->middleware('permission:update-product')->name('store.update');
+     Route::get('/store', [StoreController::class, 'index'])->middleware('permission:read-store')->name('store.index');
+     Route::get('/store/create', [StoreController::class, 'create'])->middleware('permission:create-store')->name('store.create');
+     Route::post('/store/create', [StoreController::class, 'store'])->middleware('permission:create-store')->name('store.store');
+     Route::get('/store/{store}', [StoreController::class, 'show'])->middleware('permission:read-store')->name('store.show');
+     Route::get('/store/{store}/edit', [StoreController::class, 'edit'])->middleware('permission:update-store')->name('store.edit');
+     Route::post('/store/{store}/edit', [StoreController::class, 'update'])->middleware('permission:update-store')->name('store.update');
 
      // Store's Contacts
-     Route::get('/store/{store}/contact', [StoreContactController::class, 'index'])->middleware('permission:read-product-configuration')->name('store.contact.index');
-     Route::get('/store/{store}/contact/create', [StoreContactController::class, 'create'])->middleware('permission:create-product-configuration')->name('store.contact.create');
-     Route::post('/store/{store}/contact/create', [StoreContactController::class, 'store'])->middleware('permission:create-product-configuration')->name('store.contact.store');
-     Route::get('/store/{store}/contact/{contact}/edit', [StoreContactController::class, 'edit'])->middleware('permission:update-product-configuration')->name('store.contact.edit');
-     Route::post('/store/{store}/contact/{contact}/edit', [StoreContactController::class, 'update'])->middleware('permission:update-product-configuration')->name('store.contact.update');
+     Route::get('/store/{store}/contact', [StoreContactController::class, 'index'])->middleware('permission:read-store-contact')->name('store.contact.index');
+     Route::get('/store/{store}/contact/create', [StoreContactController::class, 'create'])->middleware('permission:create-store-contact')->name('store.contact.create');
+     Route::post('/store/{store}/contact/create', [StoreContactController::class, 'store'])->middleware('permission:create-store-contact')->name('store.contact.store');
+     Route::get('/store/{store}/contact/{contact}/edit', [StoreContactController::class, 'edit'])->middleware('permission:update-store-contact')->name('store.contact.edit');
+     Route::post('/store/{store}/contact/{contact}/edit', [StoreContactController::class, 'update'])->middleware('permission:update-store-contact')->name('store.contact.update');
+
+     // Purchase Orders
+     Route::get('/store/{store}/purchase-order', [PurchaseOrderController::class, 'index'])->middleware('permission:read-purchase-order')->name('purchase-order.index');
+     Route::get('/store/{store}/purchase-order/create', [PurchaseOrderController::class, 'create'])->middleware('permission:create-purchase-order')->name('purchase-order.create');
+     Route::post('/store/{store}/purchase-order/create', [PurchaseOrderController::class, 'store'])->middleware('permission:create-purchase-order')->name('purchase-order.store');
+     Route::get('/store/{store}/purchase-order/{purchase}', [PurchaseOrderController::class, 'show'])->middleware('permission:read-purchase-order')->name('purchase-order.show');
+     Route::get('/store/{store}/purchase-order/{purchase}/edit', [PurchaseOrderController::class, 'edit'])->middleware('permission:update-purchase-order')->name('purchase-order.edit');
+     Route::post('/store/{store}/purchase-order/{purchase}/edit', [PurchaseOrderController::class, 'update'])->middleware('permission:update-purchase-order')->name('purchase-order.update');
+     Route::get('/store/{store}/purchase-order/{purchase}/approve', [PurchaseOrderController::class, 'getApprove'])->middleware('permission:approve-purchase-order')->name('purchase-order.get.approve');
+     Route::post('/store/{store}/purchase-order/{purchase}/approve', [PurchaseOrderController::class, 'postApprove'])->middleware('permission:approve-purchase-order')->name('purchase-order.post.approve');
 });

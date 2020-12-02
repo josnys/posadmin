@@ -118,6 +118,6 @@ class StoreController extends Controller
           $store->status = ($request->get('status') == 'true') ? true : false;
           $store->update();
 
-          return redirect()->route('store.index')->with('success', 'Store updated successfully.');
+          return redirect()->route('store.show', $store->id)->with('success', 'Store updated successfully.');
      }
 }
