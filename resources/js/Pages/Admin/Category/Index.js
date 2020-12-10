@@ -15,7 +15,7 @@ const Index = () => {
                     <title>Categories</title>
                </Helmet>
                <div className="max-w-7xl mx-auto p-2">
-                    <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('home')}>Dashboard</InertiaLink> | <span className="text-md text-gray-700 leading-tight">Categories</span>
+                    <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('home')}>Dashboard</InertiaLink> | <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('product.index')}>Products</InertiaLink> | <span className="text-md text-gray-700 leading-tight">Categories</span>
                </div>
                <DataContainer>
                     <div className="col-span-12">
@@ -23,6 +23,10 @@ const Index = () => {
                               <Icon name={'plus'} className={'fill-current w-4 h-4 mr-2'} />
                               Add Category
                          </InertiaLink>)}
+                         <InertiaLink href={route('product.index')} className="float-right bg-white border border-gray-400 hover:bg-gray-400 mr-2 text-gray-600 text-sm py-1 px-1 rounded inline-flex items-center">
+                              <Icon name={'back'} className={'fill-current w-4 h-4 mr-2'} />
+                              Back
+                         </InertiaLink>
                     </div>
                     <table className="table-fixed col-span-12">
                          <thead className="bg-gray-400">

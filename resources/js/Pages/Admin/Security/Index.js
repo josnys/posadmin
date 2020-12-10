@@ -15,7 +15,9 @@ const Index = () => {
                     <title>Roles & Permission</title>
                </Helmet>
                <div className="max-w-7xl mx-auto p-2">
-                    <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('home')}>Dashboard</InertiaLink> | <span className="text-md text-gray-700 leading-tight">Roles & Permissions</span>
+                    <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('home')}>Dashboard</InertiaLink> |
+                    <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('user.index')}> Users</InertiaLink> |
+                    <span className="text-md text-gray-700 leading-tight"> Roles & Permissions</span>
                </div>
                <DataContainer>
                     <div className="col-span-12">
@@ -23,6 +25,10 @@ const Index = () => {
                               <Icon name={'plus'} className={'fill-current w-4 h-4 mr-2'} />
                               Add Role
                          </InertiaLink>:null}
+                         <InertiaLink href={route('user.index')} className="float-right bg-white border border-gray-400 hover:bg-gray-200 text-gray-600 text-sm py-1 px-1 ml-3 rounded inline-flex items-center">
+                              <Icon name={'back'} className={'fill-current w-4 h-4 mr-2'} />
+                              Back
+                         </InertiaLink>
                          {can(auth.user, 'create-permission')?<InertiaLink href={route('permission.create')} className="float-right bg-gray-300 hover:bg-gray-400 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
                               <Icon name={'plus'} className={'fill-current w-4 h-4 mr-2'} />
                               Permissions

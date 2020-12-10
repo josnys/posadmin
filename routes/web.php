@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\ProductConfigurationController;
 use App\Http\Controllers\Admin\StoreController;
 use App\Http\Controllers\Admin\StoreContactController;
 use App\Http\Controllers\Admin\PurchaseOrderController;
+use App\Http\Controllers\Admin\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -144,4 +145,12 @@ Route::group(['middleware' => ['auth']], function(){
      Route::post('/store/{store}/purchase-order/{purchase}/edit', [PurchaseOrderController::class, 'update'])->middleware('permission:update-purchase-order')->name('purchase-order.update');
      Route::get('/store/{store}/purchase-order/{purchase}/approve', [PurchaseOrderController::class, 'getApprove'])->middleware('permission:approve-purchase-order')->name('purchase-order.get.approve');
      Route::post('/store/{store}/purchase-order/{purchase}/approve', [PurchaseOrderController::class, 'postApprove'])->middleware('permission:approve-purchase-order')->name('purchase-order.post.approve');
+
+     // Purchases
+     Route::get('/store/{store}/purchase', [PurchaseController::class, 'index'])->middleware('permission:read-purchase-order')->name('purchase.index');
+     Route::get('/store/{store}/purchase/{order}/create', [PurchaseController::class, 'create'])->middleware('permission:read-purchase-order')->name('purchase.create');
+     Route::post('/store/{store}/purchase/{order}/create', [PurchaseController::class, 'store'])->middleware('permission:read-purchase-order')->name('purchase.store');
+     Route::get('/store/{store}/purchase/{purchase}', [PurchaseController::class, 'show'])->middleware('permission:read-purchase-order')->name('purchase.show');
+     Route::get('/store/{store}/purchase/{purchase}/edit', [PurchaseController::class, 'edit'])->middleware('permission:read-purchase-order')->name('purchase.edit');
+     Route::post('/store/{store}/purchase/{purchase}/edit', [PurchaseController::class, 'update'])->middleware('permission:read-purchase-order')->name('purchase.update');
 });

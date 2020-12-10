@@ -16,6 +16,7 @@
         "laravel/fortify": "^1.5",
         "laravel/framework": "^8.10",
         "laravel/tinker": "^2.0",
+        "milon/barcode": "^8.0",
         "santigarcor/laratrust": "^6.2",
         "tightenco/ziggy": "^0.9.4"
     },

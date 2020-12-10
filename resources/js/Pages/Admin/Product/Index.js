@@ -23,6 +23,10 @@ const Index = () => {
                               <Icon name={'plus'} className={'fill-current w-4 h-4 mr-2'} />
                               Add Product
                          </InertiaLink>)}
+                         {can(auth.user, 'read-category') && (<InertiaLink href={route('category.index')} className="float-right bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
+                              <Icon name={'category'} className={'fill-current w-4 h-4 mr-2'} />
+                              Categories
+                         </InertiaLink>)}
                     </div>
                     <table className="table-fixed col-span-12">
                          <thead className="bg-gray-400">

@@ -15,7 +15,7 @@ import { can, dateTimeFormat } from '../../../../utils';
 
 const Show = () => {
      const { auth, data } = usePage().props;
-
+     console.log(data);
      const iconClasses = classNames('w-3 h-3 mr-1', {
           'text-white fill-current': false,
           'text-gray-500 hover:text-white fill-current': true
@@ -33,9 +33,13 @@ const Show = () => {
                </Helmet>
                <DataContainer>
                     <div className="col-span-12 text-right">
-                         {(can(auth.user, 'update-store-contact') && !data.purchase.approved) && (<InertiaLink href={route('purchase-order.edit', [data.store.id, data.purchase.id])} className="float-left bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
+                         {(can(auth.user, 'update-purchase-order') && !data.purchase.approved) && (<InertiaLink href={route('purchase-order.edit', [data.store.id, data.purchase.id])} className="float-left bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
                               <Icon name="edit" className={iconClasses} />
                               Edit
+                         </InertiaLink>)}
+                         {(can(auth.user, 'read-purchase-order') && data.purchase.approved) && (<InertiaLink href={route('purchase.create', [data.store.id, data.purchase.id])} className="float-left bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
+                              <Icon name="ticket" className={iconClasses} />
+                              Create Purchase
                          </InertiaLink>)}
                          <InertiaLink href={route('purchase-order.index', data.store.id)} className="bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
                               <Icon name="back" className={iconClasses} />

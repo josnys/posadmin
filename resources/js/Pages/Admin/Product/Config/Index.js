@@ -24,6 +24,14 @@ const Index = () => {
                               <Icon name={'plus'} className={'fill-current w-4 h-4 mr-2'} />
                               Add Configuration
                          </InertiaLink>)}
+                         {can(auth.user, 'read-presentation') && (<InertiaLink href={route('presentation.index')} className="float-right bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
+                              <Icon name={'presentation'} className={'fill-current w-4 h-4 mr-2'} />
+                              Presentations
+                         </InertiaLink>)}
+                         {can(auth.user, 'read-agency') && (<InertiaLink href={route('agency.index')} className="float-right bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
+                              <Icon name={'clipboard'} className={'fill-current w-4 h-4 mr-2'} />
+                              Agency
+                         </InertiaLink>)}
                     </div>
                     <table className="table-fixed col-span-12">
                          <thead className="bg-gray-400">

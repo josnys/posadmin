@@ -21,6 +21,7 @@ class CreatePurchaseOrdersTable extends Migration
                $table->integer('merged_id')->nullable();
                $table->boolean('approved')->default(false);
                $table->integer('printed')->default(0);
+               $table->boolean('purchased')->default(false);
                $table->text('note')->nullable();
                $table->timestamps();
                $table->softDeletes();

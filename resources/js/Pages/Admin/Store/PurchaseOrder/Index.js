@@ -33,19 +33,21 @@ const Index = () => {
                               <tr>
                                    <th className="px-4 py-2">Code</th>
                                    <th className="px-4 py-2">User</th>
-                                   <th className="px-4 py-2">Is Merged ?</th>
-                                   <th className="px-4 py-2">Is Approved ?</th>
+                                   <th className="px-4 py-2">Merged</th>
+                                   <th className="px-4 py-2">Approved</th>
+                                   <th className="px-4 py-2">Purchased</th>
                                    <th className="px-4 py-2">Created</th>
                                    <th className="px-4 py-2"></th>
                               </tr>
                          </thead>
                          <tbody>
-                              {data.purchases.data.map(({id, code, user, date, merged, mergeCaption, approved, approveCaption}) => {
+                              {data.purchases.data.map(({id, code, user, date, merged, mergeCaption, approved, approveCaption, purchased, purchasedCaption}) => {
                                    return <tr key={id}>
                                         <td className="border px-4 py-2">{code}</td>
                                         <td className="border px-4 py-2">{user}</td>
                                         <td className={`border px-4 py-2 text-center text-${merged?'blue':'gray'}-600`}>{mergeCaption}</td>
-                                        <td className={`border px-4 py-2 text-center text-${approved?'blue':'gray'}-600`}>{approveCaption}</td>
+                                        <td className={`border px-4 py-2 text-center text-${approved?'green':'gray'}-600`}>{approveCaption}</td>
+                                        <td className={`border px-4 py-2 text-center text-${purchased?'blue':'gray'}-600`}>{purchasedCaption}</td>
                                         <td className="border px-4 py-2 text-center">{dateTimeFormat(date)}</td>
                                         <td className="border px-4 py-2">
                                              <DropdownButton caption="Actions" color="blue">
@@ -57,6 +59,10 @@ const Index = () => {
                                                        <Icon name={'eye'} className={'fill-current w-5 h-5 mr-2'} />
                                                        View
                                                   </InertiaLink>)}
+                                                  {(can(auth.user, 'update-purchase-order') && approved) && (<InertiaLink href={route('purchase.create', [data.store.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                                                       <Icon name={'ticket'} className={'fill-current w-5 h-5 mr-2'} />
+                                                       Create Purchase
+                                                  </InertiaLink>)}
                                                   {(can(auth.user, 'approve-purchase-order') && !approved) && (<InertiaLink href={route('purchase-order.get.approve', [data.store.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
                                                        <Icon name={'thumb-up'} className={'fill-current w-5 h-5 mr-2'} />
                                                        Approve
@@ -66,7 +72,7 @@ const Index = () => {
                                    </tr>
                               })}
                               {!data.purchases.data.length && (<tr>
-                                   <td colSpan="7" className="p-4 bg-blue-100 text-blue-500 text-center">No data found.</td>
+                                   <td colSpan="8" className="p-4 bg-blue-100 text-blue-500 text-center">No data found.</td>
                               </tr>)}
                          </tbody>
                     </table>

@@ -15,7 +15,9 @@ const Index = () => {
                     <title>Presentations</title>
                </Helmet>
                <div className="max-w-7xl mx-auto p-2">
-                    <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('home')}>Dashboard</InertiaLink> | <span className="text-md text-gray-700 leading-tight">Presentations</span>
+                    <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('home')}>Dashboard</InertiaLink> |
+                         <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('product.index')}> Products</InertiaLink> |
+                    <span className="text-md text-gray-700 leading-tight"> Configuration / Presentations</span>
                </div>
                <DataContainer>
                     <div className="col-span-12">

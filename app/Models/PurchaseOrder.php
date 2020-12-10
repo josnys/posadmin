@@ -12,7 +12,7 @@ class PurchaseOrder extends Model
      use HasFactory;
      use SoftDeletes;
 
-     protected $fillable = ['code', 'store_id', 'user_id', 'merged_id', 'approved', 'printed', 'note'];
+     protected $fillable = ['code', 'store_id', 'user_id', 'merged_id', 'approved', 'purchased', 'printed', 'note'];
 
      public function details()
      {

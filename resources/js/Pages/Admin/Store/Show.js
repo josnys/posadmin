@@ -82,6 +82,10 @@ const Show = () => {
                                              <Icon name="reciept" className={iconClassesBlue} />
                                              Purchase Orders
                                         </InertiaLink>)}
+                                        {can(auth.user, 'read-purchase-order') && (<InertiaLink href={route('purchase.index', data.id)} className="ml-5 bg-transparent border border-blue-500 text-sm text-blue-500 p-1 rounded focus:outline-none hover:bg-blue-600 hover:text-blue-100 inline-flex items-center">
+                                             <Icon name="ticket" className={iconClassesBlue} />
+                                             Purchase
+                                        </InertiaLink>)}
                                    </div>
                               </div>
                          </div>

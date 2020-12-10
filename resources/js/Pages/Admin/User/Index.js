@@ -19,9 +19,13 @@ const Index = () => {
                </div>
                <DataContainer>
                     <div className="col-span-12">
-                         {can(auth.user, 'change-password-user') && (<InertiaLink href={route('user.create')} className="bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
+                         {can(auth.user, 'create-user') && (<InertiaLink href={route('user.create')} className="bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
                               <Icon name={'plus'} className={'fill-current w-4 h-4 mr-2'} />
                               Add User
+                         </InertiaLink>)}
+                         {can(auth.user, 'read-role') && (<InertiaLink href={route('security.index')} className="float-right bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
+                              <Icon name={'key'} className={'fill-current w-4 h-4 mr-2'} />
+                              Roles & Permissions
                          </InertiaLink>)}
                     </div>
                     <table className="table-fixed col-span-12">
