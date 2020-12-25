@@ -15,7 +15,9 @@ const Index = () => {
                     <title>Agencies</title>
                </Helmet>
                <div className="max-w-7xl mx-auto p-2">
-                    <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('home')}>Dashboard</InertiaLink> | <span className="text-md text-gray-700 leading-tight">Agencies</span>
+                    <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('home')}>Dashboard</InertiaLink> |
+                    <InertiaLink className="font-semibold text-md text-gray-700 hover:text-gray-800 leading-tight" href={route('product.index')}> Products</InertiaLink> |
+                    <span className="text-md text-gray-700 leading-tight"> Configuration / Agencies</span>
                </div>
                <DataContainer>
                     <div className="col-span-12">
@@ -24,7 +26,7 @@ const Index = () => {
                               Add Agency
                          </InertiaLink>)}
                     </div>
-                    <table className="table-fixed col-span-12">
+                    <table className="table-fixed col-span-12 text-sm">
                          <thead className="bg-gray-400">
                               <tr>
                                    <th className="px-4 py-2">Name</th>
@@ -43,7 +45,7 @@ const Index = () => {
                                         <td className={`border px-4 py-2 text-center text-${status?'green':'red'}-600`}>{statusCaption}</td>
                                         <td className="border px-4 py-2">
                                              <DropdownButton caption="Actions" color="blue">
-                                                  {can(auth.user, 'update-agency') && (<InertiaLink href={route('agency.edit', id)} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                                                  {can(auth.user, 'update-agency') && (<InertiaLink href={route('agency.edit', id)} className="flex block px-6 py-1 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
                                                        <Icon name={'edit'} className={'fill-current w-5 h-5 mr-2'} />
                                                        Edit
                                                   </InertiaLink>)}

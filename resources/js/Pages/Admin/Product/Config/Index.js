@@ -24,8 +24,20 @@ const Index = () => {
                               <Icon name={'plus'} className={'fill-current w-4 h-4 mr-2'} />
                               Add Configuration
                          </InertiaLink>)}
+                         <InertiaLink href={route('product.index')} className="float-right bg-transparent border border-gray-500 text-sm text-gray-500 p-1 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
+                              <Icon name="back" className={'fill-current w-4 h-4 mr-2'} />
+                              Back
+                         </InertiaLink>
+                         {can(auth.user, 'read-presentation') && (<InertiaLink href={route('presentation.index')} className="float-right bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
+                              <Icon name={'presentation'} className={'fill-current w-4 h-4 mr-2'} />
+                              Presentations
+                         </InertiaLink>)}
+                         {can(auth.user, 'read-agency') && (<InertiaLink href={route('agency.index')} className="float-right bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
+                              <Icon name={'clipboard'} className={'fill-current w-4 h-4 mr-2'} />
+                              Agency
+                         </InertiaLink>)}
                     </div>
-                    <table className="table-fixed col-span-12">
+                    <table className="table-fixed col-span-12 text-sm">
                          <thead className="bg-gray-400">
                               <tr>
                                    <th className="px-4 py-2">Code</th>
@@ -55,7 +67,7 @@ const Index = () => {
                                    </tr>
                               })}
                               {!data.config.length && (<tr>
-                                   <td colSpan="5" className="p-4 bg-blue-100 text-blue-500 text-center">No data found.</td>
+                                   <td colSpan="6" className="p-4 bg-blue-100 text-blue-500 text-center">No data found.</td>
                               </tr>)}
                          </tbody>
                     </table>

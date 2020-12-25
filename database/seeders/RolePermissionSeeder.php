@@ -244,6 +244,141 @@ class RolePermissionSeeder extends Seeder
                     'display_name' => 'Delete product configuration',
                     'description' => 'Allow user to delete a product configuration'
                ],
+               [
+                    'name' => 'create-store',
+                    'display_name' => 'Create store',
+                    'description' => 'Allow users to create a store'
+               ],
+               [
+                    'name' => 'read-store',
+                    'display_name' => 'Read store',
+                    'description' => 'Allow user to read store'
+               ],
+               [
+                    'name' => 'update-store',
+                    'display_name' => 'Update store',
+                    'description' => 'Allow user to modify store'
+               ],
+               [
+                    'name' => 'delete-store',
+                    'display_name' => 'Delete store',
+                    'description' => 'Allow user to delete a store'
+               ],
+               [
+                    'name' => 'create-store-contact',
+                    'display_name' => 'Create store contact',
+                    'description' => 'Allow users to create a store contact'
+               ],
+               [
+                    'name' => 'read-store-contact',
+                    'display_name' => 'Read store contact',
+                    'description' => 'Allow user to read store contact'
+               ],
+               [
+                    'name' => 'update-store-contact',
+                    'display_name' => 'Update store contact',
+                    'description' => 'Allow user to modify store contact'
+               ],
+               [
+                    'name' => 'delete-store-contact',
+                    'display_name' => 'Delete store contact',
+                    'description' => 'Allow user to delete a store contact'
+               ],
+               [
+                    'name' => 'create-purchase-order',
+                    'display_name' => 'Create Purchase Order',
+                    'description' => 'Allow users to create a purchase order'
+               ],
+               [
+                    'name' => 'read-purchase-order',
+                    'display_name' => 'Read Purchase Order',
+                    'description' => 'Allow user to read purchase order'
+               ],
+               [
+                    'name' => 'update-purchase-order',
+                    'display_name' => 'Update Purchase Order',
+                    'description' => 'Allow user to modify purchase order'
+               ],
+               [
+                    'name' => 'delete-purchase-order',
+                    'display_name' => 'Delete Purchase Order',
+                    'description' => 'Allow user to delete a purchase order'
+               ],
+               [
+                    'name' => 'approve-purchase-order',
+                    'display_name' => 'Approve Purchase Order',
+                    'description' => 'Allow user to approve purchase order'
+               ],
+               [
+                    'name' => 'create-purchase',
+                    'display_name' => 'Create Purchase',
+                    'description' => 'Allow users to create a purchase'
+               ],
+               [
+                    'name' => 'read-purchase',
+                    'display_name' => 'Read Purchase',
+                    'description' => 'Allow user to read purchase'
+               ],
+               [
+                    'name' => 'update-purchase',
+                    'display_name' => 'Update Purchase',
+                    'description' => 'Allow user to modify purchase'
+               ],
+               [
+                    'name' => 'delete-purchase',
+                    'display_name' => 'Delete Purchase',
+                    'description' => 'Allow user to delete a purchase'
+               ],
+               [
+                    'name' => 'approve-purchase',
+                    'display_name' => 'Approve Purchase',
+                    'description' => 'Allow user to approve purchase'
+               ], // rive la
+               [
+                    'name' => 'create-stock',
+                    'display_name' => 'Create Stock',
+                    'description' => 'Allow users to create a stock'
+               ],
+               [
+                    'name' => 'read-stock',
+                    'display_name' => 'Read Stock',
+                    'description' => 'Allow user to read stock'
+               ],
+               [
+                    'name' => 'update-stock',
+                    'display_name' => 'Update stock',
+                    'description' => 'Allow user to modify stock'
+               ],
+               [
+                    'name' => 'delete-stock',
+                    'display_name' => 'Delete stock',
+                    'description' => 'Allow user to delete a stock'
+               ],
+               [
+                    'name' => 'approve-stock',
+                    'display_name' => 'Approve stock',
+                    'description' => 'Allow user to approve stock'
+               ], // rive la
+               [
+                    'name' => 'create-inventory',
+                    'display_name' => 'Create Inventory',
+                    'description' => 'Allow users to create a inventory'
+               ],
+               [
+                    'name' => 'read-inventory',
+                    'display_name' => 'Read Inventory',
+                    'description' => 'Allow user to read inventory'
+               ],
+               [
+                    'name' => 'update-inventory',
+                    'display_name' => 'Update Inventory',
+                    'description' => 'Allow user to modify inventory'
+               ],
+               [
+                    'name' => 'delete-inventory',
+                    'display_name' => 'Delete Inventory',
+                    'description' => 'Allow user to delete a inventory'
+               ],
           ];
 
           $permissionIds = array();

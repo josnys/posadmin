@@ -14,7 +14,7 @@ class AddProfileUrlToUsersTable extends Migration
      public function up()
      {
           Schema::table('users', function (Blueprint $table) {
-               $table->string('profile_url')->after('identification_type')->nullable();
+               $table->string('profile_url')->after('multi_connect')->nullable();
           });
      }
 

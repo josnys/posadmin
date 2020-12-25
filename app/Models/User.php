@@ -21,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
      protected $fillable = [
-          'firstname', 'lastname', 'code', 'username', 'email', 'dob', 'sex', 'identification', 'identification_type', 'address', 'phone', 'pin', 'multi_connect', 'password', 'profile_url'
+          'person_id', 'username', 'email', 'password', 'pin', 'multi_connect', 'profile_url'
      ];
 
      /**
@@ -42,14 +42,8 @@ class User extends Authenticatable
           'email_verified_at' => 'datetime',
      ];
 
-     public function getNameAttribute()
+     public function person()
      {
-          return "{$this->firstname} {$this->lastname}";
-     }
-
-     public static function generateCode()
-     {
-          $rand = mt_rand(1, 9999);
-          return str_pad($rand, 5, 0, STR_PAD_LEFT);
+          return $this->belongsTo('App\Models\Person');
      }
 }

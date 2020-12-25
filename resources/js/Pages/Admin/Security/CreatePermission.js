@@ -91,7 +91,7 @@ function CreatePermission() {
                               <div className="px-4 py-5 sm:p-6">
                                    <div className="grid grid-cols-3 gap-3">
                                         <div className="col-span-12 text-right">
-                                             <InertiaLink href={route('security.index')} className="bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
+                                             <InertiaLink href={route('security.index')} className="bg-transparent border border-gray-500 text-sm text-gray-500 p-1 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
                                                   <Icon name="back" className={iconClasses} />
                                                   Back
                                              </InertiaLink>
@@ -153,9 +153,9 @@ function CreatePermission() {
                </div>
                <DataContainer>
                     <div className="col-span-12">
-                         <h3 className="text-lg font-medium text-gray-900">Permission's List</h3>
+                         <h3 className="text-lg font-medium text-gray-900">Permission's List <span className="float-right text-sm text-gray-600 font-medium">{data.data.length} in total</span></h3>
                     </div>
-                    <table className="table-auto col-span-12">
+                    <table className="table-auto col-span-12 text-sm">
                          <thead className="bg-gray-400">
                               <tr>
                                    <th className="px-4 py-2">Display Name</th>

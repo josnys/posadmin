@@ -27,4 +27,9 @@ class Product extends Model
      {
           return $this->hasMany('App\Models\ProductConfiguration');
      }
+
+     public function scopeActive($query)
+     {
+          return $query->where('status', true);
+     }
 }

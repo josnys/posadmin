@@ -13,6 +13,11 @@ class ProductConfiguration extends Model
 
      protected $fillable = ['product_id', 'presentation_id', 'agency_id', 'code', 'is_transformable', 'status'];
 
+     public function product()
+     {
+          return $this->belongsTo('App\Models\Product', 'product_id', 'id');
+     }
+
      public function presentation()
      {
           return $this->belongsTo('App\Models\Presentation');
@@ -21,5 +26,10 @@ class ProductConfiguration extends Model
      public function agency()
      {
           return $this->belongsTo('App\Models\Agency');
+     }
+
+     public function scopeActive($query)
+     {
+          return $query->where('status', true);
      }
 }
