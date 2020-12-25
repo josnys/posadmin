@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[42],{
 
-/***/ "./resources/js/Pages/Admin/Supplier/Create.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/Pages/Admin/Supplier/Create.js ***!
-  \*****************************************************/
+/***/ "./resources/js/Pages/Admin/Presentation/Create.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/Pages/Admin/Presentation/Create.js ***!
+  \*********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -67,12 +67,6 @@ var Create = function Create() {
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     name: '',
-    country: '',
-    state: '',
-    city: '',
-    address: '',
-    phone: '',
-    email: '',
     status: false
   }),
       _useState4 = _slicedToArray(_useState3, 2),
@@ -95,14 +89,14 @@ var Create = function Create() {
   function handleSubmit(e) {
     e.preventDefault();
     setSending(true);
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post(route('supplier.store'), values).then(function () {
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__["Inertia"].post(route('presentation.store'), values).then(function () {
       setSending(false);
     });
   }
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
     key: "uprofile"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Create Supplier")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Create Presentation")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_ProfileCard__WEBPACK_IMPORTED_MODULE_6__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "md:col-span-1"
@@ -110,17 +104,17 @@ var Create = function Create() {
     className: "px-4 sm:px-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "text-lg font-medium text-gray-900"
-  }, "Create Supplier"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Create Presentation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "mt-1 text-sm text-gray-600"
-  }, "Create a new Supplier for the products."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DataCard__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Create a new presentation for the products."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_DataCard__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "px-4 py-5 sm:p-6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "grid grid-cols-6 gap-6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-span-12 text-right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__["InertiaLink"], {
-    href: route('supplier.index'),
-    className: "bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center"
+    href: route('presentation.index'),
+    className: "bg-transparent border border-gray-500 text-sm text-gray-500 p-1 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Icon__WEBPACK_IMPORTED_MODULE_9__["default"], {
     name: "back",
     className: iconClasses
@@ -136,72 +130,6 @@ var Create = function Create() {
     must: true,
     errors: errors.name,
     value: values.name,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: "form-input rounded-md shadow-sm mt-4 block w-full",
-    label: "Country",
-    name: "country",
-    type: "text",
-    disable: false,
-    readonly: false,
-    must: true,
-    errors: errors.country,
-    value: values.country,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: "form-input rounded-md shadow-sm mt-4 block w-full",
-    label: "State",
-    name: "state",
-    type: "text",
-    disable: false,
-    readonly: false,
-    must: true,
-    errors: errors.state,
-    value: values.state,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: "form-input rounded-md shadow-sm mt-4 block w-full",
-    label: "City",
-    name: "city",
-    type: "text",
-    disable: false,
-    readonly: false,
-    must: true,
-    errors: errors.city,
-    value: values.city,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: "form-input rounded-md shadow-sm mt-4 block w-full",
-    label: "Address",
-    name: "address",
-    type: "text",
-    disable: false,
-    readonly: false,
-    must: false,
-    errors: errors.address,
-    value: values.address,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: "form-input rounded-md shadow-sm mt-4 block w-full",
-    label: "Phone",
-    name: "phone",
-    type: "tel",
-    disable: false,
-    readonly: false,
-    must: true,
-    errors: errors.phone,
-    value: values.phone,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_TextInput__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: "form-input rounded-md shadow-sm mt-4 block w-full",
-    label: "Email",
-    name: "email",
-    type: "email",
-    disable: false,
-    readonly: false,
-    must: false,
-    errors: errors.email,
-    value: values.email,
     onChange: handleChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
     className: "flex items-center mt-3",
@@ -229,7 +157,7 @@ var Create = function Create() {
 Create.layout = function (page) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
     children: page,
-    header: 'Create Supplier'
+    header: 'Create Presentation'
   });
 };
 

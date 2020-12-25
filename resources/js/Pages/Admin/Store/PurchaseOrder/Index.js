@@ -23,12 +23,12 @@ const Index = () => {
                               <Icon name={'plus'} className={'fill-current w-4 h-4 mr-2'} />
                               Add Purchase Order
                          </InertiaLink>)}
-                         <InertiaLink href={route('store.show', data.store.id)} className="float-right bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
+                         <InertiaLink href={route('store.show', data.store.id)} className="float-right bg-transparent border border-gray-500 text-sm text-gray-500 p-1 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
                               <Icon name="back" className={'fill-current w-4 h-4 mr-2'} />
                               Back
                          </InertiaLink>
                     </div>
-                    <table className="table-fixed col-span-12">
+                    <table className="table-fixed col-span-12 text-sm">
                          <thead className="bg-gray-400">
                               <tr>
                                    <th className="px-4 py-2">Code</th>
@@ -59,7 +59,7 @@ const Index = () => {
                                                        <Icon name={'eye'} className={'fill-current w-5 h-5 mr-2'} />
                                                        View
                                                   </InertiaLink>)}
-                                                  {(can(auth.user, 'update-purchase-order') && approved) && (<InertiaLink href={route('purchase.create', [data.store.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                                                  {(can(auth.user, 'create-purchase') && approved && !purchased) && (<InertiaLink href={route('purchase.create', [data.store.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
                                                        <Icon name={'ticket'} className={'fill-current w-5 h-5 mr-2'} />
                                                        Create Purchase
                                                   </InertiaLink>)}

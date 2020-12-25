@@ -118,3 +118,7 @@ export function can(user, permission){
 export function dateTimeFormat(date){
      return format(new Date(date), 'dd MMM yyyy, hh:ii aa');
 }
+
+export function dateFormat(date){
+     return format(new Date(date), 'dd MMM yyyy');
+}

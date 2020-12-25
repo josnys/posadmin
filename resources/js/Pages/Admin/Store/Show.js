@@ -53,7 +53,7 @@ const Show = () => {
                               <div className="w-full border-t mt-3"></div>
                               <h4 className="text-lg font-medium text-gray-700">
                                    Contacts
-                                   {can(auth.user, 'create-store-contact') && (<InertiaLink href={route('store.edit', data.id)} className="float-right text-blue-500 text-sm hover:underline">
+                                   {can(auth.user, 'create-store-contact') && (<InertiaLink href={route('store.contact.index', data.id)} className="float-right text-blue-500 text-sm hover:underline">
                                         Add
                                    </InertiaLink>)}
 
@@ -78,13 +78,21 @@ const Show = () => {
                                         </InertiaLink>
                                    </div>
                                    <div className="col-span-12 sm:col-span-12">
-                                        {can(auth.user, 'read-purchase-order') && (<InertiaLink href={route('purchase-order.index', data.id)} className="bg-transparent border border-blue-500 text-sm text-blue-500 p-1 rounded focus:outline-none hover:bg-blue-600 hover:text-blue-100 inline-flex items-center">
+                                        {can(auth.user, 'read-purchase-order') && (<InertiaLink href={route('purchase-order.index', data.id)} className="bg-transparent border border-blue-500 text-sm text-blue-500 p-2 rounded focus:outline-none hover:bg-blue-600 hover:text-blue-100 inline-flex items-center">
                                              <Icon name="reciept" className={iconClassesBlue} />
                                              Purchase Orders
                                         </InertiaLink>)}
-                                        {can(auth.user, 'read-purchase-order') && (<InertiaLink href={route('purchase.index', data.id)} className="ml-5 bg-transparent border border-blue-500 text-sm text-blue-500 p-1 rounded focus:outline-none hover:bg-blue-600 hover:text-blue-100 inline-flex items-center">
+                                        {can(auth.user, 'read-purchase') && (<InertiaLink href={route('purchase.index', data.id)} className="ml-5 bg-transparent border border-blue-500 text-sm text-blue-500 p-2 rounded focus:outline-none hover:bg-blue-600 hover:text-blue-100 inline-flex items-center">
                                              <Icon name="ticket" className={iconClassesBlue} />
                                              Purchase
+                                        </InertiaLink>)}
+                                        {can(auth.user, 'read-stock') && (<InertiaLink href={route('stock.index', data.id)} className="ml-5 bg-transparent border border-blue-500 text-sm text-blue-500 p-2 rounded focus:outline-none hover:bg-blue-600 hover:text-blue-100 inline-flex items-center">
+                                             <Icon name="box" className={iconClassesBlue} />
+                                             Stock
+                                        </InertiaLink>)}
+                                        {can(auth.user, 'read-inventory') && (<InertiaLink href={route('inventory.index', data.id)} className="ml-5 bg-transparent border border-blue-500 text-sm text-blue-500 p-2 rounded focus:outline-none hover:bg-blue-600 hover:text-blue-100 inline-flex items-center">
+                                             <Icon name="box" className={iconClassesBlue} />
+                                             Inventory
                                         </InertiaLink>)}
                                    </div>
                               </div>

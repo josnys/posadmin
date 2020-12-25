@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
 use App\Models\User;
+use App\Models\Person;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Log;
 
@@ -42,23 +43,24 @@ class HomeController extends Controller
      public function Profile()
      {
           try {
+               $user = User::with('person')->find(Auth::user()->id);
                return Inertia::render('Dashboard/User/Profile', [
                     'data' => [
-                         'id' => Auth::user()->id,
-                         'fname' => Auth::user()->firstname,
-                         'lname' => Auth::user()->lastname,
-                         'code' => Auth::user()->code,
-                         'dob' => Auth::user()->dob,
-                         'sex' => Auth::user()->sex,
-                         'identification' => Auth::user()->identification,
-                         'identificationType' => Auth::user()->identification_type,
-                         'address' => Auth::user()->address,
-                         'phone' => Auth::user()->phone,
-                         'pin' => Auth::user()->pin,
-                         'multiConnect' => (Auth::user()->multi_connect) ? true : false,
-                         'username' => Auth::user()->username,
-                         'email' => Auth::user()->email,
-                         'avatar' => (Auth::user()->profile_url) ? route('show.image', 'users/'.Auth::user()->profile_url) : null,
+                         'id' => $user->id,
+                         'fname' => $user->person->firstname,
+                         'lname' => $user->person->lastname,
+                         'code' => $user->person->code,
+                         'dob' => $user->person->dob,
+                         'sex' => $user->person->sex,
+                         'identification' => $user->person->identification,
+                         'identificationType' => $user->person->identification_type,
+                         'address' => $user->person->address,
+                         'phone' => $user->person->phone,
+                         'pin' => $user->pin,
+                         'multiConnect' => ($user->multi_connect) ? true : false,
+                         'username' => $user->username,
+                         'email' => $user->email,
+                         'avatar' => ($user->profile_url) ? route('show.image', 'users/'.$user->profile_url) : null,
                          'sexes' => $this->userSex,
                          'identityType' => $this->identityType
                     ]
@@ -71,26 +73,28 @@ class HomeController extends Controller
      public function postProfile(ProfileRequest $request, User $user)
      {
           try {
+               $person = Person::find($user->person_id);
                $mediaName = null;
                if($request->hasFile('photo')){
                     $mediaPath = $request->file('photo')->store('users/');
                     $index = count(explode('/', $mediaPath)) - 1;
                     $mediaName = explode('/', $mediaPath)[$index];
                }
-               $user->firstname = $request->get('fname');
-               $user->lastname = $request->get('lname');
-               $user->dob = $request->get('dob');
-               $user->sex = $request->get('sex');
-               $user->identification = $request->get('identification');
-               $user->identification_type = $request->get('identificationType');
-               $user->address = $request->get('address');
-               $user->phone = $request->get('phone');
+               $person->firstname = $request->get('fname');
+               $person->lastname = $request->get('lname');
+               $person->dob = $request->get('dob');
+               $person->sex = $request->get('sex');
+               $person->identification = $request->get('identification');
+               $person->identification_type = $request->get('identificationType');
+               $person->address = $request->get('address');
+               $person->phone = $request->get('phone');
+               $person->update();
                $user->username = $request->get('username');
                $user->email = $request->get('email');
                $user->profile_url = $mediaName;
                $user->update();
                return response()->json([
-                    'name' => $user->name,
+                    'name' => $person->name,
                     'username' => $user->username,
                     'email' => $user->email
                ], 200);

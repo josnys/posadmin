@@ -15,7 +15,7 @@ import { can, dateTimeFormat } from '../../../../utils';
 
 const Show = () => {
      const { auth, data } = usePage().props;
-     console.log(data);
+
      const iconClasses = classNames('w-3 h-3 mr-1', {
           'text-white fill-current': false,
           'text-gray-500 hover:text-white fill-current': true
@@ -33,7 +33,7 @@ const Show = () => {
                </Helmet>
                <DataContainer>
                     <div className="col-span-12 text-right">
-                         <InertiaLink href={route('purchase.index', data.store.id)} className="bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
+                         <InertiaLink href={route('purchase.index', data.store.id)} className="bg-transparent border border-gray-500 text-sm text-gray-500 p-1 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
                               <Icon name="back" className={iconClasses} />
                               Back
                          </InertiaLink>
@@ -82,8 +82,8 @@ const Show = () => {
                          </div>
                     </div>
                     <div className="flex w-full mt-5 border-t pt-5">
-                         <table className="table-auto w-full">
-                              <thead className="bg-gray-400 text-sm">
+                         <table className="table-auto w-full text-sm">
+                              <thead className="bg-gray-400">
                                    <tr>
                                         <th className="px-4 py-2">Product</th>
                                         <th className="px-4 py-2">Quantity</th>

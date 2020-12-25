@@ -38,7 +38,7 @@ class HandleInertiaRequests extends Middleware
                     ];
                },
                'auth' => function () {
-                    $user = Auth::user() ? User::with(['roles' => function($roles){
+                    $user = Auth::user() ? User::with('person')->with(['roles' => function($roles){
                          return $roles->with('permissions');
                     }])->find(Auth::user()->id) : null;
                     $roles = array();
@@ -54,8 +54,8 @@ class HandleInertiaRequests extends Middleware
 
                     return [
                          'user' => $user ? [
-                              'id' => $user->code,
-                              'name' => $user->name,
+                              'id' => $user->person->code,
+                              'name' => $user->person->name,
                               'username' => $user->username,
                               'avatar' => ($user->profile_url) ? route('show.image', 'users/'.$user->profile_url) : null, // (Auth::user()->profile_url) ? asset('storage/users/'.Auth::user()->profile_url) : null
                               'roles' => ($roles) ? $roles : null,

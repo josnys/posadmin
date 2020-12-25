@@ -26,7 +26,7 @@ const Index = () => {
                               Add Agency
                          </InertiaLink>)}
                     </div>
-                    <table className="table-fixed col-span-12">
+                    <table className="table-fixed col-span-12 text-sm">
                          <thead className="bg-gray-400">
                               <tr>
                                    <th className="px-4 py-2">Name</th>
@@ -45,7 +45,7 @@ const Index = () => {
                                         <td className={`border px-4 py-2 text-center text-${status?'green':'red'}-600`}>{statusCaption}</td>
                                         <td className="border px-4 py-2">
                                              <DropdownButton caption="Actions" color="blue">
-                                                  {can(auth.user, 'update-agency') && (<InertiaLink href={route('agency.edit', id)} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                                                  {can(auth.user, 'update-agency') && (<InertiaLink href={route('agency.edit', id)} className="flex block px-6 py-1 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
                                                        <Icon name={'edit'} className={'fill-current w-5 h-5 mr-2'} />
                                                        Edit
                                                   </InertiaLink>)}

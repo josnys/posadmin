@@ -70,7 +70,7 @@ class StoreContactController extends Controller
                $contact->link = $request->get('link');
                $contact->status = ($request->get('status') == 'true') ? true : false;
                $contact->save();
-               return redirect()->route('store.show', $store->id)->with('success', 'Contact saved successfully');
+               return redirect()->route('store.contact.index', $store->id)->with('success', 'Contact saved successfully');
           } catch (\Exception $e) {
                Log::error('StoreContact store', ['data' => $e]);
           }

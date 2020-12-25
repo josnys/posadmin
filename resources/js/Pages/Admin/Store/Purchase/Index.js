@@ -20,16 +20,16 @@ const Index = () => {
                </div>
                <DataContainer>
                     <div className="col-span-12">
-                         {can(auth.user, 'create-purchase-order') && (<InertiaLink href={route('purchase-order.create', data.store.id)} className="bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
+                         {can(auth.user, 'create-purchase') && (<InertiaLink href={route('purchase-order.create', data.store.id)} className="bg-gray-300 hover:bg-gray-400 mr-2 text-gray-800 text-sm py-1 px-1 rounded inline-flex items-center">
                               <Icon name={'plus'} className={'fill-current w-4 h-4 mr-2'} />
                               Add Purchase
                          </InertiaLink>)}
-                         <InertiaLink href={route('store.show', data.store.id)} className="float-right bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
+                         <InertiaLink href={route('store.show', data.store.id)} className="float-right bg-transparent border border-gray-500 text-sm text-gray-500 p-1 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
                               <Icon name="back" className={'fill-current w-4 h-4 mr-2'} />
                               Back
                          </InertiaLink>
                     </div>
-                    <table className="table-fixed col-span-12">
+                    <table className="table-fixed col-span-12 text-sm">
                          <thead className="bg-gray-400">
                               <tr>
                                    <th className="px-4 py-2">Code</th>
@@ -41,7 +41,7 @@ const Index = () => {
                               </tr>
                          </thead>
                          <tbody>
-                              {data.purchases.data.map(({id, code, user, supplier, approved, approvedCaption, date}) => {
+                              {data.purchases.data.map(({id, code, user, supplier, addStock, approved, approvedCaption, date}) => {
                                    return <tr key={id}>
                                         <td className="border px-4 py-2">{code}</td>
                                         <td className="border px-4 py-2">{user}</td>
@@ -50,17 +50,21 @@ const Index = () => {
                                         <td className="border px-4 py-2 text-center">{dateTimeFormat(date)}</td>
                                         <td className="border px-4 py-2">
                                              <DropdownButton caption="Actions" color="blue">
-                                                  {(can(auth.user, 'update-purchase-order') && !approved) && (<InertiaLink href={route('purchase.edit', [data.store.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                                                  {(can(auth.user, 'update-purchase') && !approved) && (<InertiaLink href={route('purchase.edit', [data.store.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
                                                        <Icon name={'edit'} className={'fill-current w-5 h-5 mr-2'} />
                                                        Edit
                                                   </InertiaLink>)}
-                                                  {can(auth.user, 'read-purchase-order') && (<InertiaLink href={route('purchase.show', [data.store.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                                                  {can(auth.user, 'read-purchase') && (<InertiaLink href={route('purchase.show', [data.store.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
                                                        <Icon name={'eye'} className={'fill-current w-5 h-5 mr-2'} />
                                                        View
                                                   </InertiaLink>)}
-                                                  {(can(auth.user, 'approve-purchase-order') && !approved) && (<InertiaLink href={route('purchase-order.get.approve', [data.store.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                                                  {(can(auth.user, 'approve-purchase') && !approved) && (<InertiaLink href={route('purchase.get.approve', [data.store.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
                                                        <Icon name={'thumb-up'} className={'fill-current w-5 h-5 mr-2'} />
                                                        Approve
+                                                  </InertiaLink>)}
+                                                  {(can(auth.user, 'create-stock') && approved && !addStock) && (<InertiaLink href={route('stock.create', [data.store.id, id])} className="flex block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-700">
+                                                       <Icon name={'plus'} className={'fill-current w-5 h-5 mr-2'} />
+                                                       Add To Stock
                                                   </InertiaLink>)}
                                              </DropdownButton>
                                         </td>
@@ -78,6 +82,6 @@ const Index = () => {
 
 // Persisten layout
 // Docs: https://inertiajs.com/pages#persistent-layouts
-Index.layout = page => <Layout children={page} header={'Purchase Order'} />;
+Index.layout = page => <Layout children={page} header={'Purchase'} />;
 
 export default Index;

@@ -17,13 +17,14 @@ class PurchaseOrderController extends Controller
      public function index(Store $store)
      {
           try {
-               $purchases = PurchaseOrder::with('user')
-                    ->where('store_id', $store->id)
+               $purchases = PurchaseOrder::with(['user' => function($user){
+                    return $user->with('person');
+               }])->where('store_id', $store->id)
                     ->paginate(50)->transform(function($purchase){
                     return [
                          'id' => $purchase->id,
                          'code' => $purchase->code,
-                         'user' => $purchase->user->name,
+                         'user' => $purchase->user->person->name,
                          'merged' => ($purchase->merged_id) ? true : false,
                          'mergeCaption' => ($purchase->merged_id) ? 'Yes' : 'No',
                          'approved' => ($purchase->approved) ? true : false,
@@ -117,7 +118,9 @@ class PurchaseOrderController extends Controller
                     return $contacts->where('status', true);
                }])->find($store->id);
                $contacts = array();
-               $purchase = PurchaseOrder::with('user')->with(['details' => function($details){
+               $purchase = PurchaseOrder::with(['user' => function($user){
+                    return $user->with('person');
+               }])->with(['details' => function($details){
                     return $details->with(['productinfo' => function($productinfo){
                          return $productinfo->with(['product' => function($product){
                               return $product->with('category')->with('subcategory');
@@ -155,7 +158,7 @@ class PurchaseOrderController extends Controller
                     'purchase' => [
                          'id' => $purchase->id,
                          'code' => $purchase->code,
-                         'user' => $purchase->user->name,
+                         'user' => $purchase->user->person->name,
                          'approved' => ($purchase->approved) ? true : false,
                          'purchased' => ($purchase->purchased) ? true : false,
                          'created' => $purchase->created_at->toDateTimeString()
@@ -273,7 +276,9 @@ class PurchaseOrderController extends Controller
                     return $contacts->where('status', true);
                }])->find($store->id);
                $contacts = array();
-               $purchase = PurchaseOrder::with('user')->with(['details' => function($details){
+               $purchase = PurchaseOrder::with(['user' => function($user){
+                    return $user->with('person');
+               }])->with(['details' => function($details){
                     return $details->with(['productinfo' => function($productinfo){
                          return $productinfo->with(['product' => function($product){
                               return $product->with('category')->with('subcategory');
@@ -311,7 +316,7 @@ class PurchaseOrderController extends Controller
                     'purchase' => [
                          'id' => $purchase->id,
                          'code' => $purchase->code,
-                         'user' => $purchase->user->name,
+                         'user' => $purchase->user->person->name,
                          'created' => $purchase->created_at->toDateTimeString()
                     ],
                     'details' => $details

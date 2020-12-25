@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Person;
 use App\Models\User;
 
 class UserSeeder extends Seeder
@@ -15,18 +16,22 @@ class UserSeeder extends Seeder
      */
      public function run()
      {
+          $person = new Person;
+          $person->firstname = 'Josny J.';
+          $person->lastname = 'Severe';
+          $person->code = '0001';
+          $person->dob = '1984-05-21';
+          $person->sex = 'Man';
+          $person->identification = '008-378-446-3';
+          $person->identification_type = 'CIN';
+          $person->address = 'Anndan lakay mwen';
+          $person->phone = '50948091228';
+          $person->save();
+
           $user = new User;
-          $user->firstname = 'Josny J.';
-          $user->lastname = 'Severe';
-          $user->code = '0001';
+          $user->person_id = $person->id;
           $user->username = 'josnys';
           $user->email = 'dirjos2014@gmail.com';
-          $user->dob = '1984-05-21';
-          $user->sex = 'Man';
-          $user->identification = '008-378-446-3';
-          $user->identification_type = 'CIN';
-          $user->address = 'Anndan lakay mwen';
-          $user->phone = '50948091228';
           $user->pin = '1234';
           $user->multi_connect = true;
           $user->password = Hash::make('password');

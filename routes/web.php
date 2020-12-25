@@ -19,6 +19,8 @@ use App\Http\Controllers\Admin\StoreController;
 use App\Http\Controllers\Admin\StoreContactController;
 use App\Http\Controllers\Admin\PurchaseOrderController;
 use App\Http\Controllers\Admin\PurchaseController;
+use App\Http\Controllers\Admin\StockController;
+use App\Http\Controllers\Admin\InventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -147,10 +149,28 @@ Route::group(['middleware' => ['auth']], function(){
      Route::post('/store/{store}/purchase-order/{purchase}/approve', [PurchaseOrderController::class, 'postApprove'])->middleware('permission:approve-purchase-order')->name('purchase-order.post.approve');
 
      // Purchases
-     Route::get('/store/{store}/purchase', [PurchaseController::class, 'index'])->middleware('permission:read-purchase-order')->name('purchase.index');
-     Route::get('/store/{store}/purchase/{order}/create', [PurchaseController::class, 'create'])->middleware('permission:read-purchase-order')->name('purchase.create');
-     Route::post('/store/{store}/purchase/{order}/create', [PurchaseController::class, 'store'])->middleware('permission:read-purchase-order')->name('purchase.store');
-     Route::get('/store/{store}/purchase/{purchase}', [PurchaseController::class, 'show'])->middleware('permission:read-purchase-order')->name('purchase.show');
-     Route::get('/store/{store}/purchase/{purchase}/edit', [PurchaseController::class, 'edit'])->middleware('permission:read-purchase-order')->name('purchase.edit');
-     Route::post('/store/{store}/purchase/{purchase}/edit', [PurchaseController::class, 'update'])->middleware('permission:read-purchase-order')->name('purchase.update');
+     Route::get('/store/{store}/purchase', [PurchaseController::class, 'index'])->middleware('permission:read-purchase')->name('purchase.index');
+     Route::get('/store/{store}/purchase/{order}/create', [PurchaseController::class, 'create'])->middleware('permission:create-purchase')->name('purchase.create');
+     Route::post('/store/{store}/purchase/{order}/create', [PurchaseController::class, 'store'])->middleware('permission:create-purchase')->name('purchase.store');
+     Route::get('/store/{store}/purchase/{purchase}', [PurchaseController::class, 'show'])->middleware('permission:read-purchase')->name('purchase.show');
+     Route::get('/store/{store}/purchase/{purchase}/edit', [PurchaseController::class, 'edit'])->middleware('permission:update-purchase')->name('purchase.edit');
+     Route::post('/store/{store}/purchase/{purchase}/edit', [PurchaseController::class, 'update'])->middleware('permission:update-purchase')->name('purchase.update');
+     Route::get('/store/{store}/purchase/{purchase}/approve', [PurchaseController::class, 'getApprove'])->middleware('permission:approve-purchase')->name('purchase.get.approve');
+     Route::post('/store/{store}/purchase/{purchase}/approve', [PurchaseController::class, 'postApprove'])->middleware('permission:approve-purchase')->name('purchase.post.approve');
+
+     // Stocks
+     Route::get('/store/{store}/stock', [StockController::class, 'index'])->middleware('permission:read-stock')->name('stock.index');
+     Route::get('/store/{store}/stock/{purchase}/create', [StockController::class, 'create'])->middleware('permission:create-stock')->name('stock.create');
+     Route::post('/store/{store}/stock/{purchase}/create', [StockController::class, 'store'])->middleware('permission:create-stock')->name('stock.store');
+     Route::get('/store/{store}/stock/{stock}/show', [StockController::class, 'show'])->middleware('permission:read-stock')->name('stock.show');
+     Route::get('/store/{store}/stock/{stock}/edit', [StockController::class, 'edit'])->middleware('permission:update-stock')->name('stock.edit');
+     Route::post('/store/{store}/stock/{stock}/edit', [StockController::class, 'update'])->middleware('permission:update-stock')->name('stock.update');
+     Route::get('/store/{store}/stock/{stock}/approve', [StockController::class, 'getApprove'])->middleware('permission:approve-stock')->name('stock.get.approve');
+     Route::post('/store/{store}/stock/{stock}/approve', [StockController::class, 'postApprove'])->middleware('permission:approve-stock')->name('stock.post.approve');
+     Route::get('/store/{store}/stockitems', [StockController::class, 'items'])->middleware('permission:read-stock')->name('stock.items');
+     // Route::post('/store/{store}/stockitems', [StockController::class, 'items'])->middleware('permission:read-purchase-order')->name('stock.items');
+
+     // Inventories
+     Route::get('/store/{store}/inventory', [InventoryController::class, 'index'])->middleware('permission:read-inventory')->name('inventory.index');
+     Route::post('/store/{store}/inventory/create', [InventoryController::class, 'store'])->middleware('permission:create-inventory')->name('inventory.store');
 });

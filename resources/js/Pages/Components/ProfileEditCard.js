@@ -108,7 +108,7 @@ const ProfileEditCard = () => {
                                                   label="Select Picture"
                                                   name="photo"
                                                   accept="image/jpg,jpeg,png"
-                                                  errors={values.errors.photo}
+                                                  errors={errors.photo}
                                                   value={values.photo}
                                                   onChange={handleFileChange}
                                               />

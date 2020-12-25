@@ -26,7 +26,7 @@ const Index = () => {
                               Add Presentation
                          </InertiaLink>)}
                     </div>
-                    <table className="table-fixed col-span-12">
+                    <table className="table-fixed col-span-12 text-sm">
                          <thead className="bg-gray-400">
                               <tr>
                                    <th className="px-4 py-2">Name</th>

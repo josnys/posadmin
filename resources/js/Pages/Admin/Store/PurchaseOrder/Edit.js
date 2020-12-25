@@ -189,7 +189,7 @@ const Edit = () => {
                               </InertiaLink>
                          </h3>
                          <form onSubmit={handleSubmit}>
-                              <table className="table col-span-12 mt-2 w-full">
+                              <table className="table col-span-12 mt-2 w-full text-sm">
                                    <thead className="bg-gray-400">
                                         <tr>
                                              <th className="px-4 py-2">Code</th>

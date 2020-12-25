@@ -10,6 +10,7 @@ use App\Http\Requests\UserRequest;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\PasswordRequest;
 use App\Models\User;
+use App\Models\Person;
 use App\Models\Role;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Log;
@@ -35,15 +36,15 @@ class UserController extends Controller
      public function index()
      {
           try {
-               $users = User::with('roles')->paginate(20)->transform(function($user){
+               $users = User::with('person')->with('roles')->paginate(20)->transform(function($user){
                     $roles = array();
                     foreach($user->roles as $rl){
                          array_push($roles, $rl->display_name);
                     }
                     return [
                          'id' => $user->id,
-                         'code' => $user->code,
-                         'name' => $user->name,
+                         'code' => $user->person->code,
+                         'name' => $user->person->name,
                          'username' => $user->username,
                          'email' => $user->email,
                          'avatar' => ($user->profile_url) ? route('show.image', 'users/'.$user->profile_url) : null,
@@ -72,22 +73,27 @@ class UserController extends Controller
      public function store(CreateUserRequest $request)
      {
           try {
-               $code = User::generateCode();
-               $exist = User::where('code', $code)->first();
+               $code = Person::generateCode();
+               $exist = Person::where('code', $code)->first();
                while($exist != null){
-                    $code = User::generateCode();
-                    $exist = User::where('code', $code)->first();
+                    $code = Person::generateCode();
+                    $exist = Person::where('code', $code)->first();
                }
+               $person = new Person;
+               $person->firstname = $request->get('fname');
+               $person->lastname = $request->get('lname');
+               $person->code = $code;
+               $person->dob = $request->get('dob');
+               $person->sex = $request->get('sex');
+               $person->identification = $request->get('identification');
+               $person->identification_type = $request->get('identificationType');
+               $person->address = $request->get('address');
+               $person->phone = $request->get('phone');
+               $person->save();
+               $pid = $person->id;
+
                $user = new User;
-               $user->firstname = $request->get('fname');
-               $user->lastname = $request->get('lname');
-               $user->code = $code;
-               $user->dob = $request->get('dob');
-               $user->sex = $request->get('sex');
-               $user->identification = $request->get('identification');
-               $user->identification_type = $request->get('identificationType');
-               $user->address = $request->get('address');
-               $user->phone = $request->get('phone');
+               $user->person_id = $pid;
                $user->username = $request->get('username');
                $user->email = $request->get('email');
                $user->password = Hash::make($request->get('password'));
@@ -104,17 +110,18 @@ class UserController extends Controller
      public function edit(User $user)
      {
           try {
+               $person = Person::find($user->person_id);
                return Inertia::render('Admin/User/Edit', ['data' => [
                     'id' => $user->id,
-                    'fname' => $user->firstname,
-                    'lname' => $user->lastname,
-                    'code' => $user->code,
-                    'dob' => $user->dob,
-                    'sex' => $user->sex,
-                    'identification' => $user->identification,
-                    'identificationType' => $user->identification_type,
-                    'address' => $user->address,
-                    'phone' => $user->phone,
+                    'fname' => $person->firstname,
+                    'lname' => $person->lastname,
+                    'code' => $person->code,
+                    'dob' => $person->dob,
+                    'sex' => $person->sex,
+                    'identification' => $person->identification,
+                    'identificationType' => $person->identification_type,
+                    'address' => $person->address,
+                    'phone' => $person->phone,
                     'pin' => $user->pin,
                     'multiConnect' => ($user->multi_connect) ? true : false,
                     'username' => $user->username,
@@ -131,14 +138,17 @@ class UserController extends Controller
      public function update(UserRequest $request, User $user)
      {
           try {
-               $user->firstname = $request->get('fname');
-               $user->lastname = $request->get('lname');
-               $user->dob = $request->get('dob');
-               $user->sex = $request->get('sex');
-               $user->identification = $request->get('identification');
-               $user->identification_type = $request->get('identificationType');
-               $user->address = $request->get('address');
-               $user->phone = $request->get('phone');
+               $person = Person::find($user->person_id);
+               $person->firstname = $request->get('fname');
+               $person->lastname = $request->get('lname');
+               $person->dob = $request->get('dob');
+               $person->sex = $request->get('sex');
+               $person->identification = $request->get('identification');
+               $person->identification_type = $request->get('identificationType');
+               $person->address = $request->get('address');
+               $person->phone = $request->get('phone');
+               $person->update();
+
                $user->update();
                return redirect()->route('user.index')->with('success', 'User updated successfully.');
           } catch (\Exception $e) {
@@ -165,13 +175,13 @@ class UserController extends Controller
                          'isCheck' => in_array($rl->id, $user_roles)
                     ]);
                }
-
+               $person = Person::find($user->person_id);
                return Inertia::render('Admin/User/Role', [
                     'data' => [
                          'roles' => $roles,
                          'user' => [
                               'id' => $user->id,
-                              'name' => $user->name,
+                              'name' => $person->name,
                               'username' => $user->username,
                               'email' => $user->email,
                               'avatar' => null
@@ -201,9 +211,10 @@ class UserController extends Controller
      public function getResetPassword(User $user)
      {
           try {
+               $person = Person::find($user->person_id);
                return Inertia::render('Admin/User/ChangePassword', ['data' => [
                     'id' => $user->id,
-                    'name' => $user->name,
+                    'name' => $person->name,
                     'code' => $user->code,
                ]]);
           } catch (\Exception $e) {

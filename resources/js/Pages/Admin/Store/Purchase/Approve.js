@@ -14,7 +14,7 @@ import classNames from 'classnames';
 import { can } from '../../../../utils';
 import format from 'date-fns/format';
 
-const Show = () => {
+const Approve = () => {
      const { auth, errors, data } = usePage().props;
      const [sending, setSending] = useState(false);
      const iconClasses = classNames('w-3 h-3 mr-1', {
@@ -30,7 +30,7 @@ const Show = () => {
      function handleSubmit(e) {
           e.preventDefault();
           setSending(true);
-          Inertia.post(route('purchase-order.post.approve', [data.store.id, data.purchase.id])).then((response) => {
+          Inertia.post(route('purchase.post.approve', [data.store.id, data.purchase.id])).then((response) => {
                setSending(false);
           });
      }
@@ -38,7 +38,7 @@ const Show = () => {
      return (
           <React.Fragment key="uprofile">
                <Helmet>
-                    <title>Approve Purchase Order</title>
+                    <title>Approve Purchase</title>
                </Helmet>
                <div className="w-full mt-3 bg-white shadow rounded p-4">
                     <form onSubmit={handleSubmit}>
@@ -55,37 +55,46 @@ const Show = () => {
                               </div>
                               <div className=""></div>
                          </div>
-                         <div className="w-full text-center uppercase font-semibold text-gray-600 mt-3">Purchase Order</div>
+                         <div className="w-full text-center uppercase font-semibold text-gray-600 mt-3">Purchase</div>
                          <div className="w-full grid grid-cols-2 gap-3">
                               <div className="justify-between">
-                                   <p className="mt-3 text-gray-800 font-medium w-full">Purchase Order No. : <span className="w-1/2 ml-3 px-4 py-1 bg-gray-200 text-gray-700 font-medium rounded float-right">{data.purchase.code}</span></p>
+                                   <p className="mt-3 text-gray-800 font-medium w-full">Purchase No. : <span className="w-1/2 ml-3 px-4 py-1 bg-gray-200 text-gray-700 font-medium rounded float-right">{data.purchase.code}</span></p>
                                    <p className="mt-3 text-gray-800 font-medium w-full">User : <span className="w-1/2 ml-3 px-4 py-1 bg-gray-200 text-gray-700 font-medium rounded float-right">{data.purchase.user}</span></p>
                                    <p className="mt-3 text-gray-800 font-medium w-full">Purchase Created : <span className="w-1/2 ml-3 px-4 py-1 bg-gray-200 text-gray-700 font-medium rounded float-right">{format(new Date(data.purchase.created), 'Pp')}</span></p>
+                              </div>
+                              <div className="justify-between">
+                                   <p className="mt-3 text-gray-800 font-medium w-full">Sub Total. : <span className="w-1/2 ml-3 px-4 py-1 bg-gray-200 text-gray-700 text-right font-medium rounded float-right">{data.purchase.subtotal.toFixed(2)}</span></p>
+                                   <p className="mt-3 text-gray-800 font-medium w-full">Tax & Transport : <span className="w-1/2 ml-3 px-4 py-1 bg-gray-200 text-gray-700 text-right font-medium rounded float-right">{data.purchase.tax.toFixed(2)} + {data.purchase.transport.toFixed(2)}</span></p>
+                                   <p className="mt-3 text-gray-800 font-medium w-full">Total : <span className="w-1/2 ml-3 px-4 py-1 bg-gray-200 text-gray-700 text-right font-medium rounded float-right">{data.purchase.total.toFixed(2)}</span></p>
                               </div>
                          </div>
                          <div className="w-full mt-3 border-t pt-4">
                               <div className="flex items-center justify-end px-4 py-3 bg-gray-100 text-right sm:px-6 rounded-b">
-                                   <InertiaLink href={route('purchase-order.index', data.store.id)} className="bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
+                                   <InertiaLink href={route('purchase.index', data.store.id)} className="bg-transparent border border-gray-500 text-sm text-gray-500 p-2 rounded focus:outline-none hover:bg-gray-600 hover:text-gray-100 inline-flex items-center">
                                         Cancel
                                    </InertiaLink>
                                    <LoadingButton type="submit" loading={sending} className="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 ml-4">
-                                        Approve Purchase Order
+                                        Approve Purchase
                                    </LoadingButton>
                               </div>
-                              <table className="table-fixed w-full">
+                              <table className="table-auto w-full text-sm">
                                    <thead className="bg-gray-400">
                                         <tr>
-                                             <th className="px-4 py-2 w-1/6">Code</th>
-                                             <th className="px-4 py-2 w-4/6">Product</th>
-                                             <th className="px-4 py-2 w-1/6">Quantity</th>
+                                             <th className="px-4 py-2">Product</th>
+                                             <th className="px-4 py-2">Quantity</th>
+                                             <th className="px-4 py-2">Cost</th>
+                                             <th className="px-4 py-2">Tax</th>
+                                             <th className="px-4 py-2">Total</th>
                                         </tr>
                                    </thead>
                                    <tbody>
-                                        {data.details.map(({code, name, qty}, i) => {
+                                        {data.details.map(({name, quantity, cost, tax, total}, i) => {
                                              return <tr key={`prod-${i}`}>
-                                                  <td className="border px-4 py-2">{code}</td>
                                                   <td className="border px-4 py-2">{name}</td>
-                                                  <td className="border px-4 py-2 text-center">{qty}</td>
+                                                  <td className="border px-4 py-2 text-center">{quantity}</td>
+                                                  <td className="border px-4 py-2 text-right">{cost.toFixed(2)}</td>
+                                                  <td className="border px-4 py-2 text-right">{tax.toFixed(2)}</td>
+                                                  <td className="border px-4 py-2 text-right">{total.toFixed(2)}</td>
                                              </tr>
                                         })}
                                         {!data.details.length && (<tr>
@@ -99,7 +108,7 @@ const Show = () => {
                                    Cancel
                               </InertiaLink>
                               <LoadingButton type="submit" loading={sending} className="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 ml-4">
-                                   Approve Purchase Order
+                                   Approve Purchase
                               </LoadingButton>
                          </div>
                     </form>
@@ -110,6 +119,6 @@ const Show = () => {
 
 // Persisten layout
 // Docs: https://inertiajs.com/pages#persistent-layouts
-Show.layout = page => <Layout children={page} header={'Approve Purchase Order'} />;
+Approve.layout = page => <Layout children={page} header={'Approve Purchase'} />;
 
-export default Show;
+export default Approve;

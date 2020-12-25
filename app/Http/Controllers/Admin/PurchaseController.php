@@ -20,12 +20,15 @@ class PurchaseController extends Controller
      public function index(Store $store)
      {
           try {
-               $purchases = Purchase::with('user')->with('supplier')->where('store_id', $store->id)->paginate(50)->transform(function($purchase){
+               $purchases = Purchase::with(['user' => function($user){
+                    return $user->with('person');
+               }])->with('supplier')->where('store_id', $store->id)->paginate(50)->transform(function($purchase){
                     return [
                          'id' => $purchase->id,
                          'code' => $purchase->code,
-                         'user' => $purchase->user->name,
+                         'user' => $purchase->user->person->name,
                          'supplier' => $purchase->supplier->name,
+                         'addStock' => ($purchase->is_stock) ? true : false,
                          'approved' => ($purchase->approved) ? true : false,
                          'approvedCaption' => ($purchase->approved) ? 'Yes' : 'No',
                          'date' => $purchase->created_at->toDateTimeString()
@@ -46,7 +49,9 @@ class PurchaseController extends Controller
      public function create(Store $store, PurchaseOrder $order)
      {
           try {
-               $order = PurchaseOrder::with('user')->with(['details' => function($details){
+               $order = PurchaseOrder::with(['user' => function($user){
+                    return $user->with('person');
+               }])->with(['details' => function($details){
                     return $details->with(['productinfo' => function($productinfo){
                          return $productinfo->with(['product' => function($product){
                               return $product->with('category')->with('subcategory');
@@ -84,7 +89,7 @@ class PurchaseController extends Controller
                     'purchase' => [
                          'id' => $order->id,
                          'code' => $order->code,
-                         'user' => $order->user->name,
+                         'user' => $order->user->person->name,
                          'approved' => ($order->approved) ? true : false,
                          'approveCaption' => ($order->approved) ? 'Yes' : 'No',
                          'date' => $order->created_at->toDateTimeString(),
@@ -171,7 +176,9 @@ class PurchaseController extends Controller
                     return $details->with(['productinfo' => function($productinfo){
                          return $productinfo->with('product')->with('presentation')->with('agency');
                     }])->with('user');
-               }])->with('user')->with('store')->with('supplier')->find($purchase->id);
+               }])->with(['user' => function($user){
+                    return $user->with('person');
+               }])->with('store')->with('supplier')->find($purchase->id);
 
                $details = array();
                foreach($purchase->details as $detail){
@@ -200,7 +207,7 @@ class PurchaseController extends Controller
                     'id' => $purchase->id,
                     'code' => $purchase->code,
                     'barcode' => $purchase->barcode,
-                    'user' => $purchase->user->name,
+                    'user' => $purchase->user->person->name,
                     'supplier' => $purchase->supplier->name,
                     'reciept' => $purchase->receipt_no,
                     'amount' => $purchase->amount,
@@ -238,7 +245,9 @@ class PurchaseController extends Controller
                     return $details->with(['productinfo' => function($productinfo){
                          return $productinfo->with('product')->with('presentation')->with('agency');
                     }])->with('user');
-               }])->with('user')->with('store')->with('supplier')->find($purchase->id);
+               }])->with(['user' => function($user){
+                    return $user->with('person');
+               }])->with('store')->with('supplier')->find($purchase->id);
 
                $details = array();
                foreach($purchase->details as $detail){
@@ -261,7 +270,7 @@ class PurchaseController extends Controller
                          'id' => $purchase->id,
                          'code' => $purchase->code,
                          'receipt' => $purchase->receipt_no,
-                         'user' => $purchase->user->name,
+                         'user' => $purchase->user->person->name,
                          'supplier' => $purchase->supplier->id,
                          'subtotal' => $purchase->amount,
                          'tax' => $purchase->tax,
@@ -330,6 +339,83 @@ class PurchaseController extends Controller
                return redirect()->back()->with('error', 'Unable to update purchase. Please verify quantity of products.');
           } catch (\Exception $e) {
                Log::error('Purchase update', ['data' => $e]);
+          }
+     }
+
+     public function getApprove(Store $store, Purchase $purchase)
+     {
+          try {
+               if($purchase->approved){
+                    return redirect()->back()->with('error', 'Purchase already approved.');
+               }
+               $store = Store::with(['contacts' => function($contacts){
+                    return $contacts->where('status', true);
+               }])->find($store->id);
+
+               $contacts = array();
+               foreach($store->contacts as $contact){
+                    array_push($contacts, [
+                         'type' => $contact->name,
+                         'reference' => $contact->reference,
+                         'link' => ($contact->link) ? $contact->link : '-',
+                    ]);
+               }
+
+               $purchase = Purchase::with(['details' => function($details){
+                    return $details->with(['productinfo' => function($productinfo){
+                         return $productinfo->with('product')->with('presentation')->with('agency');
+                    }])->with('user');
+               }])->with(['user' => function($user){
+                    return $user->with('person');
+               }])->with('store')->with('supplier')->find($purchase->id);
+
+               $details = array();
+               foreach($purchase->details as $detail){
+                    array_push($details, [
+                         'name' => "{$detail->productinfo->code} {$detail->productinfo->product->name} {$detail->productinfo->agency->name}  {$detail->productinfo->presentation->name}",
+                         'quantity' => $detail->quantity,
+                         'cost' => $detail->cost,
+                         'tax' => $detail->tax,
+                         'total' => ($detail->cost + $detail->tax) * $detail->quantity
+                    ]);
+               }
+               return Inertia::render('Admin/Store/Purchase/Approve', ['data' => [
+                    'store' => [
+                         'id' => $store->id,
+                         'name' => $store->name,
+                         'code' => $store->code,
+                         'type' => $store->type,
+                         'logo' => ($store->logo) ? route('show.image', 'stores/'.$store->logo) : null,
+                         'contacts' => $contacts
+                    ],
+                    'purchase' => [
+                         'id' => $purchase->id,
+                         'code' => $purchase->code,
+                         'user' => $purchase->user->person->name,
+                         'created' => $purchase->created_at->toDateTimeString(),
+                         'tax' => $purchase->tax,
+                         'transport' => $purchase->transport,
+                         'subtotal' => $purchase->amount,
+                         'total' => $purchase->amount + $purchase->tax + $purchase->transport
+                    ],
+                    'details' => $details
+               ]]);
+          } catch (\Exception $e) {
+               Log::error('Purchase update', ['data' => $e]);
+          }
+     }
+
+     public function postApprove(Store $store, Purchase $purchase)
+     {
+          try {
+               if($purchase->approved){
+                    return redirect()->route('purchase.index', $store->id)->with('error', 'Purchase already approved.');
+               }
+               $purchase->approved = true;
+               $purchase->update();
+               return redirect()->route('purchase.index', $store->id)->with('success', 'Purchase approved successfully.');
+          } catch (\Exception $e) {
+               Log::error('Purchase post approve', ['data' => $e]);
           }
      }
 }

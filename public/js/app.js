@@ -49032,932 +49032,1108 @@ var map = {
 		0,
 		1,
 		2,
-		33,
-		91
+		3,
+		36
 	],
 	"./Admin/Agency/Create.js": [
 		"./resources/js/Pages/Admin/Agency/Create.js",
 		0,
 		1,
 		2,
-		33,
-		91
+		3,
+		36
 	],
 	"./Admin/Agency/Edit": [
 		"./resources/js/Pages/Admin/Agency/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		92
+		3,
+		37
 	],
 	"./Admin/Agency/Edit.js": [
 		"./resources/js/Pages/Admin/Agency/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		92
+		3,
+		37
 	],
 	"./Admin/Agency/Index": [
 		"./resources/js/Pages/Admin/Agency/Index.js",
 		0,
 		1,
 		2,
-		33,
-		103
+		3,
+		54
 	],
 	"./Admin/Agency/Index.js": [
 		"./resources/js/Pages/Admin/Agency/Index.js",
 		0,
 		1,
 		2,
-		33,
-		103
+		3,
+		54
 	],
 	"./Admin/Category/Create": [
 		"./resources/js/Pages/Admin/Category/Create.js",
 		0,
 		1,
 		2,
-		33,
-		93
+		3,
+		38
 	],
 	"./Admin/Category/Create.js": [
 		"./resources/js/Pages/Admin/Category/Create.js",
 		0,
 		1,
 		2,
-		33,
-		93
+		3,
+		38
 	],
 	"./Admin/Category/Edit": [
 		"./resources/js/Pages/Admin/Category/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		94
+		3,
+		39
 	],
 	"./Admin/Category/Edit.js": [
 		"./resources/js/Pages/Admin/Category/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		94
+		3,
+		39
 	],
 	"./Admin/Category/Index": [
 		"./resources/js/Pages/Admin/Category/Index.js",
 		0,
 		1,
 		2,
-		33,
-		104
+		3,
+		55
 	],
 	"./Admin/Category/Index.js": [
 		"./resources/js/Pages/Admin/Category/Index.js",
 		0,
 		1,
 		2,
-		33,
-		104
+		3,
+		55
 	],
 	"./Admin/Category/Sub/Create": [
 		"./resources/js/Pages/Admin/Category/Sub/Create.js",
 		0,
 		1,
 		2,
-		33,
-		95
+		3,
+		40
 	],
 	"./Admin/Category/Sub/Create.js": [
 		"./resources/js/Pages/Admin/Category/Sub/Create.js",
 		0,
 		1,
 		2,
-		33,
-		95
+		3,
+		40
 	],
 	"./Admin/Category/Sub/Edit": [
 		"./resources/js/Pages/Admin/Category/Sub/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		96
+		3,
+		41
 	],
 	"./Admin/Category/Sub/Edit.js": [
 		"./resources/js/Pages/Admin/Category/Sub/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		96
+		3,
+		41
 	],
 	"./Admin/Category/Sub/Index": [
 		"./resources/js/Pages/Admin/Category/Sub/Index.js",
 		0,
 		1,
 		2,
-		33,
-		105
+		3,
+		56
 	],
 	"./Admin/Category/Sub/Index.js": [
 		"./resources/js/Pages/Admin/Category/Sub/Index.js",
 		0,
 		1,
 		2,
-		33,
-		105
+		3,
+		56
 	],
 	"./Admin/Presentation/Create": [
 		"./resources/js/Pages/Admin/Presentation/Create.js",
 		0,
 		1,
 		2,
-		33,
-		97
+		3,
+		42
 	],
 	"./Admin/Presentation/Create.js": [
 		"./resources/js/Pages/Admin/Presentation/Create.js",
 		0,
 		1,
 		2,
-		33,
-		97
+		3,
+		42
 	],
 	"./Admin/Presentation/Edit": [
 		"./resources/js/Pages/Admin/Presentation/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		98
+		3,
+		43
 	],
 	"./Admin/Presentation/Edit.js": [
 		"./resources/js/Pages/Admin/Presentation/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		98
+		3,
+		43
 	],
 	"./Admin/Presentation/Index": [
 		"./resources/js/Pages/Admin/Presentation/Index.js",
 		0,
 		1,
 		2,
-		33,
-		106
+		3,
+		57
 	],
 	"./Admin/Presentation/Index.js": [
 		"./resources/js/Pages/Admin/Presentation/Index.js",
 		0,
 		1,
 		2,
-		33,
-		106
+		3,
+		57
 	],
 	"./Admin/Product/Config/Create": [
 		"./resources/js/Pages/Admin/Product/Config/Create.js",
 		0,
 		1,
 		2,
-		33,
-		64
+		3,
+		5
 	],
 	"./Admin/Product/Config/Create.js": [
 		"./resources/js/Pages/Admin/Product/Config/Create.js",
 		0,
 		1,
 		2,
-		33,
-		64
+		3,
+		5
 	],
 	"./Admin/Product/Config/Edit": [
 		"./resources/js/Pages/Admin/Product/Config/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		66
+		3,
+		6
 	],
 	"./Admin/Product/Config/Edit.js": [
 		"./resources/js/Pages/Admin/Product/Config/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		66
+		3,
+		6
 	],
 	"./Admin/Product/Config/Index": [
 		"./resources/js/Pages/Admin/Product/Config/Index.js",
 		0,
 		1,
 		2,
-		33,
-		107
+		3,
+		58
 	],
 	"./Admin/Product/Config/Index.js": [
 		"./resources/js/Pages/Admin/Product/Config/Index.js",
 		0,
 		1,
 		2,
-		33,
-		107
+		3,
+		58
 	],
 	"./Admin/Product/Create": [
 		"./resources/js/Pages/Admin/Product/Create.js",
 		0,
 		1,
 		2,
-		33,
-		67
+		3,
+		7
 	],
 	"./Admin/Product/Create.js": [
 		"./resources/js/Pages/Admin/Product/Create.js",
 		0,
 		1,
 		2,
-		33,
-		67
+		3,
+		7
 	],
 	"./Admin/Product/Edit": [
 		"./resources/js/Pages/Admin/Product/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		68
+		3,
+		8
 	],
 	"./Admin/Product/Edit.js": [
 		"./resources/js/Pages/Admin/Product/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		68
+		3,
+		8
 	],
 	"./Admin/Product/Index": [
 		"./resources/js/Pages/Admin/Product/Index.js",
 		0,
 		1,
 		2,
-		33,
-		108
+		3,
+		59
 	],
 	"./Admin/Product/Index.js": [
 		"./resources/js/Pages/Admin/Product/Index.js",
 		0,
 		1,
 		2,
-		33,
-		108
+		3,
+		59
 	],
 	"./Admin/Product/Show": [
 		"./resources/js/Pages/Admin/Product/Show.js",
 		0,
 		1,
 		2,
-		33,
-		69
+		3,
+		9
 	],
 	"./Admin/Product/Show.js": [
 		"./resources/js/Pages/Admin/Product/Show.js",
 		0,
 		1,
 		2,
-		33,
-		69
+		3,
+		9
 	],
 	"./Admin/Security/AssignPermission": [
 		"./resources/js/Pages/Admin/Security/AssignPermission.js",
 		0,
 		1,
 		2,
-		33,
-		81
+		3,
+		27
 	],
 	"./Admin/Security/AssignPermission.js": [
 		"./resources/js/Pages/Admin/Security/AssignPermission.js",
 		0,
 		1,
 		2,
-		33,
-		81
+		3,
+		27
 	],
 	"./Admin/Security/CreatePermission": [
 		"./resources/js/Pages/Admin/Security/CreatePermission.js",
 		0,
 		1,
 		2,
-		33,
-		74
+		3,
+		14
 	],
 	"./Admin/Security/CreatePermission.js": [
 		"./resources/js/Pages/Admin/Security/CreatePermission.js",
 		0,
 		1,
 		2,
-		33,
-		74
+		3,
+		14
 	],
 	"./Admin/Security/CreateRole": [
 		"./resources/js/Pages/Admin/Security/CreateRole.js",
 		0,
 		1,
 		2,
-		33,
-		70
+		3,
+		10
 	],
 	"./Admin/Security/CreateRole.js": [
 		"./resources/js/Pages/Admin/Security/CreateRole.js",
 		0,
 		1,
 		2,
-		33,
-		70
+		3,
+		10
 	],
 	"./Admin/Security/EditPermission": [
 		"./resources/js/Pages/Admin/Security/EditPermission.js",
 		0,
 		1,
 		2,
-		33,
-		82
+		3,
+		28
 	],
 	"./Admin/Security/EditPermission.js": [
 		"./resources/js/Pages/Admin/Security/EditPermission.js",
 		0,
 		1,
 		2,
-		33,
-		82
+		3,
+		28
 	],
 	"./Admin/Security/EditRole": [
 		"./resources/js/Pages/Admin/Security/EditRole.js",
 		0,
 		1,
 		2,
-		33,
-		83
+		3,
+		29
 	],
 	"./Admin/Security/EditRole.js": [
 		"./resources/js/Pages/Admin/Security/EditRole.js",
 		0,
 		1,
 		2,
-		33,
-		83
+		3,
+		29
 	],
 	"./Admin/Security/Index": [
 		"./resources/js/Pages/Admin/Security/Index.js",
 		0,
 		1,
 		2,
-		33,
-		109
+		3,
+		60
 	],
 	"./Admin/Security/Index.js": [
 		"./resources/js/Pages/Admin/Security/Index.js",
 		0,
 		1,
 		2,
-		33,
-		109
+		3,
+		60
 	],
 	"./Admin/Store/Contact/Create": [
 		"./resources/js/Pages/Admin/Store/Contact/Create.js",
 		0,
 		1,
 		2,
-		33,
-		84
+		3,
+		30
 	],
 	"./Admin/Store/Contact/Create.js": [
 		"./resources/js/Pages/Admin/Store/Contact/Create.js",
 		0,
 		1,
 		2,
-		33,
-		84
+		3,
+		30
 	],
 	"./Admin/Store/Contact/Edit": [
 		"./resources/js/Pages/Admin/Store/Contact/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		85
+		3,
+		31
 	],
 	"./Admin/Store/Contact/Edit.js": [
 		"./resources/js/Pages/Admin/Store/Contact/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		85
+		3,
+		31
 	],
 	"./Admin/Store/Contact/Index": [
 		"./resources/js/Pages/Admin/Store/Contact/Index.js",
 		0,
 		1,
 		2,
-		33,
-		110
+		3,
+		61
 	],
 	"./Admin/Store/Contact/Index.js": [
 		"./resources/js/Pages/Admin/Store/Contact/Index.js",
 		0,
 		1,
 		2,
-		33,
-		110
+		3,
+		61
 	],
 	"./Admin/Store/Create": [
 		"./resources/js/Pages/Admin/Store/Create.js",
 		0,
 		1,
 		2,
-		33,
-		71
+		3,
+		11
 	],
 	"./Admin/Store/Create.js": [
 		"./resources/js/Pages/Admin/Store/Create.js",
 		0,
 		1,
 		2,
-		33,
-		71
+		3,
+		11
 	],
 	"./Admin/Store/Edit": [
 		"./resources/js/Pages/Admin/Store/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		72
+		3,
+		12
 	],
 	"./Admin/Store/Edit.js": [
 		"./resources/js/Pages/Admin/Store/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		72
+		3,
+		12
 	],
 	"./Admin/Store/Index": [
 		"./resources/js/Pages/Admin/Store/Index.js",
 		0,
 		1,
 		2,
-		33,
-		102
+		3,
+		53
 	],
 	"./Admin/Store/Index.js": [
 		"./resources/js/Pages/Admin/Store/Index.js",
 		0,
 		1,
 		2,
-		33,
-		102
+		3,
+		53
+	],
+	"./Admin/Store/Inventory/Approve": [
+		"./resources/js/Pages/Admin/Store/Inventory/Approve.js",
+		0,
+		1,
+		2,
+		3,
+		72
+	],
+	"./Admin/Store/Inventory/Approve.js": [
+		"./resources/js/Pages/Admin/Store/Inventory/Approve.js",
+		0,
+		1,
+		2,
+		3,
+		72
+	],
+	"./Admin/Store/Inventory/Create": [
+		"./resources/js/Pages/Admin/Store/Inventory/Create.js",
+		0,
+		1,
+		2,
+		3,
+		74
+	],
+	"./Admin/Store/Inventory/Create.js": [
+		"./resources/js/Pages/Admin/Store/Inventory/Create.js",
+		0,
+		1,
+		2,
+		3,
+		74
+	],
+	"./Admin/Store/Inventory/Edit": [
+		"./resources/js/Pages/Admin/Store/Inventory/Edit.js",
+		0,
+		1,
+		2,
+		3,
+		75
+	],
+	"./Admin/Store/Inventory/Edit.js": [
+		"./resources/js/Pages/Admin/Store/Inventory/Edit.js",
+		0,
+		1,
+		2,
+		3,
+		75
+	],
+	"./Admin/Store/Inventory/Index": [
+		"./resources/js/Pages/Admin/Store/Inventory/Index.js",
+		0,
+		1,
+		2,
+		3,
+		76
+	],
+	"./Admin/Store/Inventory/Index.js": [
+		"./resources/js/Pages/Admin/Store/Inventory/Index.js",
+		0,
+		1,
+		2,
+		3,
+		76
+	],
+	"./Admin/Store/Inventory/Show": [
+		"./resources/js/Pages/Admin/Store/Inventory/Show.js",
+		0,
+		1,
+		2,
+		3,
+		73
+	],
+	"./Admin/Store/Inventory/Show.js": [
+		"./resources/js/Pages/Admin/Store/Inventory/Show.js",
+		0,
+		1,
+		2,
+		3,
+		73
 	],
 	"./Admin/Store/Purchase/Approve": [
 		"./resources/js/Pages/Admin/Store/Purchase/Approve.js",
 		0,
 		1,
 		2,
-		33,
-		75
+		3,
+		15
 	],
 	"./Admin/Store/Purchase/Approve.js": [
 		"./resources/js/Pages/Admin/Store/Purchase/Approve.js",
 		0,
 		1,
 		2,
-		33,
-		75
+		3,
+		15
 	],
 	"./Admin/Store/Purchase/Create": [
 		"./resources/js/Pages/Admin/Store/Purchase/Create.js",
 		0,
 		1,
 		2,
-		33,
-		99
+		3,
+		44
 	],
 	"./Admin/Store/Purchase/Create.js": [
 		"./resources/js/Pages/Admin/Store/Purchase/Create.js",
 		0,
 		1,
 		2,
-		33,
-		99
+		3,
+		44
 	],
 	"./Admin/Store/Purchase/Edit": [
 		"./resources/js/Pages/Admin/Store/Purchase/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		86
+		3,
+		45
 	],
 	"./Admin/Store/Purchase/Edit.js": [
 		"./resources/js/Pages/Admin/Store/Purchase/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		86
+		3,
+		45
 	],
 	"./Admin/Store/Purchase/Index": [
 		"./resources/js/Pages/Admin/Store/Purchase/Index.js",
 		0,
 		1,
 		2,
-		33,
-		111
+		3,
+		62
 	],
 	"./Admin/Store/Purchase/Index.js": [
 		"./resources/js/Pages/Admin/Store/Purchase/Index.js",
 		0,
 		1,
 		2,
-		33,
-		111
+		3,
+		62
 	],
 	"./Admin/Store/Purchase/Show": [
 		"./resources/js/Pages/Admin/Store/Purchase/Show.js",
 		0,
 		1,
 		2,
-		33,
-		76
+		3,
+		16
 	],
 	"./Admin/Store/Purchase/Show.js": [
 		"./resources/js/Pages/Admin/Store/Purchase/Show.js",
 		0,
 		1,
 		2,
-		33,
-		76
+		3,
+		16
 	],
 	"./Admin/Store/PurchaseOrder/Approve": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Approve.js",
 		0,
 		1,
 		2,
-		33,
-		77
+		3,
+		17
 	],
 	"./Admin/Store/PurchaseOrder/Approve.js": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Approve.js",
 		0,
 		1,
 		2,
-		33,
-		77
+		3,
+		17
 	],
 	"./Admin/Store/PurchaseOrder/Create": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Create.js",
 		0,
 		1,
 		2,
-		33,
-		87
+		3,
+		32
 	],
 	"./Admin/Store/PurchaseOrder/Create.js": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Create.js",
 		0,
 		1,
 		2,
-		33,
-		87
+		3,
+		32
 	],
 	"./Admin/Store/PurchaseOrder/Edit": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		88
+		3,
+		33
 	],
 	"./Admin/Store/PurchaseOrder/Edit.js": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		88
+		3,
+		33
 	],
 	"./Admin/Store/PurchaseOrder/Index": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Index.js",
 		0,
 		1,
 		2,
-		33,
-		112
+		3,
+		63
 	],
 	"./Admin/Store/PurchaseOrder/Index.js": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Index.js",
 		0,
 		1,
 		2,
-		33,
-		112
+		3,
+		63
 	],
 	"./Admin/Store/PurchaseOrder/Show": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Show.js",
 		0,
 		1,
 		2,
-		33,
-		78
+		3,
+		18
 	],
 	"./Admin/Store/PurchaseOrder/Show.js": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Show.js",
 		0,
 		1,
 		2,
-		33,
-		78
+		3,
+		18
 	],
 	"./Admin/Store/Show": [
 		"./resources/js/Pages/Admin/Store/Show.js",
 		0,
 		1,
 		2,
-		33,
-		73
+		3,
+		13
 	],
 	"./Admin/Store/Show.js": [
 		"./resources/js/Pages/Admin/Store/Show.js",
 		0,
 		1,
 		2,
-		33,
-		73
+		3,
+		13
+	],
+	"./Admin/Store/Stock/Approve": [
+		"./resources/js/Pages/Admin/Store/Stock/Approve.js",
+		0,
+		1,
+		2,
+		3,
+		19
+	],
+	"./Admin/Store/Stock/Approve.js": [
+		"./resources/js/Pages/Admin/Store/Stock/Approve.js",
+		0,
+		1,
+		2,
+		3,
+		19
+	],
+	"./Admin/Store/Stock/Create": [
+		"./resources/js/Pages/Admin/Store/Stock/Create.js",
+		0,
+		1,
+		2,
+		3,
+		46
+	],
+	"./Admin/Store/Stock/Create.js": [
+		"./resources/js/Pages/Admin/Store/Stock/Create.js",
+		0,
+		1,
+		2,
+		3,
+		46
+	],
+	"./Admin/Store/Stock/Edit": [
+		"./resources/js/Pages/Admin/Store/Stock/Edit.js",
+		0,
+		1,
+		2,
+		3,
+		47
+	],
+	"./Admin/Store/Stock/Edit.js": [
+		"./resources/js/Pages/Admin/Store/Stock/Edit.js",
+		0,
+		1,
+		2,
+		3,
+		47
+	],
+	"./Admin/Store/Stock/Index": [
+		"./resources/js/Pages/Admin/Store/Stock/Index.js",
+		0,
+		1,
+		2,
+		3,
+		64
+	],
+	"./Admin/Store/Stock/Index.js": [
+		"./resources/js/Pages/Admin/Store/Stock/Index.js",
+		0,
+		1,
+		2,
+		3,
+		64
+	],
+	"./Admin/Store/Stock/Item": [
+		"./resources/js/Pages/Admin/Store/Stock/Item.js",
+		0,
+		1,
+		2,
+		3,
+		20
+	],
+	"./Admin/Store/Stock/Item.js": [
+		"./resources/js/Pages/Admin/Store/Stock/Item.js",
+		0,
+		1,
+		2,
+		3,
+		20
+	],
+	"./Admin/Store/Stock/Show": [
+		"./resources/js/Pages/Admin/Store/Stock/Show.js",
+		0,
+		1,
+		2,
+		3,
+		21
+	],
+	"./Admin/Store/Stock/Show.js": [
+		"./resources/js/Pages/Admin/Store/Stock/Show.js",
+		0,
+		1,
+		2,
+		3,
+		21
 	],
 	"./Admin/Supplier/Create": [
 		"./resources/js/Pages/Admin/Supplier/Create.js",
 		0,
 		1,
 		2,
-		33,
-		100
+		3,
+		48
 	],
 	"./Admin/Supplier/Create.js": [
 		"./resources/js/Pages/Admin/Supplier/Create.js",
 		0,
 		1,
 		2,
-		33,
-		100
+		3,
+		48
 	],
 	"./Admin/Supplier/Edit": [
 		"./resources/js/Pages/Admin/Supplier/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		101
+		3,
+		49
 	],
 	"./Admin/Supplier/Edit.js": [
 		"./resources/js/Pages/Admin/Supplier/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		101
+		3,
+		49
 	],
 	"./Admin/Supplier/Index": [
 		"./resources/js/Pages/Admin/Supplier/Index.js",
 		0,
 		1,
 		2,
-		33,
-		113
+		3,
+		65
 	],
 	"./Admin/Supplier/Index.js": [
 		"./resources/js/Pages/Admin/Supplier/Index.js",
 		0,
 		1,
 		2,
-		33,
-		113
+		3,
+		65
 	],
 	"./Admin/User/ChangePassword": [
 		"./resources/js/Pages/Admin/User/ChangePassword.js",
 		0,
 		1,
 		2,
-		33,
-		89
+		3,
+		34
 	],
 	"./Admin/User/ChangePassword.js": [
 		"./resources/js/Pages/Admin/User/ChangePassword.js",
 		0,
 		1,
 		2,
-		33,
-		89
+		3,
+		34
 	],
 	"./Admin/User/Create": [
 		"./resources/js/Pages/Admin/User/Create.js",
 		0,
 		1,
 		2,
-		33,
-		79
+		3,
+		22
 	],
 	"./Admin/User/Create.js": [
 		"./resources/js/Pages/Admin/User/Create.js",
 		0,
 		1,
 		2,
-		33,
-		79
+		3,
+		22
 	],
 	"./Admin/User/Edit": [
 		"./resources/js/Pages/Admin/User/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		80
+		3,
+		23
 	],
 	"./Admin/User/Edit.js": [
 		"./resources/js/Pages/Admin/User/Edit.js",
 		0,
 		1,
 		2,
-		33,
-		80
+		3,
+		23
 	],
 	"./Admin/User/Index": [
 		"./resources/js/Pages/Admin/User/Index.js",
 		0,
 		1,
 		2,
-		33,
-		114
+		3,
+		66
 	],
 	"./Admin/User/Index.js": [
 		"./resources/js/Pages/Admin/User/Index.js",
 		0,
 		1,
 		2,
-		33,
-		114
+		3,
+		66
 	],
 	"./Admin/User/Role": [
 		"./resources/js/Pages/Admin/User/Role.js",
 		0,
 		1,
 		2,
-		33,
-		90
+		3,
+		35
 	],
 	"./Admin/User/Role.js": [
 		"./resources/js/Pages/Admin/User/Role.js",
 		0,
 		1,
 		2,
-		33,
-		90
+		3,
+		35
 	],
 	"./Auth/ForgotPassword": [
 		"./resources/js/Pages/Auth/ForgotPassword.js",
 		0,
-		20
+		24
 	],
 	"./Auth/ForgotPassword.js": [
 		"./resources/js/Pages/Auth/ForgotPassword.js",
 		0,
-		20
+		24
 	],
 	"./Auth/Login": [
 		"./resources/js/Pages/Auth/Login.js",
 		0,
-		44
+		50
 	],
 	"./Auth/Login.js": [
 		"./resources/js/Pages/Auth/Login.js",
 		0,
-		44
+		50
 	],
 	"./Auth/Register": [
 		"./resources/js/Pages/Auth/Register.js",
 		0,
-		45
+		51
 	],
 	"./Auth/Register.js": [
 		"./resources/js/Pages/Auth/Register.js",
 		0,
-		45
+		51
 	],
 	"./Auth/ResetPassword": [
 		"./resources/js/Pages/Auth/ResetPassword.js",
 		0,
-		21
+		25
 	],
 	"./Auth/ResetPassword.js": [
 		"./resources/js/Pages/Auth/ResetPassword.js",
 		0,
-		21
+		25
 	],
 	"./Auth/VerifyEmail": [
 		"./resources/js/Pages/Auth/VerifyEmail.js",
 		0,
-		46
+		52
 	],
 	"./Auth/VerifyEmail.js": [
 		"./resources/js/Pages/Auth/VerifyEmail.js",
 		0,
-		46
+		52
 	],
 	"./Components/PasswordEditCard": [
 		"./resources/js/Pages/Components/PasswordEditCard.js",
 		0,
 		1,
-		22
+		26
 	],
 	"./Components/PasswordEditCard.js": [
 		"./resources/js/Pages/Components/PasswordEditCard.js",
 		0,
 		1,
-		22
+		26
 	],
 	"./Components/ProfileEditCard": [
 		"./resources/js/Pages/Components/ProfileEditCard.js",
 		0,
 		1,
-		3,
-		63
+		4,
+		71
 	],
 	"./Components/ProfileEditCard.js": [
 		"./resources/js/Pages/Components/ProfileEditCard.js",
 		0,
 		1,
-		3,
-		63
+		4,
+		71
 	],
 	"./Components/StoreFront": [
 		"./resources/js/Pages/Components/StoreFront.js",
 		1,
 		2,
-		116
+		68
 	],
 	"./Components/StoreFront.js": [
 		"./resources/js/Pages/Components/StoreFront.js",
 		1,
 		2,
-		116
+		68
 	],
 	"./Dashboard/Home": [
 		"./resources/js/Pages/Dashboard/Home.js",
 		0,
 		1,
 		2,
-		33,
-		117
+		3,
+		69
 	],
 	"./Dashboard/Home.js": [
 		"./resources/js/Pages/Dashboard/Home.js",
 		0,
 		1,
 		2,
-		33,
-		117
+		3,
+		69
 	],
 	"./Dashboard/User/Profile": [
 		"./resources/js/Pages/Dashboard/User/Profile.js",
 		0,
 		1,
 		2,
-		33,
 		3,
-		115
+		4,
+		67
 	],
 	"./Dashboard/User/Profile.js": [
 		"./resources/js/Pages/Dashboard/User/Profile.js",
 		0,
 		1,
 		2,
-		33,
 		3,
-		115
+		4,
+		67
 	],
 	"./Welcome": [
 		"./resources/js/Pages/Welcome.js",
 		0,
-		62
+		70
 	],
 	"./Welcome.js": [
 		"./resources/js/Pages/Welcome.js",
 		0,
-		62
+		70
 	]
 };
 function webpackAsyncContext(req) {

@@ -356,7 +356,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************!*\
   !*** ./resources/js/utils.js ***!
   \*******************************/
-/*! exports provided: filesize, toFormData, createSlug, isPar, can, dateTimeFormat */
+/*! exports provided: filesize, toFormData, createSlug, isPar, can, dateTimeFormat, dateFormat */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -367,6 +367,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isPar", function() { return isPar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "can", function() { return can; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dateTimeFormat", function() { return dateTimeFormat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dateFormat", function() { return dateFormat; });
 /* harmony import */ var date_fns_format__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns/format */ "./node_modules/date-fns/esm/format/index.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -470,6 +471,9 @@ function can(user, permission) {
 }
 function dateTimeFormat(date) {
   return Object(date_fns_format__WEBPACK_IMPORTED_MODULE_0__["default"])(new Date(date), 'dd MMM yyyy, hh:ii aa');
+}
+function dateFormat(date) {
+  return Object(date_fns_format__WEBPACK_IMPORTED_MODULE_0__["default"])(new Date(date), 'dd MMM yyyy');
 }
 
 /***/ })

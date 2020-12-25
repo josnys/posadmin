@@ -147,7 +147,7 @@ const Create = () => {
                                                   })}
                                              </select>
                                         </p>
-                                        <p>Suppl. Rcpt No : <input name="receipt" className={`float-right bg-gray-300 ${errors.receipt?'border border-red-500':''} px-1 border-b font-medium text-gray-700 focus:outline-none`} type="text" value={values.receipt} onChange={handleChange}/></p>
+                                        <p>Suppl. Rcpt No : <input name="receipt" className={`float-right text-right bg-gray-300 ${errors.receipt?'border border-red-500':''} px-1 border-b font-medium text-gray-700 focus:outline-none`} type="text" value={values.receipt} onChange={handleChange}/></p>
                                    </div>
                                    <div className="p-2 bg-gray-100 text-sm text-gray-600">
                                         <h2 className="text-md text-gray-800 font-semibold border-b pb-1 mb-2">Reciept Summary</h2>
@@ -158,8 +158,8 @@ const Create = () => {
                                    </div>
                               </div>
                               <div className="flex w-full mt-5 border-t pt-5">
-                                   <table className="table-auto col-span-12">
-                                        <thead className="bg-gray-400 text-sm">
+                                   <table className="table-auto col-span-12 text-sm">
+                                        <thead className="bg-gray-400">
                                              <tr>
                                                   <th className="px-4 py-2"></th>
                                                   <th className="px-4 py-2">Product</th>
