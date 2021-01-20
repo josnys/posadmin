@@ -37,15 +37,16 @@ class RoleController extends Controller
                $role->display_name = $request->get('display');
                $role->description = $request->get('description');
                $role->save();
-               return response()->json([
-                    'message' => 'Role created successfully.',
-                    'data' => [
-                         'id' => $role->id,
-                         'name' => $role->name,
-                         'display' => $role->display_name,
-                         'description' => $role->description
-                    ]
-               ], 201);
+               return redirect()->route('role.create')->with('success', 'Role created.');
+               // return response()->json([
+               //      'message' => 'Role created successfully.',
+               //      'data' => [
+               //           'id' => $role->id,
+               //           'name' => $role->name,
+               //           'display' => $role->display_name,
+               //           'description' => $role->description
+               //      ]
+               // ], 201);
           } catch (\Exception $e) {
                Log::error('Role create', ['data' => $e]);
           }

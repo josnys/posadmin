@@ -49033,7 +49033,7 @@ var map = {
 		1,
 		2,
 		3,
-		36
+		19
 	],
 	"./Admin/Agency/Create.js": [
 		"./resources/js/Pages/Admin/Agency/Create.js",
@@ -49041,7 +49041,7 @@ var map = {
 		1,
 		2,
 		3,
-		36
+		19
 	],
 	"./Admin/Agency/Edit": [
 		"./resources/js/Pages/Admin/Agency/Edit.js",
@@ -49049,7 +49049,7 @@ var map = {
 		1,
 		2,
 		3,
-		37
+		20
 	],
 	"./Admin/Agency/Edit.js": [
 		"./resources/js/Pages/Admin/Agency/Edit.js",
@@ -49057,7 +49057,7 @@ var map = {
 		1,
 		2,
 		3,
-		37
+		20
 	],
 	"./Admin/Agency/Index": [
 		"./resources/js/Pages/Admin/Agency/Index.js",
@@ -49065,7 +49065,7 @@ var map = {
 		1,
 		2,
 		3,
-		54
+		39
 	],
 	"./Admin/Agency/Index.js": [
 		"./resources/js/Pages/Admin/Agency/Index.js",
@@ -49073,7 +49073,7 @@ var map = {
 		1,
 		2,
 		3,
-		54
+		39
 	],
 	"./Admin/Category/Create": [
 		"./resources/js/Pages/Admin/Category/Create.js",
@@ -49081,7 +49081,7 @@ var map = {
 		1,
 		2,
 		3,
-		38
+		21
 	],
 	"./Admin/Category/Create.js": [
 		"./resources/js/Pages/Admin/Category/Create.js",
@@ -49089,7 +49089,7 @@ var map = {
 		1,
 		2,
 		3,
-		38
+		21
 	],
 	"./Admin/Category/Edit": [
 		"./resources/js/Pages/Admin/Category/Edit.js",
@@ -49097,7 +49097,7 @@ var map = {
 		1,
 		2,
 		3,
-		39
+		22
 	],
 	"./Admin/Category/Edit.js": [
 		"./resources/js/Pages/Admin/Category/Edit.js",
@@ -49105,7 +49105,7 @@ var map = {
 		1,
 		2,
 		3,
-		39
+		22
 	],
 	"./Admin/Category/Index": [
 		"./resources/js/Pages/Admin/Category/Index.js",
@@ -49113,7 +49113,7 @@ var map = {
 		1,
 		2,
 		3,
-		55
+		40
 	],
 	"./Admin/Category/Index.js": [
 		"./resources/js/Pages/Admin/Category/Index.js",
@@ -49121,7 +49121,7 @@ var map = {
 		1,
 		2,
 		3,
-		55
+		40
 	],
 	"./Admin/Category/Sub/Create": [
 		"./resources/js/Pages/Admin/Category/Sub/Create.js",
@@ -49129,7 +49129,7 @@ var map = {
 		1,
 		2,
 		3,
-		40
+		23
 	],
 	"./Admin/Category/Sub/Create.js": [
 		"./resources/js/Pages/Admin/Category/Sub/Create.js",
@@ -49137,7 +49137,7 @@ var map = {
 		1,
 		2,
 		3,
-		40
+		23
 	],
 	"./Admin/Category/Sub/Edit": [
 		"./resources/js/Pages/Admin/Category/Sub/Edit.js",
@@ -49145,7 +49145,7 @@ var map = {
 		1,
 		2,
 		3,
-		41
+		24
 	],
 	"./Admin/Category/Sub/Edit.js": [
 		"./resources/js/Pages/Admin/Category/Sub/Edit.js",
@@ -49153,7 +49153,7 @@ var map = {
 		1,
 		2,
 		3,
-		41
+		24
 	],
 	"./Admin/Category/Sub/Index": [
 		"./resources/js/Pages/Admin/Category/Sub/Index.js",
@@ -49161,7 +49161,7 @@ var map = {
 		1,
 		2,
 		3,
-		56
+		41
 	],
 	"./Admin/Category/Sub/Index.js": [
 		"./resources/js/Pages/Admin/Category/Sub/Index.js",
@@ -49169,7 +49169,187 @@ var map = {
 		1,
 		2,
 		3,
-		56
+		41
+	],
+	"./Admin/Currency/Create": [
+		"./resources/js/Pages/Admin/Currency/Create.js",
+		0,
+		1,
+		2,
+		3,
+		6
+	],
+	"./Admin/Currency/Create.js": [
+		"./resources/js/Pages/Admin/Currency/Create.js",
+		0,
+		1,
+		2,
+		3,
+		6
+	],
+	"./Admin/Currency/Edit": [
+		"./resources/js/Pages/Admin/Currency/Edit.js",
+		0,
+		1,
+		2,
+		3,
+		7
+	],
+	"./Admin/Currency/Edit.js": [
+		"./resources/js/Pages/Admin/Currency/Edit.js",
+		0,
+		1,
+		2,
+		3,
+		7
+	],
+	"./Admin/Currency/Index": [
+		"./resources/js/Pages/Admin/Currency/Index.js",
+		0,
+		1,
+		2,
+		3,
+		42
+	],
+	"./Admin/Currency/Index.js": [
+		"./resources/js/Pages/Admin/Currency/Index.js",
+		0,
+		1,
+		2,
+		3,
+		42
+	],
+	"./Admin/Currency/Store": [
+		"./resources/js/Pages/Admin/Currency/Store.js",
+		0,
+		1,
+		2,
+		3,
+		108,
+		80
+	],
+	"./Admin/Currency/Store.js": [
+		"./resources/js/Pages/Admin/Currency/Store.js",
+		0,
+		1,
+		2,
+		3,
+		108,
+		80
+	],
+	"./Admin/Customer/Create": [
+		"./resources/js/Pages/Admin/Customer/Create.js",
+		0,
+		1,
+		2,
+		3,
+		8
+	],
+	"./Admin/Customer/Create.js": [
+		"./resources/js/Pages/Admin/Customer/Create.js",
+		0,
+		1,
+		2,
+		3,
+		8
+	],
+	"./Admin/Customer/Edit": [
+		"./resources/js/Pages/Admin/Customer/Edit.js",
+		0,
+		1,
+		2,
+		3,
+		9
+	],
+	"./Admin/Customer/Edit.js": [
+		"./resources/js/Pages/Admin/Customer/Edit.js",
+		0,
+		1,
+		2,
+		3,
+		9
+	],
+	"./Admin/Customer/Index": [
+		"./resources/js/Pages/Admin/Customer/Index.js",
+		0,
+		1,
+		2,
+		3,
+		43
+	],
+	"./Admin/Customer/Index.js": [
+		"./resources/js/Pages/Admin/Customer/Index.js",
+		0,
+		1,
+		2,
+		3,
+		43
+	],
+	"./Admin/Customer/Store": [
+		"./resources/js/Pages/Admin/Customer/Store.js",
+		0,
+		1,
+		2,
+		3,
+		108,
+		81
+	],
+	"./Admin/Customer/Store.js": [
+		"./resources/js/Pages/Admin/Customer/Store.js",
+		0,
+		1,
+		2,
+		3,
+		108,
+		81
+	],
+	"./Admin/PayMethod/Create": [
+		"./resources/js/Pages/Admin/PayMethod/Create.js",
+		0,
+		1,
+		2,
+		3,
+		10
+	],
+	"./Admin/PayMethod/Create.js": [
+		"./resources/js/Pages/Admin/PayMethod/Create.js",
+		0,
+		1,
+		2,
+		3,
+		10
+	],
+	"./Admin/PayMethod/Edit": [
+		"./resources/js/Pages/Admin/PayMethod/Edit.js",
+		0,
+		1,
+		2,
+		3,
+		11
+	],
+	"./Admin/PayMethod/Edit.js": [
+		"./resources/js/Pages/Admin/PayMethod/Edit.js",
+		0,
+		1,
+		2,
+		3,
+		11
+	],
+	"./Admin/PayMethod/Index": [
+		"./resources/js/Pages/Admin/PayMethod/Index.js",
+		0,
+		1,
+		2,
+		3,
+		44
+	],
+	"./Admin/PayMethod/Index.js": [
+		"./resources/js/Pages/Admin/PayMethod/Index.js",
+		0,
+		1,
+		2,
+		3,
+		44
 	],
 	"./Admin/Presentation/Create": [
 		"./resources/js/Pages/Admin/Presentation/Create.js",
@@ -49177,7 +49357,7 @@ var map = {
 		1,
 		2,
 		3,
-		42
+		25
 	],
 	"./Admin/Presentation/Create.js": [
 		"./resources/js/Pages/Admin/Presentation/Create.js",
@@ -49185,7 +49365,7 @@ var map = {
 		1,
 		2,
 		3,
-		42
+		25
 	],
 	"./Admin/Presentation/Edit": [
 		"./resources/js/Pages/Admin/Presentation/Edit.js",
@@ -49193,7 +49373,7 @@ var map = {
 		1,
 		2,
 		3,
-		43
+		26
 	],
 	"./Admin/Presentation/Edit.js": [
 		"./resources/js/Pages/Admin/Presentation/Edit.js",
@@ -49201,7 +49381,7 @@ var map = {
 		1,
 		2,
 		3,
-		43
+		26
 	],
 	"./Admin/Presentation/Index": [
 		"./resources/js/Pages/Admin/Presentation/Index.js",
@@ -49209,7 +49389,7 @@ var map = {
 		1,
 		2,
 		3,
-		57
+		45
 	],
 	"./Admin/Presentation/Index.js": [
 		"./resources/js/Pages/Admin/Presentation/Index.js",
@@ -49217,7 +49397,7 @@ var map = {
 		1,
 		2,
 		3,
-		57
+		45
 	],
 	"./Admin/Product/Config/Create": [
 		"./resources/js/Pages/Admin/Product/Config/Create.js",
@@ -49225,7 +49405,8 @@ var map = {
 		1,
 		2,
 		3,
-		5
+		108,
+		46
 	],
 	"./Admin/Product/Config/Create.js": [
 		"./resources/js/Pages/Admin/Product/Config/Create.js",
@@ -49233,7 +49414,8 @@ var map = {
 		1,
 		2,
 		3,
-		5
+		108,
+		46
 	],
 	"./Admin/Product/Config/Edit": [
 		"./resources/js/Pages/Admin/Product/Config/Edit.js",
@@ -49241,7 +49423,8 @@ var map = {
 		1,
 		2,
 		3,
-		6
+		108,
+		47
 	],
 	"./Admin/Product/Config/Edit.js": [
 		"./resources/js/Pages/Admin/Product/Config/Edit.js",
@@ -49249,7 +49432,8 @@ var map = {
 		1,
 		2,
 		3,
-		6
+		108,
+		47
 	],
 	"./Admin/Product/Config/Index": [
 		"./resources/js/Pages/Admin/Product/Config/Index.js",
@@ -49257,7 +49441,7 @@ var map = {
 		1,
 		2,
 		3,
-		58
+		48
 	],
 	"./Admin/Product/Config/Index.js": [
 		"./resources/js/Pages/Admin/Product/Config/Index.js",
@@ -49265,7 +49449,7 @@ var map = {
 		1,
 		2,
 		3,
-		58
+		48
 	],
 	"./Admin/Product/Create": [
 		"./resources/js/Pages/Admin/Product/Create.js",
@@ -49273,7 +49457,8 @@ var map = {
 		1,
 		2,
 		3,
-		7
+		108,
+		49
 	],
 	"./Admin/Product/Create.js": [
 		"./resources/js/Pages/Admin/Product/Create.js",
@@ -49281,7 +49466,8 @@ var map = {
 		1,
 		2,
 		3,
-		7
+		108,
+		49
 	],
 	"./Admin/Product/Edit": [
 		"./resources/js/Pages/Admin/Product/Edit.js",
@@ -49289,7 +49475,8 @@ var map = {
 		1,
 		2,
 		3,
-		8
+		108,
+		50
 	],
 	"./Admin/Product/Edit.js": [
 		"./resources/js/Pages/Admin/Product/Edit.js",
@@ -49297,7 +49484,8 @@ var map = {
 		1,
 		2,
 		3,
-		8
+		108,
+		50
 	],
 	"./Admin/Product/Index": [
 		"./resources/js/Pages/Admin/Product/Index.js",
@@ -49305,7 +49493,7 @@ var map = {
 		1,
 		2,
 		3,
-		59
+		51
 	],
 	"./Admin/Product/Index.js": [
 		"./resources/js/Pages/Admin/Product/Index.js",
@@ -49313,7 +49501,7 @@ var map = {
 		1,
 		2,
 		3,
-		59
+		51
 	],
 	"./Admin/Product/Show": [
 		"./resources/js/Pages/Admin/Product/Show.js",
@@ -49321,7 +49509,8 @@ var map = {
 		1,
 		2,
 		3,
-		9
+		108,
+		52
 	],
 	"./Admin/Product/Show.js": [
 		"./resources/js/Pages/Admin/Product/Show.js",
@@ -49329,7 +49518,8 @@ var map = {
 		1,
 		2,
 		3,
-		9
+		108,
+		52
 	],
 	"./Admin/Security/AssignPermission": [
 		"./resources/js/Pages/Admin/Security/AssignPermission.js",
@@ -49337,7 +49527,8 @@ var map = {
 		1,
 		2,
 		3,
-		27
+		108,
+		82
 	],
 	"./Admin/Security/AssignPermission.js": [
 		"./resources/js/Pages/Admin/Security/AssignPermission.js",
@@ -49345,7 +49536,8 @@ var map = {
 		1,
 		2,
 		3,
-		27
+		108,
+		82
 	],
 	"./Admin/Security/CreatePermission": [
 		"./resources/js/Pages/Admin/Security/CreatePermission.js",
@@ -49353,7 +49545,8 @@ var map = {
 		1,
 		2,
 		3,
-		14
+		108,
+		68
 	],
 	"./Admin/Security/CreatePermission.js": [
 		"./resources/js/Pages/Admin/Security/CreatePermission.js",
@@ -49361,7 +49554,8 @@ var map = {
 		1,
 		2,
 		3,
-		14
+		108,
+		68
 	],
 	"./Admin/Security/CreateRole": [
 		"./resources/js/Pages/Admin/Security/CreateRole.js",
@@ -49369,7 +49563,8 @@ var map = {
 		1,
 		2,
 		3,
-		10
+		108,
+		53
 	],
 	"./Admin/Security/CreateRole.js": [
 		"./resources/js/Pages/Admin/Security/CreateRole.js",
@@ -49377,7 +49572,8 @@ var map = {
 		1,
 		2,
 		3,
-		10
+		108,
+		53
 	],
 	"./Admin/Security/EditPermission": [
 		"./resources/js/Pages/Admin/Security/EditPermission.js",
@@ -49385,7 +49581,8 @@ var map = {
 		1,
 		2,
 		3,
-		28
+		108,
+		83
 	],
 	"./Admin/Security/EditPermission.js": [
 		"./resources/js/Pages/Admin/Security/EditPermission.js",
@@ -49393,7 +49590,8 @@ var map = {
 		1,
 		2,
 		3,
-		28
+		108,
+		83
 	],
 	"./Admin/Security/EditRole": [
 		"./resources/js/Pages/Admin/Security/EditRole.js",
@@ -49401,7 +49599,8 @@ var map = {
 		1,
 		2,
 		3,
-		29
+		108,
+		84
 	],
 	"./Admin/Security/EditRole.js": [
 		"./resources/js/Pages/Admin/Security/EditRole.js",
@@ -49409,7 +49608,8 @@ var map = {
 		1,
 		2,
 		3,
-		29
+		108,
+		84
 	],
 	"./Admin/Security/Index": [
 		"./resources/js/Pages/Admin/Security/Index.js",
@@ -49417,7 +49617,7 @@ var map = {
 		1,
 		2,
 		3,
-		60
+		54
 	],
 	"./Admin/Security/Index.js": [
 		"./resources/js/Pages/Admin/Security/Index.js",
@@ -49425,7 +49625,7 @@ var map = {
 		1,
 		2,
 		3,
-		60
+		54
 	],
 	"./Admin/Store/Contact/Create": [
 		"./resources/js/Pages/Admin/Store/Contact/Create.js",
@@ -49433,7 +49633,7 @@ var map = {
 		1,
 		2,
 		3,
-		30
+		14
 	],
 	"./Admin/Store/Contact/Create.js": [
 		"./resources/js/Pages/Admin/Store/Contact/Create.js",
@@ -49441,7 +49641,7 @@ var map = {
 		1,
 		2,
 		3,
-		30
+		14
 	],
 	"./Admin/Store/Contact/Edit": [
 		"./resources/js/Pages/Admin/Store/Contact/Edit.js",
@@ -49449,7 +49649,7 @@ var map = {
 		1,
 		2,
 		3,
-		31
+		15
 	],
 	"./Admin/Store/Contact/Edit.js": [
 		"./resources/js/Pages/Admin/Store/Contact/Edit.js",
@@ -49457,7 +49657,7 @@ var map = {
 		1,
 		2,
 		3,
-		31
+		15
 	],
 	"./Admin/Store/Contact/Index": [
 		"./resources/js/Pages/Admin/Store/Contact/Index.js",
@@ -49465,7 +49665,7 @@ var map = {
 		1,
 		2,
 		3,
-		61
+		55
 	],
 	"./Admin/Store/Contact/Index.js": [
 		"./resources/js/Pages/Admin/Store/Contact/Index.js",
@@ -49473,7 +49673,7 @@ var map = {
 		1,
 		2,
 		3,
-		61
+		55
 	],
 	"./Admin/Store/Create": [
 		"./resources/js/Pages/Admin/Store/Create.js",
@@ -49481,7 +49681,8 @@ var map = {
 		1,
 		2,
 		3,
-		11
+		108,
+		56
 	],
 	"./Admin/Store/Create.js": [
 		"./resources/js/Pages/Admin/Store/Create.js",
@@ -49489,7 +49690,8 @@ var map = {
 		1,
 		2,
 		3,
-		11
+		108,
+		56
 	],
 	"./Admin/Store/Edit": [
 		"./resources/js/Pages/Admin/Store/Edit.js",
@@ -49497,7 +49699,8 @@ var map = {
 		1,
 		2,
 		3,
-		12
+		108,
+		57
 	],
 	"./Admin/Store/Edit.js": [
 		"./resources/js/Pages/Admin/Store/Edit.js",
@@ -49505,7 +49708,8 @@ var map = {
 		1,
 		2,
 		3,
-		12
+		108,
+		57
 	],
 	"./Admin/Store/Index": [
 		"./resources/js/Pages/Admin/Store/Index.js",
@@ -49513,7 +49717,7 @@ var map = {
 		1,
 		2,
 		3,
-		53
+		38
 	],
 	"./Admin/Store/Index.js": [
 		"./resources/js/Pages/Admin/Store/Index.js",
@@ -49521,7 +49725,7 @@ var map = {
 		1,
 		2,
 		3,
-		53
+		38
 	],
 	"./Admin/Store/Inventory/Approve": [
 		"./resources/js/Pages/Admin/Store/Inventory/Approve.js",
@@ -49529,7 +49733,8 @@ var map = {
 		1,
 		2,
 		3,
-		72
+		108,
+		69
 	],
 	"./Admin/Store/Inventory/Approve.js": [
 		"./resources/js/Pages/Admin/Store/Inventory/Approve.js",
@@ -49537,7 +49742,8 @@ var map = {
 		1,
 		2,
 		3,
-		72
+		108,
+		69
 	],
 	"./Admin/Store/Inventory/Create": [
 		"./resources/js/Pages/Admin/Store/Inventory/Create.js",
@@ -49545,7 +49751,7 @@ var map = {
 		1,
 		2,
 		3,
-		74
+		27
 	],
 	"./Admin/Store/Inventory/Create.js": [
 		"./resources/js/Pages/Admin/Store/Inventory/Create.js",
@@ -49553,7 +49759,7 @@ var map = {
 		1,
 		2,
 		3,
-		74
+		27
 	],
 	"./Admin/Store/Inventory/Edit": [
 		"./resources/js/Pages/Admin/Store/Inventory/Edit.js",
@@ -49561,7 +49767,7 @@ var map = {
 		1,
 		2,
 		3,
-		75
+		28
 	],
 	"./Admin/Store/Inventory/Edit.js": [
 		"./resources/js/Pages/Admin/Store/Inventory/Edit.js",
@@ -49569,7 +49775,7 @@ var map = {
 		1,
 		2,
 		3,
-		75
+		28
 	],
 	"./Admin/Store/Inventory/Index": [
 		"./resources/js/Pages/Admin/Store/Inventory/Index.js",
@@ -49577,7 +49783,7 @@ var map = {
 		1,
 		2,
 		3,
-		76
+		58
 	],
 	"./Admin/Store/Inventory/Index.js": [
 		"./resources/js/Pages/Admin/Store/Inventory/Index.js",
@@ -49585,7 +49791,7 @@ var map = {
 		1,
 		2,
 		3,
-		76
+		58
 	],
 	"./Admin/Store/Inventory/Show": [
 		"./resources/js/Pages/Admin/Store/Inventory/Show.js",
@@ -49593,7 +49799,8 @@ var map = {
 		1,
 		2,
 		3,
-		73
+		108,
+		70
 	],
 	"./Admin/Store/Inventory/Show.js": [
 		"./resources/js/Pages/Admin/Store/Inventory/Show.js",
@@ -49601,7 +49808,8 @@ var map = {
 		1,
 		2,
 		3,
-		73
+		108,
+		70
 	],
 	"./Admin/Store/Purchase/Approve": [
 		"./resources/js/Pages/Admin/Store/Purchase/Approve.js",
@@ -49609,7 +49817,8 @@ var map = {
 		1,
 		2,
 		3,
-		15
+		108,
+		71
 	],
 	"./Admin/Store/Purchase/Approve.js": [
 		"./resources/js/Pages/Admin/Store/Purchase/Approve.js",
@@ -49617,7 +49826,8 @@ var map = {
 		1,
 		2,
 		3,
-		15
+		108,
+		71
 	],
 	"./Admin/Store/Purchase/Create": [
 		"./resources/js/Pages/Admin/Store/Purchase/Create.js",
@@ -49625,7 +49835,7 @@ var map = {
 		1,
 		2,
 		3,
-		44
+		29
 	],
 	"./Admin/Store/Purchase/Create.js": [
 		"./resources/js/Pages/Admin/Store/Purchase/Create.js",
@@ -49633,7 +49843,7 @@ var map = {
 		1,
 		2,
 		3,
-		44
+		29
 	],
 	"./Admin/Store/Purchase/Edit": [
 		"./resources/js/Pages/Admin/Store/Purchase/Edit.js",
@@ -49641,7 +49851,7 @@ var map = {
 		1,
 		2,
 		3,
-		45
+		30
 	],
 	"./Admin/Store/Purchase/Edit.js": [
 		"./resources/js/Pages/Admin/Store/Purchase/Edit.js",
@@ -49649,7 +49859,7 @@ var map = {
 		1,
 		2,
 		3,
-		45
+		30
 	],
 	"./Admin/Store/Purchase/Index": [
 		"./resources/js/Pages/Admin/Store/Purchase/Index.js",
@@ -49657,7 +49867,7 @@ var map = {
 		1,
 		2,
 		3,
-		62
+		59
 	],
 	"./Admin/Store/Purchase/Index.js": [
 		"./resources/js/Pages/Admin/Store/Purchase/Index.js",
@@ -49665,7 +49875,7 @@ var map = {
 		1,
 		2,
 		3,
-		62
+		59
 	],
 	"./Admin/Store/Purchase/Show": [
 		"./resources/js/Pages/Admin/Store/Purchase/Show.js",
@@ -49673,7 +49883,8 @@ var map = {
 		1,
 		2,
 		3,
-		16
+		108,
+		72
 	],
 	"./Admin/Store/Purchase/Show.js": [
 		"./resources/js/Pages/Admin/Store/Purchase/Show.js",
@@ -49681,7 +49892,8 @@ var map = {
 		1,
 		2,
 		3,
-		16
+		108,
+		72
 	],
 	"./Admin/Store/PurchaseOrder/Approve": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Approve.js",
@@ -49689,7 +49901,8 @@ var map = {
 		1,
 		2,
 		3,
-		17
+		108,
+		73
 	],
 	"./Admin/Store/PurchaseOrder/Approve.js": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Approve.js",
@@ -49697,7 +49910,8 @@ var map = {
 		1,
 		2,
 		3,
-		17
+		108,
+		73
 	],
 	"./Admin/Store/PurchaseOrder/Create": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Create.js",
@@ -49705,7 +49919,7 @@ var map = {
 		1,
 		2,
 		3,
-		32
+		16
 	],
 	"./Admin/Store/PurchaseOrder/Create.js": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Create.js",
@@ -49713,7 +49927,7 @@ var map = {
 		1,
 		2,
 		3,
-		32
+		16
 	],
 	"./Admin/Store/PurchaseOrder/Edit": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Edit.js",
@@ -49721,7 +49935,7 @@ var map = {
 		1,
 		2,
 		3,
-		33
+		17
 	],
 	"./Admin/Store/PurchaseOrder/Edit.js": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Edit.js",
@@ -49729,7 +49943,7 @@ var map = {
 		1,
 		2,
 		3,
-		33
+		17
 	],
 	"./Admin/Store/PurchaseOrder/Index": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Index.js",
@@ -49737,7 +49951,7 @@ var map = {
 		1,
 		2,
 		3,
-		63
+		60
 	],
 	"./Admin/Store/PurchaseOrder/Index.js": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Index.js",
@@ -49745,7 +49959,7 @@ var map = {
 		1,
 		2,
 		3,
-		63
+		60
 	],
 	"./Admin/Store/PurchaseOrder/Show": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Show.js",
@@ -49753,7 +49967,8 @@ var map = {
 		1,
 		2,
 		3,
-		18
+		108,
+		74
 	],
 	"./Admin/Store/PurchaseOrder/Show.js": [
 		"./resources/js/Pages/Admin/Store/PurchaseOrder/Show.js",
@@ -49761,7 +49976,8 @@ var map = {
 		1,
 		2,
 		3,
-		18
+		108,
+		74
 	],
 	"./Admin/Store/Show": [
 		"./resources/js/Pages/Admin/Store/Show.js",
@@ -49769,7 +49985,8 @@ var map = {
 		1,
 		2,
 		3,
-		13
+		108,
+		61
 	],
 	"./Admin/Store/Show.js": [
 		"./resources/js/Pages/Admin/Store/Show.js",
@@ -49777,7 +49994,8 @@ var map = {
 		1,
 		2,
 		3,
-		13
+		108,
+		61
 	],
 	"./Admin/Store/Stock/Approve": [
 		"./resources/js/Pages/Admin/Store/Stock/Approve.js",
@@ -49785,7 +50003,8 @@ var map = {
 		1,
 		2,
 		3,
-		19
+		108,
+		75
 	],
 	"./Admin/Store/Stock/Approve.js": [
 		"./resources/js/Pages/Admin/Store/Stock/Approve.js",
@@ -49793,7 +50012,8 @@ var map = {
 		1,
 		2,
 		3,
-		19
+		108,
+		75
 	],
 	"./Admin/Store/Stock/Create": [
 		"./resources/js/Pages/Admin/Store/Stock/Create.js",
@@ -49801,7 +50021,7 @@ var map = {
 		1,
 		2,
 		3,
-		46
+		31
 	],
 	"./Admin/Store/Stock/Create.js": [
 		"./resources/js/Pages/Admin/Store/Stock/Create.js",
@@ -49809,7 +50029,7 @@ var map = {
 		1,
 		2,
 		3,
-		46
+		31
 	],
 	"./Admin/Store/Stock/Edit": [
 		"./resources/js/Pages/Admin/Store/Stock/Edit.js",
@@ -49817,7 +50037,7 @@ var map = {
 		1,
 		2,
 		3,
-		47
+		32
 	],
 	"./Admin/Store/Stock/Edit.js": [
 		"./resources/js/Pages/Admin/Store/Stock/Edit.js",
@@ -49825,7 +50045,7 @@ var map = {
 		1,
 		2,
 		3,
-		47
+		32
 	],
 	"./Admin/Store/Stock/Index": [
 		"./resources/js/Pages/Admin/Store/Stock/Index.js",
@@ -49833,7 +50053,7 @@ var map = {
 		1,
 		2,
 		3,
-		64
+		62
 	],
 	"./Admin/Store/Stock/Index.js": [
 		"./resources/js/Pages/Admin/Store/Stock/Index.js",
@@ -49841,7 +50061,7 @@ var map = {
 		1,
 		2,
 		3,
-		64
+		62
 	],
 	"./Admin/Store/Stock/Item": [
 		"./resources/js/Pages/Admin/Store/Stock/Item.js",
@@ -49849,7 +50069,8 @@ var map = {
 		1,
 		2,
 		3,
-		20
+		108,
+		76
 	],
 	"./Admin/Store/Stock/Item.js": [
 		"./resources/js/Pages/Admin/Store/Stock/Item.js",
@@ -49857,7 +50078,8 @@ var map = {
 		1,
 		2,
 		3,
-		20
+		108,
+		76
 	],
 	"./Admin/Store/Stock/Show": [
 		"./resources/js/Pages/Admin/Store/Stock/Show.js",
@@ -49865,7 +50087,8 @@ var map = {
 		1,
 		2,
 		3,
-		21
+		108,
+		77
 	],
 	"./Admin/Store/Stock/Show.js": [
 		"./resources/js/Pages/Admin/Store/Stock/Show.js",
@@ -49873,7 +50096,8 @@ var map = {
 		1,
 		2,
 		3,
-		21
+		108,
+		77
 	],
 	"./Admin/Supplier/Create": [
 		"./resources/js/Pages/Admin/Supplier/Create.js",
@@ -49881,7 +50105,7 @@ var map = {
 		1,
 		2,
 		3,
-		48
+		33
 	],
 	"./Admin/Supplier/Create.js": [
 		"./resources/js/Pages/Admin/Supplier/Create.js",
@@ -49889,7 +50113,7 @@ var map = {
 		1,
 		2,
 		3,
-		48
+		33
 	],
 	"./Admin/Supplier/Edit": [
 		"./resources/js/Pages/Admin/Supplier/Edit.js",
@@ -49897,7 +50121,7 @@ var map = {
 		1,
 		2,
 		3,
-		49
+		34
 	],
 	"./Admin/Supplier/Edit.js": [
 		"./resources/js/Pages/Admin/Supplier/Edit.js",
@@ -49905,7 +50129,7 @@ var map = {
 		1,
 		2,
 		3,
-		49
+		34
 	],
 	"./Admin/Supplier/Index": [
 		"./resources/js/Pages/Admin/Supplier/Index.js",
@@ -49913,7 +50137,7 @@ var map = {
 		1,
 		2,
 		3,
-		65
+		63
 	],
 	"./Admin/Supplier/Index.js": [
 		"./resources/js/Pages/Admin/Supplier/Index.js",
@@ -49921,7 +50145,7 @@ var map = {
 		1,
 		2,
 		3,
-		65
+		63
 	],
 	"./Admin/User/ChangePassword": [
 		"./resources/js/Pages/Admin/User/ChangePassword.js",
@@ -49929,7 +50153,7 @@ var map = {
 		1,
 		2,
 		3,
-		34
+		18
 	],
 	"./Admin/User/ChangePassword.js": [
 		"./resources/js/Pages/Admin/User/ChangePassword.js",
@@ -49937,7 +50161,7 @@ var map = {
 		1,
 		2,
 		3,
-		34
+		18
 	],
 	"./Admin/User/Create": [
 		"./resources/js/Pages/Admin/User/Create.js",
@@ -49945,7 +50169,7 @@ var map = {
 		1,
 		2,
 		3,
-		22
+		12
 	],
 	"./Admin/User/Create.js": [
 		"./resources/js/Pages/Admin/User/Create.js",
@@ -49953,7 +50177,7 @@ var map = {
 		1,
 		2,
 		3,
-		22
+		12
 	],
 	"./Admin/User/Edit": [
 		"./resources/js/Pages/Admin/User/Edit.js",
@@ -49961,7 +50185,7 @@ var map = {
 		1,
 		2,
 		3,
-		23
+		13
 	],
 	"./Admin/User/Edit.js": [
 		"./resources/js/Pages/Admin/User/Edit.js",
@@ -49969,7 +50193,7 @@ var map = {
 		1,
 		2,
 		3,
-		23
+		13
 	],
 	"./Admin/User/Index": [
 		"./resources/js/Pages/Admin/User/Index.js",
@@ -49977,7 +50201,7 @@ var map = {
 		1,
 		2,
 		3,
-		66
+		64
 	],
 	"./Admin/User/Index.js": [
 		"./resources/js/Pages/Admin/User/Index.js",
@@ -49985,7 +50209,7 @@ var map = {
 		1,
 		2,
 		3,
-		66
+		64
 	],
 	"./Admin/User/Role": [
 		"./resources/js/Pages/Admin/User/Role.js",
@@ -49993,7 +50217,8 @@ var map = {
 		1,
 		2,
 		3,
-		35
+		108,
+		85
 	],
 	"./Admin/User/Role.js": [
 		"./resources/js/Pages/Admin/User/Role.js",
@@ -50001,95 +50226,114 @@ var map = {
 		1,
 		2,
 		3,
-		35
+		108,
+		85
+	],
+	"./Admin/User/Store": [
+		"./resources/js/Pages/Admin/User/Store.js",
+		0,
+		1,
+		2,
+		3,
+		108,
+		86
+	],
+	"./Admin/User/Store.js": [
+		"./resources/js/Pages/Admin/User/Store.js",
+		0,
+		1,
+		2,
+		3,
+		108,
+		86
 	],
 	"./Auth/ForgotPassword": [
 		"./resources/js/Pages/Auth/ForgotPassword.js",
 		0,
-		24
+		35
 	],
 	"./Auth/ForgotPassword.js": [
 		"./resources/js/Pages/Auth/ForgotPassword.js",
 		0,
-		24
+		35
 	],
 	"./Auth/Login": [
 		"./resources/js/Pages/Auth/Login.js",
 		0,
-		50
+		65
 	],
 	"./Auth/Login.js": [
 		"./resources/js/Pages/Auth/Login.js",
 		0,
-		50
+		65
 	],
 	"./Auth/Register": [
 		"./resources/js/Pages/Auth/Register.js",
 		0,
-		51
+		66
 	],
 	"./Auth/Register.js": [
 		"./resources/js/Pages/Auth/Register.js",
 		0,
-		51
+		66
 	],
 	"./Auth/ResetPassword": [
 		"./resources/js/Pages/Auth/ResetPassword.js",
 		0,
-		25
+		36
 	],
 	"./Auth/ResetPassword.js": [
 		"./resources/js/Pages/Auth/ResetPassword.js",
 		0,
-		25
+		36
 	],
 	"./Auth/VerifyEmail": [
 		"./resources/js/Pages/Auth/VerifyEmail.js",
 		0,
-		52
+		67
 	],
 	"./Auth/VerifyEmail.js": [
 		"./resources/js/Pages/Auth/VerifyEmail.js",
 		0,
-		52
+		67
 	],
 	"./Components/PasswordEditCard": [
 		"./resources/js/Pages/Components/PasswordEditCard.js",
 		0,
 		1,
-		26
+		37
 	],
 	"./Components/PasswordEditCard.js": [
 		"./resources/js/Pages/Components/PasswordEditCard.js",
 		0,
 		1,
-		26
+		37
 	],
 	"./Components/ProfileEditCard": [
 		"./resources/js/Pages/Components/ProfileEditCard.js",
 		0,
 		1,
-		4,
-		71
+		5,
+		90
 	],
 	"./Components/ProfileEditCard.js": [
 		"./resources/js/Pages/Components/ProfileEditCard.js",
 		0,
 		1,
-		4,
-		71
+		5,
+		90
 	],
 	"./Components/StoreFront": [
 		"./resources/js/Pages/Components/StoreFront.js",
 		1,
 		2,
-		68
+		88
 	],
 	"./Components/StoreFront.js": [
 		"./resources/js/Pages/Components/StoreFront.js",
 		1,
 		2,
-		68
+		88
 	],
 	"./Dashboard/Home": [
 		"./resources/js/Pages/Dashboard/Home.js",
@@ -50097,7 +50341,7 @@ var map = {
 		1,
 		2,
 		3,
-		69
+		87
 	],
 	"./Dashboard/Home.js": [
 		"./resources/js/Pages/Dashboard/Home.js",
@@ -50105,7 +50349,39 @@ var map = {
 		1,
 		2,
 		3,
-		69
+		87
+	],
+	"./Dashboard/Sale/Create": [
+		"./resources/js/Pages/Dashboard/Sale/Create.js",
+		0,
+		1,
+		2,
+		3,
+		79
+	],
+	"./Dashboard/Sale/Create.js": [
+		"./resources/js/Pages/Dashboard/Sale/Create.js",
+		0,
+		1,
+		2,
+		3,
+		79
+	],
+	"./Dashboard/Sale/Show": [
+		"./resources/js/Pages/Dashboard/Sale/Show.js",
+		0,
+		1,
+		2,
+		3,
+		4
+	],
+	"./Dashboard/Sale/Show.js": [
+		"./resources/js/Pages/Dashboard/Sale/Show.js",
+		0,
+		1,
+		2,
+		3,
+		4
 	],
 	"./Dashboard/User/Profile": [
 		"./resources/js/Pages/Dashboard/User/Profile.js",
@@ -50113,8 +50389,8 @@ var map = {
 		1,
 		2,
 		3,
-		4,
-		67
+		5,
+		78
 	],
 	"./Dashboard/User/Profile.js": [
 		"./resources/js/Pages/Dashboard/User/Profile.js",
@@ -50122,18 +50398,18 @@ var map = {
 		1,
 		2,
 		3,
-		4,
-		67
+		5,
+		78
 	],
 	"./Welcome": [
 		"./resources/js/Pages/Welcome.js",
 		0,
-		70
+		89
 	],
 	"./Welcome.js": [
 		"./resources/js/Pages/Welcome.js",
 		0,
-		70
+		89
 	]
 };
 function webpackAsyncContext(req) {

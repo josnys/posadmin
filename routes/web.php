@@ -21,6 +21,11 @@ use App\Http\Controllers\Admin\PurchaseOrderController;
 use App\Http\Controllers\Admin\PurchaseController;
 use App\Http\Controllers\Admin\StockController;
 use App\Http\Controllers\Admin\InventoryController;
+use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\CurrencyController;
+use App\Http\Controllers\Admin\PaymentMethodController;
+use App\Http\Controllers\SellController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +74,9 @@ Route::group(['middleware' => ['auth']], function(){
      Route::post('/user/{user}/role', [UserController::class, 'postRole'])->middleware('permission:assign-role')->name('user.post.role');
      Route::get('/user/{user}/resetPassword', [UserController::class, 'getResetPassword'])->middleware('permission:change-password-user')->name('user.get.resetpassword');
      Route::post('/user/{user}/resetPassword', [UserController::class, 'postResetPassword'])->middleware('permission:change-password-user')->name('user.post.resetpassword');
+     Route::get('/user/{user}/store', [UserController::class, 'getUserStore'])->middleware('permission:assign-role')->name('user.get.store');
+     Route::post('/user/{user}/store', [UserController::class, 'postUserStore'])->middleware('permission:assign-role')->name('user.post.store');
+     // Add user_store permissions
 
      // Categories
      Route::get('/category', [CategoryController::class, 'index'])->middleware('permission:read-category')->name('category.index');
@@ -173,4 +181,34 @@ Route::group(['middleware' => ['auth']], function(){
      // Inventories
      Route::get('/store/{store}/inventory', [InventoryController::class, 'index'])->middleware('permission:read-inventory')->name('inventory.index');
      Route::post('/store/{store}/inventory/create', [InventoryController::class, 'store'])->middleware('permission:create-inventory')->name('inventory.store');
+
+     // Customers
+     Route::get('/customer', [CustomerController::class, 'index'])->middleware('permission:read-customer')->name('customer.index');
+     Route::get('/customer/create', [CustomerController::class, 'create'])->middleware('permission:create-customer')->name('customer.create');
+     Route::post('/customer/create', [CustomerController::class, 'store'])->middleware('permission:create-customer')->name('customer.store');
+     Route::get('/customer/{customer}/edit', [CustomerController::class, 'edit'])->middleware('permission:update-customer')->name('customer.edit');
+     Route::post('/customer/{customer}/edit', [CustomerController::class, 'update'])->middleware('permission:update-customer')->name('customer.update');
+
+     // Currencies
+     Route::get('/currency', [CurrencyController::class, 'index'])->middleware('permission:read-currency')->name('currency.index');
+     Route::get('/currency/create', [CurrencyController::class, 'create'])->middleware('permission:create-currency')->name('currency.create');
+     Route::post('/currency/create', [CurrencyController::class, 'store'])->middleware('permission:create-currency')->name('currency.store');
+     Route::get('/currency/{currency}/edit', [CurrencyController::class, 'edit'])->middleware('permission:update-currency')->name('currency.edit');
+     Route::post('/currency/{currency}/edit', [CurrencyController::class, 'update'])->middleware('permission:update-currency')->name('currency.update');
+
+     // Payment Methods
+     Route::get('/paymethod', [PaymentMethodController::class, 'index'])->middleware('permission:read-payment-method')->name('paymethod.index');
+     Route::get('/paymethod/create', [PaymentMethodController::class, 'create'])->middleware('permission:create-payment-method')->name('paymethod.create');
+     Route::post('/paymethod/create', [PaymentMethodController::class, 'store'])->middleware('permission:create-payment-method')->name('paymethod.store');
+     Route::get('/paymethod/{paymethod}/edit', [PaymentMethodController::class, 'edit'])->middleware('permission:update-payment-method')->name('paymethod.edit');
+     Route::post('/paymethod/{paymethod}/edit', [PaymentMethodController::class, 'update'])->middleware('permission:update-payment-method')->name('paymethod.update');
+
+     // Search
+     Route::post('/store/{store}/sell/searchproduct', [SearchController::class, 'product'])->middleware('permission:read-inventory')->name('sell.search.product');
+     Route::post('/store/{store}/sell/searchcustomer', [SearchController::class, 'customer'])->middleware('permission:read-inventory')->name('sell.search.customer');
+     // POS
+     Route::get('/store/{store}/sell', [SellController::class, 'create'])->middleware('permission:create-sell')->name('sell.create');
+     Route::post('/store/{store}/sell', [SellController::class, 'store'])->middleware('permission:create-sell')->name('sell.post');
+     Route::get('/store/{store}/sell/{sell}/show', [SellController::class, 'show'])->middleware('permission:read-sell')->name('sell.show');
+
 });

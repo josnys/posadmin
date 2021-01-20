@@ -19,6 +19,11 @@ class Store extends Model
           return $this->hasMany('App\Models\StoreContact', 'store_id', 'id');
      }
 
+     public function users()
+     {
+          return $this->belongsToMany('App\Models\User');
+     }
+
      public static function generateCode()
      {
           $code = mt_rand(1, 9999);
@@ -28,5 +33,10 @@ class Store extends Model
                $exists = DB::table('stores')->where('code', $code)->first();
           }
           return 'ST'.str_pad((string)$code, 4, "0", STR_PAD_LEFT);
+     }
+
+     public function scopeActive()
+     {
+          return $this->where('status', true);
      }
 }

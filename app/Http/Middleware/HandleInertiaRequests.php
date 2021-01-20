@@ -55,6 +55,7 @@ class HandleInertiaRequests extends Middleware
                     return [
                          'user' => $user ? [
                               'id' => $user->person->code,
+                              'fname' => $user->person->firstname,
                               'name' => $user->person->name,
                               'username' => $user->username,
                               'avatar' => ($user->profile_url) ? route('show.image', 'users/'.$user->profile_url) : null, // (Auth::user()->profile_url) ? asset('storage/users/'.Auth::user()->profile_url) : null

@@ -358,7 +358,7 @@ class RolePermissionSeeder extends Seeder
                     'name' => 'approve-stock',
                     'display_name' => 'Approve stock',
                     'description' => 'Allow user to approve stock'
-               ], // rive la
+               ],
                [
                     'name' => 'create-inventory',
                     'display_name' => 'Create Inventory',
@@ -378,6 +378,96 @@ class RolePermissionSeeder extends Seeder
                     'name' => 'delete-inventory',
                     'display_name' => 'Delete Inventory',
                     'description' => 'Allow user to delete a inventory'
+               ],
+               [
+                    'name' => 'create-customer',
+                    'display_name' => 'Create Customer',
+                    'description' => 'Allow users to create a customer'
+               ],
+               [
+                    'name' => 'read-customer',
+                    'display_name' => 'Read Customer',
+                    'description' => 'Allow user to read customer'
+               ],
+               [
+                    'name' => 'update-customer',
+                    'display_name' => 'Update Customer',
+                    'description' => 'Allow user to modify customer'
+               ],
+               [
+                    'name' => 'delete-customer',
+                    'display_name' => 'Delete Customer',
+                    'description' => 'Allow user to delete a customer'
+               ],
+               [
+                    'name' => 'discount-customer',
+                    'display_name' => 'Discount Customer',
+                    'description' => 'Allow user to grant discount to Customer'
+               ],
+               [
+                    'name' => 'create-currency',
+                    'display_name' => 'Create Currency',
+                    'description' => 'Allow users to create a currency'
+               ],
+               [
+                    'name' => 'read-currency',
+                    'display_name' => 'Read Currency',
+                    'description' => 'Allow user to read currency'
+               ],
+               [
+                    'name' => 'update-currency',
+                    'display_name' => 'Update Currency',
+                    'description' => 'Allow user to modify currency'
+               ],
+               [
+                    'name' => 'delete-currency',
+                    'display_name' => 'Delete Currency',
+                    'description' => 'Allow user to delete a currency'
+               ],
+               [
+                    'name' => 'create-payment-method',
+                    'display_name' => 'Create Payment Method',
+                    'description' => 'Allow users to create a Payment Method'
+               ],
+               [
+                    'name' => 'read-payment-method',
+                    'display_name' => 'Read Payment Method',
+                    'description' => 'Allow user to read Payment Method'
+               ],
+               [
+                    'name' => 'update-payment-method',
+                    'display_name' => 'Update Payment Method',
+                    'description' => 'Allow user to modify Payment Method'
+               ],
+               [
+                    'name' => 'delete-payment-method',
+                    'display_name' => 'Delete Payment Method',
+                    'description' => 'Allow user to delete a Payment Method'
+               ],
+               [
+                    'name' => 'activate-payment-method',
+                    'display_name' => 'Activate Payment Method',
+                    'description' => 'Allow user to activate a Payment Method'
+               ],// rive la
+               [
+                    'name' => 'create-sell',
+                    'display_name' => 'Create Sell',
+                    'description' => 'Allow user to use the POS interface to create Sell'
+               ],
+               [
+                    'name' => 'read-sell',
+                    'display_name' => 'Read Sell',
+                    'description' => 'Allow user to read sell'
+               ],
+               [
+                    'name' => 'update-sell',
+                    'display_name' => 'Update Sell',
+                    'description' => 'Allow user to modify sell'
+               ],
+               [
+                    'name' => 'delete-sell',
+                    'display_name' => 'Delete Sell',
+                    'description' => 'Allow user to delete a sell'
                ],
           ];
 

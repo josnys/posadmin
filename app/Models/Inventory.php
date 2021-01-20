@@ -30,4 +30,9 @@ class Inventory extends Model
      {
           return $this->belongsTo('App\Models\User', 'user_id', 'id');
      }
+
+     public function scopeExist($query)
+     {
+          return $query->where('quantity', '>', 0);
+     }
 }

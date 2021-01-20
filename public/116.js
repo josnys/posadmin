@@ -1,59 +1,13 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[116],{
 
-/***/ "./resources/js/Pages/Components/StoreFront.js":
+/***/ "./resources/js/Pages/Dashboard/Sale/Create.js":
 /*!*****************************************************!*\
-  !*** ./resources/js/Pages/Components/StoreFront.js ***!
+  !*** ./resources/js/Pages/Dashboard/Sale/Create.js ***!
   \*****************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils */ "./resources/js/utils.js");
-/* harmony import */ var _Shared_Icon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Shared/Icon */ "./resources/js/Shared/Icon.js");
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
-  var data = _ref.data,
-      props = _objectWithoutProperties(_ref, ["data"]);
-
-  var auth = Object(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["usePage"])().props.auth;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "md:flex shadow-lg max-w-lg md:max-w-2xl h-32"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6",
-    src: data.image
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full md:w-2/3 px-4 py-4 bg-white rounded-r-lg"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "w-full text-md text-gray-700 font-medium"
-  }, data.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "text-gray-600 font-semibold"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-2 h-2 rounded-full bg-".concat(data.status ? 'green' : 'red', "-500")
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "text-sm text-gray-700 mt-4"
-  }, data.code, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "text-gray-500 text-sm italic"
-  }, data.type)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "flex items-center justify-end mt-2 top-auto"
-  }, Object(_utils__WEBPACK_IMPORTED_MODULE_2__["can"])(auth.user, 'read-store') && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__["InertiaLink"], {
-    href: route('store.show', data.id),
-    className: "flex px-6 py-2 text-gray-600 hover:text-gray-700"
-  }, "View"))));
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/josnys/Documents/WebDev/posadmin/resources/js/Pages/Dashboard/Sale/Create.js: Unexpected token, expected \",\" (169:15)\n\n\u001b[0m \u001b[90m 167 | \u001b[39m               discountTotal\u001b[33m:\u001b[39m discountTotal\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 168 | \u001b[39m               discount\u001b[33m:\u001b[39m customer\u001b[33m.\u001b[39mdiscount\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 169 | \u001b[39m               total\u001b[33m:\u001b[39m total\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     | \u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 170 | \u001b[39m               customer\u001b[33m:\u001b[39m customer\u001b[33m.\u001b[39mid\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 171 | \u001b[39m               customerData\u001b[33m:\u001b[39m customer\u001b[0m\n\u001b[0m \u001b[90m 172 | \u001b[39m          }))\u001b[33m;\u001b[39m\u001b[0m\n    at Object._raise (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:799:17)\n    at Object.raiseWithData (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:792:17)\n    at Object.raise (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:786:17)\n    at Object.unexpected (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9089:16)\n    at Object.expect (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9075:28)\n    at Object.parseObjectLike (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:10793:14)\n    at Object.parseExprAtom (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:10332:23)\n    at Object.parseExprAtom (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:4748:20)\n    at Object.parseExprSubscripts (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9976:23)\n    at Object.parseUpdate (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9956:21)\n    at Object.parseMaybeUnary (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9945:17)\n    at Object.parseExprOps (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9815:23)\n    at Object.parseMaybeConditional (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9789:23)\n    at Object.parseMaybeAssign (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9752:21)\n    at /Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9718:39\n    at Object.allowInAnd (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:11448:12)\n    at Object.parseMaybeAssignAllowIn (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9718:17)\n    at Object.parseParenAndDistinguishExpression (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:10607:28)\n    at Object.parseExprAtom (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:10311:21)\n    at Object.parseExprAtom (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:4748:20)\n    at Object.parseExprSubscripts (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9976:23)\n    at Object.parseUpdate (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9956:21)\n    at Object.parseMaybeUnary (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9945:17)\n    at Object.parseExprOps (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9815:23)\n    at Object.parseMaybeConditional (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9789:23)\n    at Object.parseMaybeAssign (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9752:21)\n    at Object.parseFunctionBody (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:11101:24)\n    at Object.parseArrowExpression (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:11077:10)\n    at Object.parseExprAtom (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:10269:25)\n    at Object.parseExprAtom (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:4748:20)\n    at Object.parseExprSubscripts (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9976:23)\n    at Object.parseUpdate (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9956:21)\n    at Object.parseMaybeUnary (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9945:17)\n    at Object.parseExprOps (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9815:23)\n    at Object.parseMaybeConditional (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9789:23)\n    at Object.parseMaybeAssign (/Users/josnys/Documents/WebDev/posadmin/node_modules/@babel/parser/lib/index.js:9752:21)");
 
 /***/ })
 
