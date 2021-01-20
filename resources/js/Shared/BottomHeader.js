@@ -18,7 +18,7 @@ export default ({ ...props }) => {
                          </button>
                     </div>
                     <div className={menuOpened ? '' : 'hidden'}>
-                         <div className="whitespace-no-wrap absolute z-20 mt-8 left-auto top-0 right-0 py-2 shadow-xl bg-white rounded text-sm">
+                         <div className="whitespace-nowrap absolute z-20 mt-8 left-auto top-0 right-0 py-2 shadow-xl bg-white rounded text-sm">
                               <div className="block px-4 py-2 text-xs text-gray-500">Manage Account</div>
                               <div className="flex items-center px-3">
                                    <div className="font-semibold text-gray-700">{auth.user.name}</div>

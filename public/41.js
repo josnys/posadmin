@@ -175,7 +175,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: menuOpened ? '' : 'hidden'
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "whitespace-no-wrap absolute z-20 mt-8 left-auto top-0 right-0 py-2 shadow-xl bg-white rounded text-sm"
+    className: "whitespace-nowrap absolute z-20 mt-8 left-auto top-0 right-0 py-2 shadow-xl bg-white rounded text-sm"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "block px-4 py-2 text-xs text-gray-500"
   }, "Manage Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -277,7 +277,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "button",
-    className: "inline-flex justify-center w-full rounded-md border border-".concat(color, "-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-").concat(color, "-700 hover:text-").concat(color, "-500 focus:outline-none focus:border-").concat(color, "-300 focus:shadow-outline-").concat(color, " active:bg-").concat(color, "-50 active:text-").concat(color, "-800 transition ease-in-out duration-150"),
+    className: "inline-flex justify-center w-full rounded-md border border-".concat(color, "-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-").concat(color, "-700 hover:text-").concat(color, "-500 focus:outline-none focus:border-").concat(color, "-300 focus:ring-").concat(color, " active:bg-").concat(color, "-50 active:text-").concat(color, "-800 transition ease-in-out duration-150"),
     id: "options-menu",
     "aria-haspopup": "true",
     "aria-expanded": "true"
@@ -292,7 +292,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: menuOpened ? '' : 'hidden'
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "whitespace-no-wrap absolute z-20 mt-8 left-auto top-0 right-0 py-2 shadow-xl bg-white rounded text-sm"
+    className: "whitespace-nowrap absolute z-20 mt-8 left-auto top-0 right-0 py-2 shadow-xl bg-white rounded text-sm"
   }, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     onClick: function onClick() {
       setMenuOpened(false);

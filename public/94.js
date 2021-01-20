@@ -195,7 +195,7 @@ function CreateRole() {
   }, "Saved.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shared_LoadingButton__WEBPACK_IMPORTED_MODULE_12__["default"], {
     type: "submit",
     loading: sending,
-    className: "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 ml-4"
+    className: "inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring-gray disabled:opacity-25 transition ease-in-out duration-150 ml-4"
   }, "Save"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "hidden sm:block"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -363,7 +363,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "button",
-    className: "inline-flex justify-center w-full rounded-md border border-".concat(color, "-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-").concat(color, "-700 hover:text-").concat(color, "-500 focus:outline-none focus:border-").concat(color, "-300 focus:shadow-outline-").concat(color, " active:bg-").concat(color, "-50 active:text-").concat(color, "-800 transition ease-in-out duration-150"),
+    className: "inline-flex justify-center w-full rounded-md border border-".concat(color, "-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-").concat(color, "-700 hover:text-").concat(color, "-500 focus:outline-none focus:border-").concat(color, "-300 focus:ring-").concat(color, " active:bg-").concat(color, "-50 active:text-").concat(color, "-800 transition ease-in-out duration-150"),
     id: "options-menu",
     "aria-haspopup": "true",
     "aria-expanded": "true"
@@ -378,7 +378,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: menuOpened ? '' : 'hidden'
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "whitespace-no-wrap absolute z-20 mt-8 left-auto top-0 right-0 py-2 shadow-xl bg-white rounded text-sm"
+    className: "whitespace-nowrap absolute z-20 mt-8 left-auto top-0 right-0 py-2 shadow-xl bg-white rounded text-sm"
   }, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     onClick: function onClick() {
       setMenuOpened(false);

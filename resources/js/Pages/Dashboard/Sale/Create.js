@@ -482,7 +482,7 @@ const Create = () => {
                               })}
                          </ul>)}
                          {values.showPayPanel && (<React.Fragment>
-                              <button disabled={sending} onClick={e=>proceedPayment(e)} className="w-full items-center py-4 bg-blue-600 border border-transparent rounded-md font-semibold text-md text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:border-blue-900 focus:shadow-outline-blue disabled:opacity-25 transition ease-in-out duration-150 mb-2">
+                              <button disabled={sending} onClick={e=>proceedPayment(e)} className="w-full items-center py-4 bg-blue-600 border border-transparent rounded-md font-semibold text-md text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:border-blue-900 focus:ring-blue disabled:opacity-25 transition ease-in-out duration-150 mb-2">
                                    Pay
                               </button>
                               {values.payments.map((method, i) => {

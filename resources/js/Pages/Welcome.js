@@ -5,13 +5,13 @@ import Helmet from 'react-helmet';
 
 function Welcome() {
      const { app } = usePage().props;
-     
+
      return (
           <React.Fragment key="app">
                <Helmet title={app.name} />
                <div className="p-6 min-h-screen flex justify-center items-center">
                     <div className="bg-white p-4 rounded text-center text-lg text-gray-600 shadow-xl w-full max-w-xl leading-loose">
-                         <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500">
+                         <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-green-500">
                               POS Admin
                          </h1>
                          by <InertiaLink className="hover:text-purple-600" href="https://twitter.com/josnyS">JosnyS</InertiaLink><br />
