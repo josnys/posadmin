@@ -77,7 +77,7 @@ const Edit = () => {
                                                   Back
                                              </InertiaLink>
                                         </div>
-                                        <div className="col-span-6 sm:col-span-4">
+                                        <div className="col-span-12">
                                              <TextInput
                                                   className="form-input rounded-md shadow-sm mt-4 block w-full"
                                                   label="First Name"

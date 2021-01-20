@@ -25,4 +25,14 @@ class StockDetail extends Model
      {
           return $this->belongsTo('App\Models\User', 'user_id', 'id');
      }
+
+     public function scopeOrderDESC($query)
+     {
+          return $query->orderByRaw('(quantity - qty_inventary) DESC');
+     }
+
+     public function scopeOrderASC($query)
+     {
+          return $query->orderByRaw('(quantity - qty_inventary) ASC');
+     }
 }

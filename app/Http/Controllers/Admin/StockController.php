@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use App\Http\Requests\StockRequest;
 use App\Models\Store;
@@ -185,7 +186,7 @@ class StockController extends Controller
                $stockIds = Stock::where(['store_id' => $store->id, 'approved' => true])->get()->pluck('id')->toArray();
                $details = StockDetail::with(['productinfo' => function($productinfo){
                     return $productinfo->with('product')->with('presentation')->with('agency');
-               }])->whereIn('stock_id', $stockIds)->having('qty_inventary', '>=', 'quantity')->get();
+               }])->whereIn('stock_id', $stockIds)->orderDESC()->get();
                $data = array();
                foreach($details as $detail){
                     $available = ($detail->quantity - $detail->qty_inventary);

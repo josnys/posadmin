@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\PasswordRequest;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Person;
 use App\Models\Role;
+use App\Models\Store;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Log;
 
@@ -73,34 +75,31 @@ class UserController extends Controller
      public function store(CreateUserRequest $request)
      {
           try {
-               $code = Person::generateCode();
-               $exist = Person::where('code', $code)->first();
-               while($exist != null){
+               DB::transaction(function() use ($request){
                     $code = Person::generateCode();
-                    $exist = Person::where('code', $code)->first();
-               }
-               $person = new Person;
-               $person->firstname = $request->get('fname');
-               $person->lastname = $request->get('lname');
-               $person->code = $code;
-               $person->dob = $request->get('dob');
-               $person->sex = $request->get('sex');
-               $person->identification = $request->get('identification');
-               $person->identification_type = $request->get('identificationType');
-               $person->address = $request->get('address');
-               $person->phone = $request->get('phone');
-               $person->save();
-               $pid = $person->id;
+                    $person = new Person;
+                    $person->firstname = $request->get('fname');
+                    $person->lastname = $request->get('lname');
+                    $person->code = $code;
+                    $person->dob = $request->get('dob');
+                    $person->sex = $request->get('sex');
+                    $person->identification = $request->get('identification');
+                    $person->identification_type = $request->get('identificationType');
+                    $person->address = $request->get('address');
+                    $person->phone = $request->get('phone');
+                    $person->save();
+                    $pid = $person->id;
 
-               $user = new User;
-               $user->person_id = $pid;
-               $user->username = $request->get('username');
-               $user->email = $request->get('email');
-               $user->password = Hash::make($request->get('password'));
-               if($request->get('pin') != null){
-                    $user->pin = $request->get('pin');
-               }
-               $user->save();
+                    $user = new User;
+                    $user->person_id = $pid;
+                    $user->username = $request->get('username');
+                    $user->email = $request->get('email');
+                    $user->password = Hash::make($request->get('password'));
+                    if($request->get('pin') != null){
+                         $user->pin = $request->get('pin');
+                    }
+                    $user->save();
+               });
                return redirect()->route('user.index')->with('success', 'User saved successfully.');
           } catch (\Exception $e) {
                Log::error('User store', ['data' => $e]);
@@ -138,18 +137,20 @@ class UserController extends Controller
      public function update(UserRequest $request, User $user)
      {
           try {
-               $person = Person::find($user->person_id);
-               $person->firstname = $request->get('fname');
-               $person->lastname = $request->get('lname');
-               $person->dob = $request->get('dob');
-               $person->sex = $request->get('sex');
-               $person->identification = $request->get('identification');
-               $person->identification_type = $request->get('identificationType');
-               $person->address = $request->get('address');
-               $person->phone = $request->get('phone');
-               $person->update();
+               DB::transaction(function() use ($request, &$user){
+                    $person = Person::find($user->person_id);
+                    $person->firstname = $request->get('fname');
+                    $person->lastname = $request->get('lname');
+                    $person->dob = $request->get('dob');
+                    $person->sex = $request->get('sex');
+                    $person->identification = $request->get('identification');
+                    $person->identification_type = $request->get('identificationType');
+                    $person->address = $request->get('address');
+                    $person->phone = $request->get('phone');
+                    $person->update();
 
-               $user->update();
+                    $user->update();
+               });
                return redirect()->route('user.index')->with('success', 'User updated successfully.');
           } catch (\Exception $e) {
                Log::error('User update', ['data' => $e]);
@@ -233,6 +234,64 @@ class UserController extends Controller
                return redirect()->route('user.index')->with('success', 'User Password changed successfully.');
           } catch (\Exception $e) {
                Log::error('User post reset password', ['data' => $e]);
+          }
+     }
+
+     public function getUserStore(User $user)
+     {
+          try {
+               $user = User::with('person')->with('roles')->with('stores')->find($user->id);
+               $roles = array();
+               foreach($user->roles as $rl){
+                    array_push($roles, $rl->display_name);
+               }
+               $storeId = array();
+               $ustores = array();
+               foreach($user->stores as $store){
+                    array_push($storeId, $store->id);
+                    array_push($ustores, [
+                         'id' => $store->id,
+                         'name' => $store->name,
+                         'type' => $store->type,
+                    ]);
+               }
+               $_stores = Store::active()->get();
+               $stores = array();
+               foreach($_stores as $store){
+                    array_push($stores, [
+                         'id' => $store->id,
+                         'name' => $store->name,
+                         'type' => $store->type,
+                         'isCheck' => in_array($store->id, $storeId)
+                    ]);
+               }
+
+               return Inertia::render('Admin/User/Store', ['data' => [
+                    'stores' => $stores,
+                    'user' => [
+                         'id' => $user->id,
+                         'name' => $user->person->name,
+                         'username' => $user->username,
+                         'roles' => $roles,
+                         'user_store' => $ustores
+                    ]
+               ]]);
+          } catch (\Exception $e) {
+               Log::error('User get stores', ['data' => $e]);
+          }
+     }
+
+     public function postUserStore(Request $request, User $user)
+     {
+          try {
+               $request->validate([
+                    'user_store' => ['required', 'array'],
+                    'user_store.*' => ['integer'],
+               ]);
+               $user->stores()->sync($request->get('user_store'));
+               return redirect()->route('user.index')->with('success', 'Store successfully assigned to '.$user->name);
+          } catch (\Exception $e) {
+               Log::error('User post stores', ['data' => $e]);
           }
      }
 }

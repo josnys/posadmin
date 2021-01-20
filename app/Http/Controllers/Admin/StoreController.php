@@ -75,7 +75,9 @@ class StoreController extends Controller
      public function show(Store $store)
      {
           try {
-               $store = Store::with('contacts')->find($store->id);
+               $store = Store::with('contacts')->with(['users' => function($user){
+                    return $user->with('roles')->with('person');
+               }])->find($store->id);
                $contacts = array();
                if($store->contacts->count() > 0){
                     foreach($store->contacts as $contact){
@@ -85,6 +87,22 @@ class StoreController extends Controller
                               'reference' => $contact->reference,
                               'status' => ($contact->status) ? true : false,
                               'statusCaption' => ($contact->status) ? 'Active' : 'Inactive'
+                         ]);
+                    }
+               }
+               $users = array();
+               if($store->users->count() > 0){
+                    foreach($store->users as $user){
+                         $roles = array();
+                         foreach($user->roles as $rl){
+                              array_push($roles, $rl->display_name);
+                         }
+                         array_push($users, [
+                              'id' => $user->id,
+                              'code' => $user->person->code,
+                              'name' => $user->person->name,
+                              'username' => $user->username,
+                              'roles' => $roles
                          ]);
                     }
                }
@@ -98,7 +116,8 @@ class StoreController extends Controller
                     'type' => $store->type,
                     'status' => ($store->status) ? true : false,
                     'statusCaption' => ($store->status) ? 'Active' : 'Inactive',
-                    'contacts' => $contacts
+                    'contacts' => $contacts,
+                    'users' => $users
                ]]);
           } catch (\Exception $e) {
                Log::error('Store show', ['data' => $e]);

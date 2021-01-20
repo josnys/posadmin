@@ -94,6 +94,35 @@ const Show = () => {
                                              <Icon name="box" className={iconClassesBlue} />
                                              Inventory
                                         </InertiaLink>)}
+                                        {can(auth.user, 'create-sell') && (<InertiaLink href={route('sell.create', data.id)} className="ml-5 bg-transparent border border-blue-500 text-sm text-blue-500 p-2 rounded focus:outline-none hover:bg-blue-600 hover:text-blue-100 inline-flex items-center">
+                                             <Icon name="box" className={iconClassesBlue} />
+                                             POS
+                                        </InertiaLink>)}
+                                   </div>
+                                   <div className="col-span-12 sm:col-span-12">
+                                        {data.users && (<div className="col-span-12 sm:col-span-12">
+                                             <h2 className="text-gray-600 font-medium">Users</h2>
+                                             <table className="table-fixed w-full text-sm">
+                                                  <thead className="bg-gray-400">
+                                                       <tr>
+                                                            <th className="px-4 py-2">Code</th>
+                                                            <th className="px-4 py-2">Name</th>
+                                                            <th className="px-4 py-2">Username</th>
+                                                            <th className="px-4 py-2">Roles</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       {data.users.map(({id, code, name, username, roles}) => {
+                                                            return <tr key={id}>
+                                                                 <td className="border px-4 py-2 text-center">{code}</td>
+                                                                 <td className="border px-4 py-2">{name}</td>
+                                                                 <td className="border px-4 py-2 text-center">{username}</td>
+                                                                 <td className="border px-4 py-2 text-center">{roles.join(', ')}</td>
+                                                            </tr>
+                                                       })}
+                                                  </tbody>
+                                             </table>
+                                        </div>)}
                                    </div>
                               </div>
                          </div>

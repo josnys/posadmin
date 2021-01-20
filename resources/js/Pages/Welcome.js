@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 
 function Welcome() {
      const { app } = usePage().props;
-     console.log(app);
+     
      return (
           <React.Fragment key="app">
                <Helmet title={app.name} />

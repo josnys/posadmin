@@ -24,7 +24,6 @@ function CreateRole() {
           name: '',
           display: '',
           description: '',
-          errors: errors,
           data: data.data
      });
 
@@ -53,26 +52,14 @@ function CreateRole() {
      function handleSubmit(e) {
           e.preventDefault();
           setSending(true);
-          axios.post(route('role.store'), values).then((response) => {
-               setSaved(true);
+          Inertia.post(route('role.store'), values).then(() => {
                setSending(false);
-               let _data = values.data;
-               _data.push(response.data.data);
                setValues(values => ({
                     ...values,
                     name: '',
                     display: '',
-                    description: '',
-                    data: _data,
-                    errors: []
+                    description: ''
                }));
-          }).catch((error) => {
-               // console.log(JSON.stringify(error));
-               setValues(values => ({
-                    ...values,
-                    errors: error.response.data.errors
-               }));
-               setSending(false);
           });
      }
 
@@ -106,7 +93,7 @@ function CreateRole() {
                                                    disable={false}
                                                    readonly={false}
                                                    must={true}
-                                                   errors={values.errors.display}
+                                                   errors={errors.display}
                                                    value={values.display}
                                                    onChange={handleChange}
                                                    onBlur={handleFocusOut}
@@ -119,7 +106,7 @@ function CreateRole() {
                                                    disable={false}
                                                    readonly={true}
                                                    must={false}
-                                                   errors={values.errors.name}
+                                                   errors={errors.name}
                                                    value={values.name}
                                                    onChange={handleChange}
                                               />
@@ -127,7 +114,7 @@ function CreateRole() {
                                                    className="form-input rounded-md shadow-sm mt-4 block w-full"
                                                    label="Description"
                                                    name="description"
-                                                   errors={values.errors.description}
+                                                   errors={errors.description}
                                                    value={values.description}
                                                    onChange={handleChange}
                                               />
