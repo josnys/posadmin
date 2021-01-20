@@ -86,7 +86,7 @@ export default () => {
         </div>
         <button
           onClick={() => setOpened(true)}
-          className="px-4 md:px-6 rounded-l border-r hover:bg-gray-100 focus:outline-none focus:border-white focus:shadow-outline focus:z-10"
+          className="px-4 md:px-6 rounded-l border-r hover:bg-gray-100 focus:outline-none focus:border-white focus:ring focus:z-10"
         >
           <div className="flex items-baseline">
             <span className="text-gray-700 hidden md:inline">Filter</span>
@@ -100,7 +100,7 @@ export default () => {
           </div>
         </button>
         <input
-          className="relative w-full px-6 py-3 rounded-r focus:shadow-outline"
+          className="relative w-full px-6 py-3 rounded-r focus:ring"
           autoComplete="off"
           type="text"
           name="search"
